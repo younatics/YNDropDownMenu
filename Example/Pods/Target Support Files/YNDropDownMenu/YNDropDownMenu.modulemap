@@ -1,0 +1,6 @@
+framework module YNDropDownMenu {
+  umbrella header "YNDropDownMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}
