@@ -188,11 +188,6 @@ open class YNDropDownMenu: UIView {
             }
             
         }
-        let line = UIView()
-        line.backgroundColor = UIColor.black
-        line.frame = CGRect(x: 0, y: CGFloat(menuHeight-0.5), width: self.bounds.size.width, height: 0.5)
-        
-        self.addSubview(line)
     }
 
 }
