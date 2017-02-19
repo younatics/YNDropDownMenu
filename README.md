@@ -22,7 +22,7 @@ pod "YNDropDownMenu"
 
 ## Author
 
-seungyoun@zigbang.com, younatics@gmail.com
+younatics@gmail.com
 
 ## License
 
