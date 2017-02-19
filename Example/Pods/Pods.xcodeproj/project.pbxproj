@@ -10,6 +10,7 @@
 		01E1BB5428031CDE0054E3E3F797B767 /* Pods-YNDropDownMenu_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B6BC5E28F3AD22494DAC5C92705F390 /* Pods-YNDropDownMenu_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		024D891FEEAB97E93CE1F0D79C2D5312 /* Pods-YNDropDownMenu_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A94D148A5DB8E30042AC280569A1E8 /* Pods-YNDropDownMenu_Tests-dummy.m */; };
 		07D83E5E54B4AC5D602C08135900D711 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		192995001E59E0CC0081E4FD /* YNDropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192994FE1E59E0C60081E4FD /* YNDropDownButton.swift */; };
 		2AB35C820A9D1B7EB7E2FC2A5CDA19ED /* YNDropDownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BAFC37AD26130EB7192D84168050057 /* YNDropDownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91B67B8713F7BA4F09564EC3D60F8214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		B13F269EBCDF1275BBBAEF42B159C6D1 /* Pods-YNDropDownMenu_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69193DF2D38DF20D649692E939094666 /* Pods-YNDropDownMenu_Example-dummy.m */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		0B6BC5E28F3AD22494DAC5C92705F390 /* Pods-YNDropDownMenu_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YNDropDownMenu_Example-umbrella.h"; sourceTree = "<group>"; };
+		192994FE1E59E0C60081E4FD /* YNDropDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownButton.swift; sourceTree = "<group>"; };
 		22075A17B3D8A1021FD99815DC813BC2 /* Pods-YNDropDownMenu_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNDropDownMenu_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		2553BF8A70202B9381BED3455E791043 /* Pods-YNDropDownMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNDropDownMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2944CED1B6D0B4A17C923A276F4EEC77 /* Pods-YNDropDownMenu_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNDropDownMenu_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -40,22 +42,22 @@
 		46F312251600716869E5251C5F7C2DB9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A38B8CDF3C4D1E2F86ABF7572326933 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B969C67238B696C7E59276A5BECD9A /* YNDropDownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YNDropDownMenu-prefix.pch"; sourceTree = "<group>"; };
-		5A026F349DA7DF4BCD7C607D0281D80C /* Pods_YNDropDownMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YNDropDownMenu_Example.framework; path = "Pods-YNDropDownMenu_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A026F349DA7DF4BCD7C607D0281D80C /* Pods_YNDropDownMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNDropDownMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69193DF2D38DF20D649692E939094666 /* Pods-YNDropDownMenu_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNDropDownMenu_Example-dummy.m"; sourceTree = "<group>"; };
 		6BAFC37AD26130EB7192D84168050057 /* YNDropDownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YNDropDownMenu-umbrella.h"; sourceTree = "<group>"; };
-		6E33F5341CB6973BC813731487909FD9 /* Pods-YNDropDownMenu_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-YNDropDownMenu_Example.modulemap"; sourceTree = "<group>"; };
+		6E33F5341CB6973BC813731487909FD9 /* Pods-YNDropDownMenu_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-YNDropDownMenu_Example.modulemap"; sourceTree = "<group>"; };
 		8D640726A2AB42486B0052C1645C22B1 /* Pods-YNDropDownMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNDropDownMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		969CF417A37859E9B1810F8816838483 /* YNDropDownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YNDropDownMenu.xcconfig; sourceTree = "<group>"; };
-		9AD980CFB14BE4CFA8515D25F81E6F4F /* Pods-YNDropDownMenu_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-YNDropDownMenu_Tests.modulemap"; sourceTree = "<group>"; };
+		9AD980CFB14BE4CFA8515D25F81E6F4F /* Pods-YNDropDownMenu_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-YNDropDownMenu_Tests.modulemap"; sourceTree = "<group>"; };
 		9F3F3724EE3FC54092F0A401176E0517 /* Pods-YNDropDownMenu_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YNDropDownMenu_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A9A94D148A5DB8E30042AC280569A1E8 /* Pods-YNDropDownMenu_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNDropDownMenu_Tests-dummy.m"; sourceTree = "<group>"; };
 		ABC2CECEBEDEB6267B1423AF97AE5FFA /* Pods-YNDropDownMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNDropDownMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B0AA527FEBEC4735AE7D955C797B410D /* YNDropDownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = YNDropDownMenu.modulemap; sourceTree = "<group>"; };
-		C284426519B6F30F4B105CE8EC0F774A /* Pods_YNDropDownMenu_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YNDropDownMenu_Tests.framework; path = "Pods-YNDropDownMenu_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0AA527FEBEC4735AE7D955C797B410D /* YNDropDownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = YNDropDownMenu.modulemap; sourceTree = "<group>"; };
+		C284426519B6F30F4B105CE8EC0F774A /* Pods_YNDropDownMenu_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNDropDownMenu_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C717A3771B3CCFB52E471C7531B7090A /* Pods-YNDropDownMenu_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNDropDownMenu_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D9C4F7DA6DAF70CCC82E8AD849EB3602 /* YNDropDownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YNDropDownMenu.framework; path = YNDropDownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9C4F7DA6DAF70CCC82E8AD849EB3602 /* YNDropDownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNDropDownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7B41096C5B84DDCD98ABAE48154BB3 /* Pods-YNDropDownMenu_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNDropDownMenu_Example-resources.sh"; sourceTree = "<group>"; };
 		F5698A485FC7A1554F8F0152DFF09167 /* Pods-YNDropDownMenu_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNDropDownMenu_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F70B4B84C1253A6C60BDE2C4426DF0D3 /* Pods-YNDropDownMenu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNDropDownMenu_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				3609F409A4F50ACBFBCD8994200EE13D /* YNDropDownMenu.swift */,
+				192994FE1E59E0C60081E4FD /* YNDropDownButton.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -202,7 +204,6 @@
 			children = (
 				5E755EF2D2EDE8178CF16B4CE6794C71 /* Classes */,
 			);
-			name = YNDropDownMenu;
 			path = YNDropDownMenu;
 			sourceTree = "<group>";
 		};
@@ -314,6 +315,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					22F114BDD8721243637C2A78355A8BE3 = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -340,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA4081615E9B8AB08FE56F4E334B38E /* YNDropDownMenu-dummy.m in Sources */,
+				192995001E59E0CC0081E4FD /* YNDropDownButton.swift in Sources */,
 				BDA61133C158C8F5CA47350D7EC78B99 /* YNDropDownMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D640726A2AB42486B0052C1645C22B1 /* Pods-YNDropDownMenu_Example.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -587,6 +595,7 @@
 				PRODUCT_NAME = Pods_YNDropDownMenu_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -630,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F70B4B84C1253A6C60BDE2C4426DF0D3 /* Pods-YNDropDownMenu_Example.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -656,6 +666,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

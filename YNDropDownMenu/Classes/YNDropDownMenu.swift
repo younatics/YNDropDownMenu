@@ -24,11 +24,14 @@ open class YNDropDownMenu: UIView {
     open var hideMenuDuration = 0.3
     
     open var menuButtonImage: UIImage?
-    open var menuLabelFontSize: CGFloat? {
+    open var labelFontSize: CGFloat? {
         didSet {
             
         }
     }
+    // Set this value [Normal, Highlighted or Selected, Disabled]
+    open var labelFontColors: [UIColor] = [.black, .yellow, .gray]
+    open var buttonImages: [UIImage]?
     
     public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String], menuButtonImage: UIImage) {
         super.init(frame: frame)
@@ -145,7 +148,7 @@ open class YNDropDownMenu: UIView {
             
             let label = UILabel()
             label.text = dropDownViewTitles?[i]
-            if let _menuLabelFontSize = menuLabelFontSize {
+            if let _menuLabelFontSize = labelFontSize {
                 label.font = UIFont.systemFont(ofSize: _menuLabelFontSize)
             } else {
                 label.font = UIFont.systemFont(ofSize: 12)
@@ -174,6 +177,12 @@ open class YNDropDownMenu: UIView {
                 
                 button.addSubview(arrowImage)
                 button.addConstraints([arrowXContraint,arrowYConstraint,arrowHeight,arrowWidth])
+            } else {
+                let centerXwithOffsetConstraint = NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: button, attribute: .centerX, multiplier: 1.0, constant: 0)
+                let centerYConstraint = NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: button, attribute: .centerY, multiplier: 1.0, constant: 0)
+                
+                button.addConstraints([centerXwithOffsetConstraint,centerYConstraint])
+
             }
             // Setup Views
             let dropDownMenu = dropDownViews?[i]
