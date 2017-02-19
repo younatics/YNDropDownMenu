@@ -1,6 +1,6 @@
 # YNDropDownMenu
 
-[![CI Status](http://img.shields.io/travis/seungyoun@zigbang.com/YNDropDownMenu.svg?style=flat)](https://travis-ci.org/seungyoun@zigbang.com/YNDropDownMenu)
+[![CI Status](http://img.shields.io/travis/seungyoun@zigbang.com/YNDropDownMenu.svg?style=flat)](https://travis-ci.org/younatics@gmail.com/YNDropDownMenu)
 [![Version](https://img.shields.io/cocoapods/v/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
 [![License](https://img.shields.io/cocoapods/l/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
 [![Platform](https://img.shields.io/cocoapods/p/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
