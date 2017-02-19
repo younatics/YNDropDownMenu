@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+TODO: This project is made by iOS Developer in Zigbang. You can simply add views and labels to project. It will make dropdown menu easily
                        DESC
 
   s.homepage         = 'https://github.com/younatics/YNDropDownMenu'
