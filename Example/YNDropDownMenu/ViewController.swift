@@ -18,8 +18,8 @@ class ViewController: UIViewController {
         let image = UIImage(named: "arrow_nor")
         
         if let _ZBdropDownViews = ZBdropDownViews, let _image = image {
-            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["매매", "전체가격", "전체면적", "단지특징"],menuButtonImage: _image)
-            view.menuLabelFontSize = 20
+            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "PineApple", "Pear"],menuButtonImage: _image)
+//            view.menuLabelFontSize = 20
             
             self.view.addSubview(view)
         }
