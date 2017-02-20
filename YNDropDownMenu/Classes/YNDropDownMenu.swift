@@ -13,27 +13,28 @@ open class YNDropDownMenu: UIView {
     fileprivate var openedView = UIView()
     fileprivate var openedArrowView = UIView()
     
+    fileprivate var dropDownButtons: [YNDropDownButton]?
     fileprivate var menuHeight: CGFloat = 0.0
     
     public var dropDownViews: [UIView]?
     public var dropDownViewTitles: [String]?
 
-    var numberOfMenu: Int = 0
+    fileprivate var numberOfMenu: Int = 0
     
     open var showMenuDuration = 0.5
     open var hideMenuDuration = 0.3
     
-    open var menuButtonImage: UIImage?
     open var labelFontSize: CGFloat? {
         didSet {
             
         }
     }
-    // Set this value [Normal, Highlighted or Selected, Disabled]
+    // Set this value [Normal, Highlighted, Selected, Disabled]
     open var labelFontColors: [UIColor] = [.black, .yellow, .gray]
-    open var buttonImages: [UIImage]?
+    // Set this value [Normal, Highlighted, Selected, Disabled]
+    fileprivate var buttonImages: YNImages?
     
-    public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String], menuButtonImage: UIImage) {
+    public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
         
         if dropDownViews.count != dropDownViewTitles.count {
@@ -44,7 +45,6 @@ open class YNDropDownMenu: UIView {
         
         self.dropDownViews = dropDownViews
         self.dropDownViewTitles = dropDownViewTitles
-        self.menuButtonImage = menuButtonImage
         self.menuHeight = self.frame.height
         
         self.initViews()
@@ -54,39 +54,54 @@ open class YNDropDownMenu: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func menuClicked(_ sender: UIButton) {
-        var arrowView = UIView()
-        var dropDownView = UIView()
+    fileprivate func setImageWhen(images: YNImages) {
         
-        let subviews = sender.subviews.filter{$0 is UIImageView}
-        for menuArrowView in subviews {
-            arrowView = menuArrowView
+    }
+    
+    // Use this function when your menu button image is all same
+    open func setImageWhen(normal: UIImage?, highlighted: UIImage?, selected: UIImage?, disabled: UIImage?) {
+        let yNImages = YNImages.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+        
+        for i in 0..<numberOfMenu {
+            print(dropDownButtons?[i])
+            dropDownButtons?[i].buttonImages = yNImages
         }
+    }
+    
+    
+    
+    open func setLabelColorWhen(normal: UIColor, highlighted: UIColor, selected: UIColor, disabled: UIColor) {
+        
+    }
+    
+    func menuClicked(_ sender: YNDropDownButton) {
+        var dropDownView = UIView()
         
         for subview in self.subviews {
             if subview.tag == sender.tag + 100 {
                 dropDownView = subview
             }
         }
-        
-        if openedView != dropDownView && opened {
-            hideMenu(arrowView: openedArrowView, dropDownMenu: openedView, didComplete: {
-                self.showMenu(arrowView: arrowView, dropDownMenu: dropDownView, didComplete: nil)
-            })
-            openedArrowView = arrowView
+        if let buttonImageView = sender.buttonImageView {
+            if openedView != dropDownView && opened {
+                hideMenu(arrowView: openedArrowView, dropDownMenu: openedView, didComplete: {
+                    self.showMenu(arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+                })
+                openedArrowView = buttonImageView
+                openedView = dropDownView
+                return
+            }
+            
+            openedArrowView = buttonImageView
             openedView = dropDownView
-            return
+            
+            if !opened {
+                showMenu(arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+            } else {
+                hideMenu(arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+            }
+            opened = !opened
         }
-        
-        openedArrowView = arrowView
-        openedView = dropDownView
-        
-        if !opened {
-            showMenu(arrowView: arrowView, dropDownMenu: dropDownView, didComplete: nil)
-        } else {
-            hideMenu(arrowView: arrowView, dropDownMenu: dropDownView, didComplete: nil)
-        }
-        opened = !opened
     }
     
     func showMenu(arrowView: UIView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
@@ -126,64 +141,26 @@ open class YNDropDownMenu: UIView {
             guard let block = didComplete else { return }
             block()
         })
-        
     }
     
     fileprivate func initViews() {
         self.clipsToBounds = true
         
         self.backgroundColor = UIColor.white
+        self.dropDownButtons = [YNDropDownButton]()
+        
         let eachWidth = self.bounds.size.width / CGFloat(numberOfMenu)
         
         for i in 0..<numberOfMenu {
-            
             // Setup button
-            let button = UIButton()
+            let button = YNDropDownButton(frame: CGRect(x: eachWidth * CGFloat(i), y: 0.0, width: eachWidth, height: CGFloat(menuHeight)), buttonLabelText: dropDownViewTitles?[i])
             button.tag = i
-            button.backgroundColor = UIColor.white
             button.addTarget(self, action: #selector(menuClicked(_:)), for: .touchUpInside)
-            button.frame = CGRect(x: eachWidth * CGFloat(i), y: 0.0, width: eachWidth, height: CGFloat(menuHeight))
+            
+            dropDownButtons?.append(button)
             
             self.addSubview(button)
             
-            let label = UILabel()
-            label.text = dropDownViewTitles?[i]
-            if let _menuLabelFontSize = labelFontSize {
-                label.font = UIFont.systemFont(ofSize: _menuLabelFontSize)
-            } else {
-                label.font = UIFont.systemFont(ofSize: 12)
-            }
-            label.translatesAutoresizingMaskIntoConstraints = false
-            
-            button.addSubview(label)
-
-            if let _menuButtonImage = menuButtonImage {
-                let centerXwithOffsetConstraint = NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: button, attribute: .centerX, multiplier: 1.0, constant: -((_menuButtonImage.size.height+4)/2))
-                
-                let centerYConstraint = NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: button, attribute: .centerY, multiplier: 1.0, constant: 0)
-
-                button.addConstraints([centerXwithOffsetConstraint,centerYConstraint])
-
-                let arrowImage = UIImageView()
-                arrowImage.image = _menuButtonImage
-                arrowImage.tag = i
-                arrowImage.translatesAutoresizingMaskIntoConstraints = false
-                
-                let arrowXContraint = NSLayoutConstraint(item: arrowImage, attribute: .left, relatedBy: .equal, toItem: label, attribute: .right, multiplier: 1.0, constant: 4)
-                let arrowYConstraint = NSLayoutConstraint(item: arrowImage, attribute: .centerY, relatedBy: .equal, toItem: label, attribute: .centerY, multiplier: 1.0, constant: 0)
-                
-                let arrowHeight = NSLayoutConstraint(item: arrowImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: _menuButtonImage.size.height)
-                let arrowWidth = NSLayoutConstraint(item: arrowImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: _menuButtonImage.size.width)
-                
-                button.addSubview(arrowImage)
-                button.addConstraints([arrowXContraint,arrowYConstraint,arrowHeight,arrowWidth])
-            } else {
-                let centerXwithOffsetConstraint = NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: button, attribute: .centerX, multiplier: 1.0, constant: 0)
-                let centerYConstraint = NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: button, attribute: .centerY, multiplier: 1.0, constant: 0)
-                
-                button.addConstraints([centerXwithOffsetConstraint,centerYConstraint])
-
-            }
             // Setup Views
             let dropDownMenu = dropDownViews?[i]
             if let _dropDownMenu = dropDownMenu {

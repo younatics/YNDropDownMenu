@@ -15,11 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let ZBdropDownViews = Bundle.main.loadNibNamed("ZBDropDownMenu", owner: nil, options: nil) as? [UIView]
-        let image = UIImage(named: "arrow_nor")
         
-        if let _ZBdropDownViews = ZBdropDownViews, let _image = image {
-            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "PineApple", "Pear"],menuButtonImage: _image)
+        if let _ZBdropDownViews = ZBdropDownViews {
+            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "PineApple", "Pear"])
 //            view.menuLabelFontSize = 20
+            view.setImageWhen(normal: UIImage(named: "arrow_nor"), highlighted: UIImage(named: "arrow_sel"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
             
             self.view.addSubview(view)
         }
