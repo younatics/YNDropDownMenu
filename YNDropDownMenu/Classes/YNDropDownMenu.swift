@@ -9,17 +9,17 @@
 import UIKit
 
 open class YNDropDownMenu: UIView {
-    fileprivate var opened: Bool = false
-    fileprivate var openedView = UIView()
-    fileprivate var openedArrowView = UIView()
+    private var opened: Bool = false
+    private var openedView = UIView()
+    private var openedArrowView = UIView()
     
-    fileprivate var dropDownButtons: [YNDropDownButton]?
-    fileprivate var menuHeight: CGFloat = 0.0
+    private var dropDownButtons: [YNDropDownButton]?
+    private var menuHeight: CGFloat = 0.0
     
     public var dropDownViews: [UIView]?
     public var dropDownViewTitles: [String]?
 
-    fileprivate var numberOfMenu: Int = 0
+    private var numberOfMenu: Int = 0
     
     open var showMenuDuration = 0.5
     open var hideMenuDuration = 0.3
@@ -29,10 +29,7 @@ open class YNDropDownMenu: UIView {
             
         }
     }
-    // Set this value [Normal, Highlighted, Selected, Disabled]
-    open var labelFontColors: [UIColor] = [.black, .yellow, .gray]
-    // Set this value [Normal, Highlighted, Selected, Disabled]
-    fileprivate var buttonImages: YNImages?
+    private var buttonImages: YNImages?
     
     public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
@@ -54,27 +51,42 @@ open class YNDropDownMenu: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setImageWhen(images: YNImages) {
-        
-    }
-    
     // Use this function when your menu button image is all same
     open func setImageWhen(normal: UIImage?, highlighted: UIImage?, selected: UIImage?, disabled: UIImage?) {
         let yNImages = YNImages.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
         
         for i in 0..<numberOfMenu {
-            print(dropDownButtons?[i])
             dropDownButtons?[i].buttonImages = yNImages
         }
     }
     
+    open func setImageWhen(normal: UIImage?, highlighted: UIImage?, selected: UIImage?, disabled: UIImage?, atIndex: Int) {
+        let yNImages = YNImages.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+        dropDownButtons?[atIndex].buttonImages = yNImages
+    }
     
     
     open func setLabelColorWhen(normal: UIColor, highlighted: UIColor, selected: UIColor, disabled: UIColor) {
-        
+        let yNFontColor = YNFontColor.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+        for i in 0..<numberOfMenu {
+            dropDownButtons?[i].labelFontColors = yNFontColor
+        }
     }
     
-    func menuClicked(_ sender: YNDropDownButton) {
+    open func setLabelColorAtIndexWhen(normal: UIColor, highlighted: UIColor, selected: UIColor, disabled: UIColor, atIndex: Int) {
+        let yNFontColor = YNFontColor.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+            dropDownButtons?[atIndex].labelFontColors = yNFontColor
+    }
+    
+    open func openMenuAt(index: Int) {
+        for subview in self.subviews {
+
+            
+        }
+    }
+
+    
+    @objc private func menuClicked(_ sender: YNDropDownButton) {
         var dropDownView = UIView()
         
         for subview in self.subviews {
@@ -104,7 +116,8 @@ open class YNDropDownMenu: UIView {
         }
     }
     
-    func showMenu(arrowView: UIView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
+    
+    private func showMenu(arrowView: UIView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = false
         
         UIView.animate(
@@ -123,7 +136,7 @@ open class YNDropDownMenu: UIView {
         })
     }
     
-    func hideMenu(arrowView: UIView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
+    private func hideMenu(arrowView: UIView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = true
         
         UIView.animate(
@@ -143,7 +156,7 @@ open class YNDropDownMenu: UIView {
         })
     }
     
-    fileprivate func initViews() {
+    private func initViews() {
         self.clipsToBounds = true
         
         self.backgroundColor = UIColor.white

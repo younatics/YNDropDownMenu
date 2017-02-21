@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         let ZBdropDownViews = Bundle.main.loadNibNamed("ZBDropDownMenu", owner: nil, options: nil) as? [UIView]
         
         if let _ZBdropDownViews = ZBdropDownViews {
-            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "PineApple", "Pear"])
+            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 //            view.menuLabelFontSize = 20
             view.setImageWhen(normal: UIImage(named: "arrow_nor"), highlighted: UIImage(named: "arrow_sel"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
             
