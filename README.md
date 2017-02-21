@@ -8,13 +8,7 @@
 
 ## Requirements
 
-`YNDropDownMenu` written in Swift 3. Maybe compatible with iOS7.0+
-
-## Example
-
-Init your view with frame `let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])`
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+`YNDropDownMenu` written in Swift 3. Compatible with iOS 8.0+
 
 ## Installation
 
@@ -23,6 +17,36 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod "YNDropDownMenu"
+```
+
+## Usage
+
+Import first 
+```
+import YNDropDownMenu
+```
+
+Init view with frame[CGRect], Views[UIView] and Titles[String]
+```
+let view = YNDropDownMenu(frame:frame, dropDownViews: dropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
+self.addSubview(view)
+```
+
+Done!
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Customize
+
+You can set your Button Image with 4 situations (normal, highlighted, selected, disabled)
+```
+view.setImageWhen(normal: UIImage(named: "arrow_nor"), highlighted: UIImage(named: "arrow_sel"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
+```
+
+Also you can set your label color with 4 situations
+```
+view.setLabelColorWhen(normal: UIColor.black, highlighted: UIColor.yellow, selected: UIColor.blue, disabled: UIColor.gray)
+
 ```
 
 ## Author
