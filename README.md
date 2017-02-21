@@ -38,27 +38,40 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ### Customize
 
-Show&Hide Menu
-
+Show & Hide Menu
 ```
 view.showAndHideMenuAt(index:1)
 ```
 
-Animation duration
+Disable & Enable Menu 
+```
+view.disabledMenuAt(index: 2)
+view.enabledMenuAt(index: 3)
+```
 
+Button Image with 3 situations (normal, selected, disabled)
+```
+view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
+```
+
+Label color with 3 situations
+```
+view.setLabelColorWhen(normal: UIColor.black, selected: UIColor.blue, disabled: UIColor.gray)
+```
+
+Animation duration
 ```
 view.showMenuDuration = 0.5
 view.hideMenuDuration = 0.3
 ```
 
-Button Image with 4 situations (normal, highlighted, selected, disabled)
+Animation velocity, damping
 ```
-view.setImageWhen(normal: UIImage(named: "arrow_nor"), highlighted: UIImage(named: "arrow_sel"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
-```
+view.showMenuSpringVelocity = 0.5
+view.showMenuSpringWithDamping = 0.8
 
-Label color with 4 situations
-```
-view.setLabelColorWhen(normal: UIColor.black, highlighted: UIColor.yellow, selected: UIColor.blue, disabled: UIColor.gray)
+view.hideMenuSpringVelocity = 0.9
+view.hideMenuSpringWithDamping = 0.8
 ```
 
 ## Author
