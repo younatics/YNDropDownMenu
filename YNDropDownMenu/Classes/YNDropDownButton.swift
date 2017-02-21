@@ -40,31 +40,14 @@ class YNDropDownButton: UIButton {
         fatalError("Will be supported soon sorry")
     }
     
-    open func normal() {
+    open func enabled() {
         if let _buttonImage = buttonImages?.normal {
             self.buttonImageView.image = _buttonImage
         }
         if let _fontColor = labelFontColors?.normal {
             self.buttonLabel.textColor = _fontColor
         }
-    }
-    
-    open func highlighted() {
-        if let _buttonImage = buttonImages?.highlighted {
-            self.buttonImageView.image = _buttonImage
-        }
-        if let _fontColor = labelFontColors?.highlighted {
-            self.buttonLabel.textColor = _fontColor
-        }
-    }
-    
-    open func selected() {
-        if let _buttonImage = buttonImages?.selected {
-            self.buttonImageView.image = _buttonImage
-        }
-        if let _fontColor = labelFontColors?.selected {
-            self.buttonLabel.textColor = _fontColor
-        }
+        self.isUserInteractionEnabled = true
     }
     
     open func disabled() {
@@ -74,6 +57,7 @@ class YNDropDownButton: UIButton {
         if let _fontColor = labelFontColors?.disabled {
             self.buttonLabel.textColor = _fontColor
         }
+        self.isUserInteractionEnabled = false
     }
     
 

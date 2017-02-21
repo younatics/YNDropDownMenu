@@ -25,6 +25,12 @@ open class YNDropDownMenu: UIView {
     open var showMenuDuration = 0.5
     open var hideMenuDuration = 0.3
     
+    open var showMenuSpringVelocity:CGFloat = 0.5
+    open var showMenuSpringWithDamping:CGFloat = 0.8
+    
+    open var hideMenuSpringVelocity:CGFloat = 0.9
+    open var hideMenuSpringWithDamping:CGFloat = 0.8
+    
     open var labelFontSize: CGFloat? {
         didSet {
             
@@ -54,22 +60,60 @@ open class YNDropDownMenu: UIView {
     }
     
     // Use this function when your menu button image is all same
-    open func setImageWhen(normal: UIImage?, highlighted: UIImage?, selected: UIImage?, disabled: UIImage?) {
-        buttonImages = YNImages.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+    open func setImageWhen(normal: UIImage?, selected: UIImage?, disabled: UIImage?) {
+        buttonImages = YNImages.init(normal: normal, selected: selected, disabled: disabled)
         
         for i in 0..<numberOfMenu {
             dropDownButtons?[i].buttonImages = buttonImages
         }
     }
     
-    open func setLabelColorWhen(normal: UIColor, highlighted: UIColor, selected: UIColor, disabled: UIColor) {
-        buttonlabelFontColors = YNFontColor.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+    open func setLabelColorWhen(normal: UIColor, selected: UIColor, disabled: UIColor) {
+        buttonlabelFontColors = YNFontColor.init(normal: normal, selected: selected, disabled: disabled)
+        
         for i in 0..<numberOfMenu {
             dropDownButtons?[i].labelFontColors = buttonlabelFontColors
         }
     }
     
+    open func disabledMenuAt(index: Int) {
+        if index > numberOfMenu {
+            fatalError("index should be smaller than menu count")
+        }
+        for subview in self.subviews {
+            if subview.tag == index {
+                if subview.isKind(of: YNDropDownButton.self) {
+                    let _subview = subview as! YNDropDownButton
+                    _subview.disabled()
+                }
+            }
+
+        }
+        
+    }
+    
+    open func enabledMenuAt(index: Int) {
+        if index > numberOfMenu {
+            fatalError("index should be smaller than menu count")
+        }
+        for subview in self.subviews {
+            if subview.tag == index {
+                if subview.isKind(of: YNDropDownButton.self) {
+                    let _subview = subview as! YNDropDownButton
+                    _subview.enabled()
+                }
+            }
+            
+        }
+        
+    }
+
+    
     open func showAndHideMenuAt(index: Int) {
+        if index > numberOfMenu {
+            fatalError("index should be smaller than menu count")
+        }
+        
         var dropDownView = UIView()
         var buttonImageView = UIImageView()
         var yNDropDownButton = YNDropDownButton()
@@ -122,14 +166,14 @@ open class YNDropDownMenu: UIView {
         UIView.animate(
             withDuration: self.showMenuDuration,
             delay: 0,
-            usingSpringWithDamping: 0.8,
-            initialSpringVelocity: 0.5,
+            usingSpringWithDamping: self.showMenuSpringWithDamping,
+            initialSpringVelocity: self.showMenuSpringVelocity,
             options: [],
             animations: {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
                 self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownMenu.frame.height + CGFloat(self.menuHeight))
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
-                arrowView.image = self.buttonImages?.highlighted
+                arrowView.image = self.buttonImages?.selected
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
 
         }, completion: { (completion) in
@@ -144,8 +188,8 @@ open class YNDropDownMenu: UIView {
         UIView.animate(
             withDuration: self.hideMenuDuration,
             delay: 0,
-            usingSpringWithDamping: 0.8,
-            initialSpringVelocity: 0.9,
+            usingSpringWithDamping: self.hideMenuSpringWithDamping,
+            initialSpringVelocity: self.hideMenuSpringVelocity,
             options: [],
             animations: {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
@@ -173,7 +217,6 @@ open class YNDropDownMenu: UIView {
             let button = YNDropDownButton(frame: CGRect(x: eachWidth * CGFloat(i), y: 0.0, width: eachWidth, height: CGFloat(menuHeight)), buttonLabelText: dropDownViewTitles?[i])
             button.tag = i
             button.addTarget(self, action: #selector(menuClicked(_:)), for: .touchUpInside)
-            
             dropDownButtons?.append(button)
             
             self.addSubview(button)
