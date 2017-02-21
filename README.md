@@ -4,11 +4,17 @@
 [![License](https://img.shields.io/cocoapods/l/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
 [![Platform](https://img.shields.io/cocoapods/p/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![demo](YNDropDownMenu.gif)
 
 ## Requirements
+
+`YNDropDownMenu` written in Swift 3. Maybe compatible with iOS7.0+
+
+## Example
+
+Init your view with frame `let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])`
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
