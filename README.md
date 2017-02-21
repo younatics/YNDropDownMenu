@@ -46,7 +46,6 @@ view.setImageWhen(normal: UIImage(named: "arrow_nor"), highlighted: UIImage(name
 Also you can set your label color with 4 situations
 ```
 view.setLabelColorWhen(normal: UIColor.black, highlighted: UIColor.yellow, selected: UIColor.blue, disabled: UIColor.gray)
-
 ```
 
 ## Author
