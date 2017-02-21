@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '0.2.4'
-  s.summary          = 'YNDropDownMenu is created to make drop down menu. You can simply add views and titles and it is done!'
+  s.version          = '0.3.0'
+  s.summary          = 'YNDropDownMenu is created to make drop down menu with Swift3'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: This project is made by iOS Developer in Zigbang. You can simply add views and labels to project. It will make dropdown menu easily
+TODO: You can init with frame. Button Images, Labels are all optional. See example in my github
                        DESC
 
   s.homepage         = 'https://github.com/younatics/YNDropDownMenu'

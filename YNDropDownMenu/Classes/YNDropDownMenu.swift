@@ -11,7 +11,8 @@ import UIKit
 open class YNDropDownMenu: UIView {
     private var opened: Bool = false
     private var openedView = UIView()
-    private var openedArrowView = UIView()
+    private var openedArrowView = UIImageView()
+    private var openedYNDropDownButton = YNDropDownButton()
     
     private var dropDownButtons: [YNDropDownButton]?
     private var menuHeight: CGFloat = 0.0
@@ -30,6 +31,7 @@ open class YNDropDownMenu: UIView {
         }
     }
     private var buttonImages: YNImages?
+    private var buttonlabelFontColors: YNFontColor?
     
     public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
@@ -53,73 +55,70 @@ open class YNDropDownMenu: UIView {
     
     // Use this function when your menu button image is all same
     open func setImageWhen(normal: UIImage?, highlighted: UIImage?, selected: UIImage?, disabled: UIImage?) {
-        let yNImages = YNImages.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+        buttonImages = YNImages.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
         
         for i in 0..<numberOfMenu {
-            dropDownButtons?[i].buttonImages = yNImages
+            dropDownButtons?[i].buttonImages = buttonImages
         }
     }
-    
-    open func setImageWhen(normal: UIImage?, highlighted: UIImage?, selected: UIImage?, disabled: UIImage?, atIndex: Int) {
-        let yNImages = YNImages.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
-        dropDownButtons?[atIndex].buttonImages = yNImages
-    }
-    
     
     open func setLabelColorWhen(normal: UIColor, highlighted: UIColor, selected: UIColor, disabled: UIColor) {
-        let yNFontColor = YNFontColor.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
+        buttonlabelFontColors = YNFontColor.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
         for i in 0..<numberOfMenu {
-            dropDownButtons?[i].labelFontColors = yNFontColor
+            dropDownButtons?[i].labelFontColors = buttonlabelFontColors
         }
     }
     
-    open func setLabelColorAtIndexWhen(normal: UIColor, highlighted: UIColor, selected: UIColor, disabled: UIColor, atIndex: Int) {
-        let yNFontColor = YNFontColor.init(normal: normal, highlighted: highlighted, selected: selected, disabled: disabled)
-            dropDownButtons?[atIndex].labelFontColors = yNFontColor
-    }
-    
-    open func openMenuAt(index: Int) {
-        for subview in self.subviews {
-
-            
-        }
-    }
-
-    
-    @objc private func menuClicked(_ sender: YNDropDownButton) {
+    open func showAndHideMenuAt(index: Int) {
         var dropDownView = UIView()
-        
+        var buttonImageView = UIImageView()
+        var yNDropDownButton = YNDropDownButton()
+
         for subview in self.subviews {
-            if subview.tag == sender.tag + 100 {
+            if subview.tag == index + 100 {
                 dropDownView = subview
             }
-        }
-        if let buttonImageView = sender.buttonImageView {
-            if openedView != dropDownView && opened {
-                hideMenu(arrowView: openedArrowView, dropDownMenu: openedView, didComplete: {
-                    self.showMenu(arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
-                })
-                openedArrowView = buttonImageView
-                openedView = dropDownView
-                return
-            }
             
+            if subview.tag == index {
+                if subview.isKind(of: YNDropDownButton.self) {
+                    let _subview = subview as! YNDropDownButton
+                    yNDropDownButton = _subview
+                    buttonImageView = _subview.buttonImageView
+                }
+            }
+        }
+        
+        if openedView != dropDownView && opened {
+            hideMenu(yNDropDownButton: openedYNDropDownButton, arrowView: openedArrowView, dropDownMenu: openedView, didComplete: {
+                self.showMenu(yNDropDownButton: yNDropDownButton, arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+            })
+            openedYNDropDownButton = yNDropDownButton
             openedArrowView = buttonImageView
             openedView = dropDownView
-            
-            if !opened {
-                showMenu(arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
-            } else {
-                hideMenu(arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
-            }
-            opened = !opened
+            return
         }
+        
+        openedYNDropDownButton = yNDropDownButton
+        openedArrowView = buttonImageView
+        openedView = dropDownView
+        
+        if !opened {
+            showMenu(yNDropDownButton: yNDropDownButton, arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+        } else {
+            hideMenu(yNDropDownButton: yNDropDownButton, arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+
+        }
+        opened = !opened
+
     }
     
+    @objc private func menuClicked(_ sender: YNDropDownButton) {
+        self.showAndHideMenuAt(index: sender.tag)
+    }
     
-    private func showMenu(arrowView: UIView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
+    private func showMenu(yNDropDownButton: YNDropDownButton, arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = false
-        
+
         UIView.animate(
             withDuration: self.showMenuDuration,
             delay: 0,
@@ -129,14 +128,17 @@ open class YNDropDownMenu: UIView {
             animations: {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
                 self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownMenu.frame.height + CGFloat(self.menuHeight))
-                arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0);
+                arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
+                arrowView.image = self.buttonImages?.highlighted
+                yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
+
         }, completion: { (completion) in
             guard let block = didComplete else { return }
             block()
         })
     }
     
-    private func hideMenu(arrowView: UIView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
+    private func hideMenu(yNDropDownButton: YNDropDownButton,arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = true
         
         UIView.animate(
@@ -149,7 +151,9 @@ open class YNDropDownMenu: UIView {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
                 self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
-                
+                arrowView.image = self.buttonImages?.normal
+                yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
+
         }, completion: { (completion) in
             guard let block = didComplete else { return }
             block()
@@ -188,5 +192,4 @@ open class YNDropDownMenu: UIView {
             
         }
     }
-
 }

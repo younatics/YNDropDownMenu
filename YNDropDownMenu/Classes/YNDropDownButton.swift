@@ -20,6 +20,12 @@ class YNDropDownButton: UIButton {
         }
     }
     open var labelFontColors: YNFontColor?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.initView()
+
+    }
 
     public init(frame: CGRect, buttonLabelText: String?) {
         super.init(frame: frame)
