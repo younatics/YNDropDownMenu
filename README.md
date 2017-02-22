@@ -12,6 +12,8 @@ The eligible dropdown menu, written in Swift 3, appears dropdown menu to display
 
 
 ![demo](YNDropDownMenu.gif)
+![demo2](YNDropDownMenu2.gif)
+![demo3](YNDropDownMenu3.gif)
 
 ## Requirements
 
@@ -71,6 +73,9 @@ view.setLabelColorWhen(normal: UIColor.black, selected: UIColor.blue, disabled: 
 
 BlurEffectView
 ```
+// Enadbled or Disabled first (Default true)
+view.backgroundBlurEnabled = false
+
 // Use this line if you want to change UIBlurEffectStyle
 view.blurEffectStyle = .light
 
