@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'YNDropDownMenu is created to make drop down menu with Swift3'
 
   s.description      = <<-DESC
@@ -21,7 +21,7 @@ TODO: You can init with frame. Button Images, Labels are all optional. See examp
   s.author           = 'younatics@gmail.com'
   s.source           = { :git => 'https://github.com/younatics/YNDropDownMenu.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.3'
+  s.ios.deployment_target = '8.0'
 
   s.source_files = 'YNDropDownMenu/Classes/**/*'
 
