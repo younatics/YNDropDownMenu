@@ -45,9 +45,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ### Customize
 
-Show & Hide Menu
+Show & Hide Menu 
 ```
 view.showAndHideMenuAt(index:1)
+
+// Wehn view is already opened
+view.hideMenu()
 ```
 
 Disable & Enable Menu 
@@ -64,6 +67,21 @@ view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: 
 Label color with 3 situations
 ```
 view.setLabelColorWhen(normal: UIColor.black, selected: UIColor.blue, disabled: UIColor.gray)
+```
+
+BlurEffectView
+```
+// Use this line if you want to change UIBlurEffectStyle
+view.blurEffectStyle = .light
+
+// Or customize blurEffectView(UIView)
+let backgroundView = UIView()
+backgroundView.backgroundColor = UIColor.black
+view.blurEffectView = backgroundView
+
+// Animation end alpha
+view.blurEffectViewAlpha = 0.7
+
 ```
 
 Animation duration
