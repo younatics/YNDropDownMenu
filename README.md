@@ -51,7 +51,7 @@ Show & Hide Menu
 ```
 view.showAndHideMenuAt(index:1)
 
-// Wehn view is already opened
+// When view is already opened
 view.hideMenu()
 ```
 
