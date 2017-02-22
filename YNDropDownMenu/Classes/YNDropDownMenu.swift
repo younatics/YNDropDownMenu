@@ -16,13 +16,21 @@ open class YNDropDownMenu: UIView {
     
     private var dropDownButtons: [YNDropDownButton]?
     private var menuHeight: CGFloat = 0.0
-    
-    public var dropDownViews: [UIView]?
-    public var dropDownViewTitles: [String]?
-
     private var numberOfMenu: Int = 0
+
+    open var blurEffectView: UIView? {
+        didSet {
+            self.changeBlurEffectView()
+        }
+    }
     
-    open var backgroundViewEnabled = true
+    open var blurEffectViewAlpha:CGFloat = 1.0
+    open var blurEffectStyle:UIBlurEffectStyle = .dark
+    
+    open var dropDownViews: [UIView]?
+    open var dropDownViewTitles: [String]?
+
+    open var backgroundBlurEnabled = true
     
     open var showMenuDuration = 0.5
     open var hideMenuDuration = 0.3
@@ -107,7 +115,13 @@ open class YNDropDownMenu: UIView {
             }
         }
     }
-
+    
+    open func hideMenu() {
+        if opened {
+            hideMenu(yNDropDownButton: openedYNDropDownButton, arrowView: openedArrowView, dropDownMenu: openedView, didComplete: nil)
+            opened = !opened
+        }
+    }
     
     open func showAndHideMenuAt(index: Int) {
         if index > numberOfMenu {
@@ -160,9 +174,18 @@ open class YNDropDownMenu: UIView {
         self.showAndHideMenuAt(index: sender.tag)
     }
     
+    @objc private func blurEffectViewClicked(_ sender: UITapGestureRecognizer) {
+        self.hideMenu()
+    }
+
+    
     private func showMenu(yNDropDownButton: YNDropDownButton, arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = false
         
+        if self.backgroundBlurEnabled, let _blurEffectView = blurEffectView {
+            self.superview?.addSubview(_blurEffectView)
+            self.superview?.insertSubview(_blurEffectView, belowSubview: self)
+        }
         UIView.animate(
             withDuration: self.showMenuDuration,
             delay: 0,
@@ -171,11 +194,12 @@ open class YNDropDownMenu: UIView {
             options: [],
             animations: {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
-                if self.backgroundViewEnabled {
-                    
-                } else {
-                    self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownMenu.frame.height + CGFloat(self.menuHeight))
+                if self.backgroundBlurEnabled {
+                    self.blurEffectView?.alpha = self.blurEffectViewAlpha
                 }
+                
+                self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownMenu.frame.height + CGFloat(self.menuHeight))
+
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
                 arrowView.image = self.buttonImages?.selected
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
@@ -196,20 +220,34 @@ open class YNDropDownMenu: UIView {
             options: [],
             animations: {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
-                if self.backgroundViewEnabled {
-                    
-                } else {
-                    self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
+                if self.backgroundBlurEnabled {
+                    self.blurEffectView?.alpha = 0
                 }
+                self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
+
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
                 arrowView.image = self.buttonImages?.normal
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
                 
         }, completion: { (completion) in
+            if self.backgroundBlurEnabled {
+                self.blurEffectView?.removeFromSuperview()
+            }
             guard let block = didComplete else { return }
             block()
         })
     }
+    
+    
+    private func changeBlurEffectView() {
+        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: UIScreen.main.bounds.size.height - self.frame.origin.y)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(blurEffectViewClicked(_:)))
+        self.blurEffectView?.addGestureRecognizer(tapGesture)
+        self.blurEffectView?.alpha = 0
+
+    }
+    
+    
     
     private func initViews() {
         self.clipsToBounds = true
@@ -241,5 +279,13 @@ open class YNDropDownMenu: UIView {
             }
             
         }
+        
+        var blurEffect = UIBlurEffect(style: blurEffectStyle)
+        self.blurEffectView = UIVisualEffectView(effect: blurEffect)
+        self.blurEffectView?.alpha = 0
+        
+        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: UIScreen.main.bounds.size.height - self.frame.origin.y)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(blurEffectViewClicked(_:)))
+        self.blurEffectView?.addGestureRecognizer(tapGesture)
     }
 }

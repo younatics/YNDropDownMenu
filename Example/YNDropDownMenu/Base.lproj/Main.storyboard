@@ -21,19 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uok-iT-JIs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="bY0-h2-6UZ"/>
-                                </constraints>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2279.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="pad-xc-3vV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93073936656790457" green="0.99586483664289316" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uok-iT-JIs" secondAttribute="trailing" id="GJN-Aa-GUM"/>
-                            <constraint firstItem="uok-iT-JIs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gqE-01-vlg"/>
-                            <constraint firstItem="uok-iT-JIs" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="hef-Zc-Hbv"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="pad-xc-3vV" secondAttribute="bottom" id="Hps-8P-cEj"/>
+                            <constraint firstAttribute="trailing" secondItem="pad-xc-3vV" secondAttribute="trailing" id="NMy-PG-efk"/>
+                            <constraint firstItem="pad-xc-3vV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="c9e-UU-cch"/>
+                            <constraint firstItem="pad-xc-3vV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wDA-oz-6f5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fbL-JK-sEB"/>
@@ -41,7 +38,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="882" y="791"/>
+            <point key="canvasLocation" x="880.79999999999995" y="790.25487256371821"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_2279.PNG" width="1242" height="2208"/>
+    </resources>
 </document>

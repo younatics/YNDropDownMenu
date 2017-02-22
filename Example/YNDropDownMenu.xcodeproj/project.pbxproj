@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		196A0F0D1E594C4700E302C8 /* ZBDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A0F0B1E594C4700E302C8 /* ZBDropDownMenu.swift */; };
 		196A0F0E1E594C4700E302C8 /* ZBDropDownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196A0F0C1E594C4700E302C8 /* ZBDropDownMenu.xib */; };
+		19EF8D8F1E5D30AC00C45293 /* IMG_2279.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19EF8D8E1E5D30AC00C45293 /* IMG_2279.PNG */; };
 		24ACCC5D6B88AB5A4294D552 /* Pods_YNDropDownMenu_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBCCE4F063594FA1CC58A7C /* Pods_YNDropDownMenu_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		196A0F0B1E594C4700E302C8 /* ZBDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZBDropDownMenu.swift; sourceTree = "<group>"; };
 		196A0F0C1E594C4700E302C8 /* ZBDropDownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBDropDownMenu.xib; sourceTree = "<group>"; };
+		19EF8D8E1E5D30AC00C45293 /* IMG_2279.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2279.PNG; sourceTree = "<group>"; };
 		2948B5D198C7826A3BF3D14C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		44513F7120327AAD6532E6E6 /* Pods-YNDropDownMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNDropDownMenu_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNDropDownMenu_Tests/Pods-YNDropDownMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4F3545D2900D0BA147A4241A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				196A0F0B1E594C4700E302C8 /* ZBDropDownMenu.swift */,
 				196A0F0C1E594C4700E302C8 /* ZBDropDownMenu.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				19EF8D8E1E5D30AC00C45293 /* IMG_2279.PNG */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -258,6 +261,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				196A0F0E1E594C4700E302C8 /* ZBDropDownMenu.xib in Resources */,
+				19EF8D8F1E5D30AC00C45293 /* IMG_2279.PNG in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);

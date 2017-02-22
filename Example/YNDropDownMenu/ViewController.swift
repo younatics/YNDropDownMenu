@@ -18,12 +18,21 @@ class ViewController: UIViewController {
         let FFA409 = UIColor(colorLiteralRed: 255/255, green: 164/255, blue: 9/255, alpha: 1.0)
         
         if let _ZBdropDownViews = ZBdropDownViews {
-            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
+            let view = YNDropDownMenu(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
             view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
             view.setLabelColorWhen(normal: UIColor.black, selected: FFA409, disabled: UIColor.gray)
             
-//            view.disabledMenuAt(index: 2)
-//            view.showAndHideMenuAt(index: 3)
+            view.backgroundBlurEnabled = false
+            
+            // Add custom blurEffectView
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor.black
+            view.blurEffectView = backgroundView
+            view.blurEffectViewAlpha = 0.7
+            
+            // Open and Hide Menu
+            view.disabledMenuAt(index: 2)
+            //view.showAndHideMenuAt(index: 3)
             self.view.addSubview(view)
         }        
     }
