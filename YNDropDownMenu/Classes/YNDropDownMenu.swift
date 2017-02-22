@@ -280,7 +280,7 @@ open class YNDropDownMenu: UIView {
             
         }
         
-        var blurEffect = UIBlurEffect(style: blurEffectStyle)
+        let blurEffect = UIBlurEffect(style: blurEffectStyle)
         self.blurEffectView = UIVisualEffectView(effect: blurEffect)
         self.blurEffectView?.alpha = 0
         
