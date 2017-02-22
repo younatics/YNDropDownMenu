@@ -21,8 +21,9 @@ class ViewController: UIViewController {
             let view = YNDropDownMenu(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
             view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
             view.setLabelColorWhen(normal: UIColor.black, selected: FFA409, disabled: UIColor.gray)
-            view.disabledMenuAt(index: 2)
-            view.showAndHideMenuAt(index: 3)
+            
+//            view.disabledMenuAt(index: 2)
+//            view.showAndHideMenuAt(index: 3)
             self.view.addSubview(view)
         }        
     }

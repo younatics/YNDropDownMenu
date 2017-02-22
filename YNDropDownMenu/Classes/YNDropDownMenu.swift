@@ -22,6 +22,8 @@ open class YNDropDownMenu: UIView {
 
     private var numberOfMenu: Int = 0
     
+    open var backgroundViewEnabled = true
+    
     open var showMenuDuration = 0.5
     open var hideMenuDuration = 0.3
     
@@ -103,9 +105,7 @@ open class YNDropDownMenu: UIView {
                     _subview.enabled()
                 }
             }
-            
         }
-        
     }
 
     
@@ -162,7 +162,7 @@ open class YNDropDownMenu: UIView {
     
     private func showMenu(yNDropDownButton: YNDropDownButton, arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = false
-
+        
         UIView.animate(
             withDuration: self.showMenuDuration,
             delay: 0,
@@ -171,11 +171,15 @@ open class YNDropDownMenu: UIView {
             options: [],
             animations: {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
-                self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownMenu.frame.height + CGFloat(self.menuHeight))
+                if self.backgroundViewEnabled {
+                    
+                } else {
+                    self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownMenu.frame.height + CGFloat(self.menuHeight))
+                }
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
                 arrowView.image = self.buttonImages?.selected
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
-
+                
         }, completion: { (completion) in
             guard let block = didComplete else { return }
             block()
@@ -184,7 +188,6 @@ open class YNDropDownMenu: UIView {
     
     private func hideMenu(yNDropDownButton: YNDropDownButton,arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = true
-        
         UIView.animate(
             withDuration: self.hideMenuDuration,
             delay: 0,
@@ -193,11 +196,15 @@ open class YNDropDownMenu: UIView {
             options: [],
             animations: {
                 dropDownMenu.frame.origin.y = CGFloat(self.menuHeight)
-                self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
+                if self.backgroundViewEnabled {
+                    
+                } else {
+                    self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
+                }
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
                 arrowView.image = self.buttonImages?.normal
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
-
+                
         }, completion: { (completion) in
             guard let block = didComplete else { return }
             block()
