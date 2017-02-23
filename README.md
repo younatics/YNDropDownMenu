@@ -7,6 +7,10 @@
 (https://img.shields.io/cocoapods/p/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
 ![Language](https://img.shields.io/badge/language-Swift-brightgreen.svg?style=flat)
 
+## Congratulation!
+- Recorded 7th in Trending in open source 2017.02.23
+- Recorded 11th in Trending developers 2017.02.23
+
 ## Intoduction
 The eligible dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
 
