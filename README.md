@@ -9,11 +9,7 @@
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Congratulation!
-- Recorded 2nd in Trending in open source 2017.02.24
-- Recorded 3rd in Trending developers 2017.02.24
-
-- Recorded 7th in Trending in open source 2017.02.23
-- Recorded 11th in Trending developers 2017.02.23
+### [Listed 2nd in Swift Trending in open source, 3rd in Swift Trending developers [2017.02.24]](https://github.com/trending/swift?since=daily)
 
 ## Updates
 
@@ -132,8 +128,8 @@ view.hideMenuSpringWithDamping = 0.8
 ```
 
 ## Author
+[Younatics](http://younatics.github.io) - iOS Developer in Republic of Korea
 
-[Younatics](http://younatics.github.io)
 
 ## License
 
