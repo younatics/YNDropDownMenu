@@ -19,7 +19,16 @@ class YNDropDownButton: UIButton {
             self.initViewWithImage()
         }
     }
-    open var labelFontColors: YNFontColor?
+    open var labelFontColors: YNFontColor? {
+        didSet {
+            self.initFontColor()
+        }
+    }
+    open var labelFonts: YNFont? {
+        didSet {
+            self.initFont()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +56,9 @@ class YNDropDownButton: UIButton {
         if let _fontColor = labelFontColors?.normal {
             self.buttonLabel.textColor = _fontColor
         }
+        if let _font = labelFonts?.normal {
+            self.buttonLabel.font = _font
+        }
         self.isUserInteractionEnabled = true
     }
     
@@ -57,9 +69,21 @@ class YNDropDownButton: UIButton {
         if let _fontColor = labelFontColors?.disabled {
             self.buttonLabel.textColor = _fontColor
         }
+        if let _font = labelFonts?.disabled {
+            self.buttonLabel.font = _font
+        }
         self.isUserInteractionEnabled = false
     }
     
+    private func initFontColor() {
+        guard let _labelFontColors = labelFontColors else { return }
+        self.buttonLabel.textColor = _labelFontColors.normal
+    }
+    
+    private func initFont() {
+        guard let _labelFonts = labelFonts else { return }
+        self.buttonLabel.font = _labelFonts.normal
+    }
     
     private func initViewWithImage() {
         self.removeConstraints([centerXwithOffsetConstraint, centerYConstraint])

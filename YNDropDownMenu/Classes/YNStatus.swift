@@ -20,3 +20,9 @@ struct YNFontColor {
     var disabled: UIColor?
 }
 
+struct YNFont {
+    var normal: UIFont?
+    var selected: UIFont?
+    var disabled: UIFont?
+}
+

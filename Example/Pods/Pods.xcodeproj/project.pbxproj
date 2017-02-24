@@ -163,8 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				3609F409A4F50ACBFBCD8994200EE13D /* YNDropDownMenu.swift */,
-				19EF8D901E5E7A2B00C45293 /* YNDropDownDelegate.swift */,
 				192994FE1E59E0C60081E4FD /* YNDropDownButton.swift */,
+				19EF8D901E5E7A2B00C45293 /* YNDropDownDelegate.swift */,
 				19B0494B1E5A9C9A009BB71C /* YNStatus.swift */,
 			);
 			path = Classes;

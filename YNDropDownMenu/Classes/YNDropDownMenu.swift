@@ -18,6 +18,10 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     private var menuHeight: CGFloat = 0.0
     private var numberOfMenu: Int = 0
     
+    private var buttonImages: YNImages?
+    private var buttonlabelFontColors: YNFontColor?
+    private var buttonlabelFonts: YNFont?
+
     open var blurEffectView: UIView? {
         didSet {
             self.changeBlurEffectView()
@@ -54,14 +58,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     open var hideMenuSpringVelocity:CGFloat = 0.9
     open var hideMenuSpringWithDamping:CGFloat = 0.8
     
-    open var labelFontSize: CGFloat? {
-        didSet {
-            
-        }
-    }
-    private var buttonImages: YNImages?
-    private var buttonlabelFontColors: YNFontColor?
-    
     public init(frame: CGRect, dropDownViews: [YNDropDownView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
         
@@ -89,19 +85,28 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     // Use this function when your menu button image is all same
     open func setImageWhen(normal: UIImage?, selected: UIImage?, disabled: UIImage?) {
-        buttonImages = YNImages.init(normal: normal, selected: selected, disabled: disabled)
+        self.buttonImages = YNImages.init(normal: normal, selected: selected, disabled: disabled)
         
         for i in 0..<numberOfMenu {
-            dropDownButtons?[i].buttonImages = buttonImages
+            dropDownButtons?[i].buttonImages = self.buttonImages
         }
     }
     
     open func setLabelColorWhen(normal: UIColor, selected: UIColor, disabled: UIColor) {
-        buttonlabelFontColors = YNFontColor.init(normal: normal, selected: selected, disabled: disabled)
+        self.buttonlabelFontColors = YNFontColor.init(normal: normal, selected: selected, disabled: disabled)
         
         for i in 0..<numberOfMenu {
-            dropDownButtons?[i].labelFontColors = buttonlabelFontColors
+            dropDownButtons?[i].labelFontColors = self.buttonlabelFontColors
         }
+    }
+    
+    open func setLabelFontWhen(normal: UIFont, selected: UIFont, disabled: UIFont) {
+        self.buttonlabelFonts = YNFont.init(normal: normal, selected: selected, disabled: disabled)
+        
+        for i in 0..<numberOfMenu {
+            dropDownButtons?[i].labelFonts = self.buttonlabelFonts
+        }
+
     }
     
     open func disabledMenuAt(index: Int) {
@@ -221,6 +226,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
                 arrowView.image = self.buttonImages?.selected
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
+                yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.selected
                 
         }, completion: { (completion) in
             guard let block = didComplete else { return }
@@ -246,7 +252,8 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
                 arrowView.image = self.buttonImages?.normal
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
-                
+                yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.normal
+
         }, completion: { (completion) in
             if self.backgroundBlurEnabled {
                 self.blurEffectView?.removeFromSuperview()

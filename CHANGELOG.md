@@ -5,15 +5,11 @@ it, simply add the following line to your Podfile:
 
 `pod 'YNDropDownMenu'`
 
-## 1.2.0 (2017-02-24)
+## [v1.2.1](https://github.com/younatics/YNDropDownMenu/releases/tag/v1.2.1)
+* Customize UIFont
 
-##### Enhancements
-
+## [v1.2.0](https://github.com/younatics/YNDropDownMenu/releases/tag/v1.2.0)
 * Inherit YNDropDownView instead of UIView to add views for YNDropDownMenu
 * Available to call hideMenu in YNDropDownView
 * Support Carthage [#1](https://github.com/younatics/YNDropDownMenu/issues/1)
-
-##### Bug Fixes
-
-* None.
 
