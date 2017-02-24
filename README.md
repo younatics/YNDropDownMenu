@@ -17,7 +17,6 @@ The eligible dropdown menu, written in Swift 3, appears dropdown menu to display
 
 ![demo](YNDropDownMenu.gif)
 ![demo2](YNDropDownMenu2.gif)
-![demo3](YNDropDownMenu3.gif)
 
 ## Requirements
 
