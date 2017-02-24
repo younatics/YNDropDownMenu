@@ -11,6 +11,7 @@ it, simply add the following line to your Podfile:
 
 * Inherit YNDropDownView instead of UIView to add views for YNDropDownMenu
 * Available to call hideMenu in YNDropDownView
+* Support Carthage
 
 ##### Bug Fixes
 
