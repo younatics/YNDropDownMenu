@@ -14,6 +14,10 @@
 - Recorded 7th in Trending in open source 2017.02.23
 - Recorded 11th in Trending developers 2017.02.23
 
+## Updates
+
+See [CHANGELOG](https://github.com/younatics/YNDropDownMenu/blob/master/CHANGELOG.md) for details
+
 ## Intoduction
 The eligible dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
 
@@ -36,11 +40,11 @@ it, simply add the following line to your Podfile:
 ## Usage
 
 Import first 
-```
-import YNDropDownMenu
-```
 
-Init view with frame[CGRect], Views[UIView] and Titles[String]
+`import YNDropDownMenu`
+
+
+Init view with frame[CGRect], Views[YNDropDownView] and Titles[String]
 ```
 let view = YNDropDownMenu(frame:frame, dropDownViews: dropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 self.addSubview(view)
@@ -58,6 +62,11 @@ view.showAndHideMenuAt(index:1)
 
 // When view is already opened
 view.hideMenu()
+```
+
+In your Custom YNDropDownView
+```
+self.hideMenu()
 ```
 
 Disable & Enable Menu 
@@ -111,7 +120,7 @@ view.hideMenuSpringWithDamping = 0.8
 
 ## Author
 
-younatics@gmail.com
+[Younatics](http://younatics.github.io)
 
 ## License
 
