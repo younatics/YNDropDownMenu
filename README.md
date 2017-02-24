@@ -93,6 +93,11 @@ Label color with 3 situations
 view.setLabelColorWhen(normal: UIColor.black, selected: UIColor.blue, disabled: UIColor.gray)
 ```
 
+Label font with 3 situations
+```
+view.setLabelFontWhen(normal: UIFont.systemFont(ofSize: 12), selected: UIFont.boldSystemFont(ofSize: 12), disabled: UIFont.systemFont(ofSize: 12))
+```
+
 BlurEffectView
 ```
 // Enadbled or Disabled first (Default true)
