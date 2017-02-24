@@ -8,14 +8,13 @@
 
 import Foundation
 
-protocol YNDropDownDelegate: class {
+public protocol YNDropDownDelegate: class {
     func hideMenu()
-    
 }
-class YNDropDownView {
-    weak var delegate: YNDropDownDelegate?
+open class YNDropDownView: UIView {
+    open weak var delegate: YNDropDownDelegate?
     
-    func hideMenuInView() {
+    open func hideMenu() {
         self.delegate?.hideMenu()
     }
 }

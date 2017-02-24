@@ -31,9 +31,7 @@ The eligible dropdown menu, written in Swift 3, appears dropdown menu to display
 YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
-pod "YNDropDownMenu"
-```
+`pod 'YNDropDownMenu'`
 
 ## Usage
 

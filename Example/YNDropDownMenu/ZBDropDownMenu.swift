@@ -9,9 +9,7 @@
 import UIKit
 import YNDropDownMenu
 
-class ZBFilterMemeView: UIView {
-    var delegate: YNDropDownDelegate?
-    
+class ZBFilterMemeView: YNDropDownView {
     @IBOutlet var tradeTypeSegmentControl: UISegmentedControl!
     
     override init(frame: CGRect) {
@@ -26,10 +24,10 @@ class ZBFilterMemeView: UIView {
         self.initViews()
     }
     @IBAction func confirmButtonClicked(_ sender: Any) {
-        
+        self.hideMenu()
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        
+        self.hideMenu()
     }
     
     func initViews() {
@@ -38,7 +36,7 @@ class ZBFilterMemeView: UIView {
 
 }
 
-class ZBFilterSalesPriceVIew: UIView {
+class ZBFilterSalesPriceVIew: YNDropDownView {
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var priceSlider: UISlider!
     
@@ -54,11 +52,11 @@ class ZBFilterSalesPriceVIew: UIView {
         self.initViews()
     }
     @IBAction func confirmButtonClicked(_ sender: Any) {
-        
+        self.hideMenu()
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        
+        self.hideMenu()
     }
     
     
@@ -66,7 +64,7 @@ class ZBFilterSalesPriceVIew: UIView {
     }
 }
 
-class ZBFilterDepositPriceView: UIView {
+class ZBFilterDepositPriceView: YNDropDownView {
     @IBOutlet var depositLabel: UILabel!
     @IBOutlet var depositSlider: UISlider!
     @IBOutlet var monthlyFeeLabel: UILabel!
@@ -87,8 +85,10 @@ class ZBFilterDepositPriceView: UIView {
     @IBAction func onlyJeonseButtonClicked(_ sender: Any) {
     }
     @IBAction func confirmButtonClicked(_ sender: Any) {
+        self.hideMenu()
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
+        self.hideMenu()
     }
     func initViews() {
         
@@ -96,7 +96,7 @@ class ZBFilterDepositPriceView: UIView {
 
 }
 
-class ZBFilterAreaView: UIView {
+class ZBFilterAreaView: YNDropDownView {
     @IBOutlet var areaTableView: UITableView!
     
     override init(frame: CGRect) {
@@ -111,16 +111,18 @@ class ZBFilterAreaView: UIView {
         self.initViews()
     }
     @IBAction func confirmButtonClicked(_ sender: Any) {
+        self.hideMenu()
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
+        self.hideMenu()
     }
     func initViews() {
         
     }
 }
 
-class ZBFilterFeatureView: UIView {
+class ZBFilterFeatureView: YNDropDownView {
     @IBOutlet var builtDateSegmentControl: UISegmentedControl!
     @IBOutlet var householdsSegmentControl: UISegmentedControl!
     
@@ -137,9 +139,11 @@ class ZBFilterFeatureView: UIView {
     }
     
     @IBAction func confirmButtonClicked(_ sender: Any) {
+        self.hideMenu()
         
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
+        self.hideMenu()
         
     }
     func initViews() {

@@ -27,7 +27,20 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     open var blurEffectViewAlpha:CGFloat = 1.0
     open var blurEffectStyle:UIBlurEffectStyle = .dark
     
-    open var dropDownViews: [UIView]?
+    var _dropDownViews: [YNDropDownView]?
+    open var dropDownViews: [YNDropDownView]? {
+        get {
+            return self._dropDownViews
+        }
+        set {
+            guard let _dropDownViews = newValue else { return }
+            for view in _dropDownViews {
+                view.delegate = self
+            }
+            
+            self._dropDownViews = newValue
+        }
+    }
     open var dropDownViewTitles: [String]?
 
     open var backgroundBlurEnabled = true
@@ -49,7 +62,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     private var buttonImages: YNImages?
     private var buttonlabelFontColors: YNFontColor?
     
-    public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) {
+    public init(frame: CGRect, dropDownViews: [YNDropDownView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
         
         if dropDownViews.count != dropDownViewTitles.count {
@@ -59,6 +72,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
         
         self.dropDownViews = dropDownViews
+        guard let _dropDownViews = self.dropDownViews else { return }
+        for view in _dropDownViews {
+            view.delegate = self
+        }
+        
         self.dropDownViewTitles = dropDownViewTitles
         self.menuHeight = self.frame.height
         
