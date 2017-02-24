@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class YNDropDownMenu: UIView {
+open class YNDropDownMenu: UIView, YNDropDownDelegate {
     private var opened: Bool = false
     private var openedView = UIView()
     private var openedArrowView = UIImageView()
@@ -17,7 +17,7 @@ open class YNDropDownMenu: UIView {
     private var dropDownButtons: [YNDropDownButton]?
     private var menuHeight: CGFloat = 0.0
     private var numberOfMenu: Int = 0
-
+    
     open var blurEffectView: UIView? {
         didSet {
             self.changeBlurEffectView()

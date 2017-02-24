@@ -484,7 +484,7 @@
                 <outlet property="builtDateSegmentControl" destination="yl7-Fx-ZBX" id="AmK-X1-JbC"/>
                 <outlet property="householdsSegmentControl" destination="2jS-BB-YSU" id="i8n-we-2pQ"/>
             </connections>
-            <point key="canvasLocation" x="537.5" y="284.5"/>
+            <point key="canvasLocation" x="520" y="-206"/>
         </view>
     </objects>
 </document>

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import YNDropDownMenu
 
 class ZBFilterMemeView: UIView {
+    var delegate: YNDropDownDelegate?
+    
     @IBOutlet var tradeTypeSegmentControl: UISegmentedControl!
     
     override init(frame: CGRect) {
