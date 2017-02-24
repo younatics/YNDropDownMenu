@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "YNDropDownMenu_Example.app"
-               BlueprintName = "YNDropDownMenu_Example"
+               BuildableName = "YNDropDownMenuExample.app"
+               BlueprintName = "YNDropDownMenuExample"
                ReferencedContainer = "container:YNDropDownMenu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "YNDropDownMenu_Example.app"
-            BlueprintName = "YNDropDownMenu_Example"
+            BuildableName = "YNDropDownMenuExample.app"
+            BlueprintName = "YNDropDownMenuExample"
             ReferencedContainer = "container:YNDropDownMenu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "YNDropDownMenu_Example.app"
-            BlueprintName = "YNDropDownMenu_Example"
+            BuildableName = "YNDropDownMenuExample.app"
+            BlueprintName = "YNDropDownMenuExample"
             ReferencedContainer = "container:YNDropDownMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -99,8 +99,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "YNDropDownMenu_Example.app"
-            BlueprintName = "YNDropDownMenu_Example"
+            BuildableName = "YNDropDownMenuExample.app"
+            BlueprintName = "YNDropDownMenuExample"
             ReferencedContainer = "container:YNDropDownMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

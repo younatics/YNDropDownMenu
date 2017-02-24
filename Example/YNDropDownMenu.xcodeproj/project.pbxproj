@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		196A0F0D1E594C4700E302C8 /* ZBDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A0F0B1E594C4700E302C8 /* ZBDropDownMenu.swift */; };
 		196A0F0E1E594C4700E302C8 /* ZBDropDownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196A0F0C1E594C4700E302C8 /* ZBDropDownMenu.xib */; };
+		196F98B61E5FE2F600673236 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 196F98B51E5FE2F600673236 /* CHANGELOG.md */; };
 		19EF8D8F1E5D30AC00C45293 /* IMG_2279.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19EF8D8E1E5D30AC00C45293 /* IMG_2279.PNG */; };
 		24ACCC5D6B88AB5A4294D552 /* Pods_YNDropDownMenu_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBCCE4F063594FA1CC58A7C /* Pods_YNDropDownMenu_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -33,11 +34,12 @@
 /* Begin PBXFileReference section */
 		196A0F0B1E594C4700E302C8 /* ZBDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZBDropDownMenu.swift; sourceTree = "<group>"; };
 		196A0F0C1E594C4700E302C8 /* ZBDropDownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBDropDownMenu.xib; sourceTree = "<group>"; };
+		196F98B51E5FE2F600673236 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		19EF8D8E1E5D30AC00C45293 /* IMG_2279.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2279.PNG; sourceTree = "<group>"; };
 		2948B5D198C7826A3BF3D14C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		44513F7120327AAD6532E6E6 /* Pods-YNDropDownMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNDropDownMenu_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNDropDownMenu_Tests/Pods-YNDropDownMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4F3545D2900D0BA147A4241A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* YNDropDownMenu_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNDropDownMenu_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* YNDropDownMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNDropDownMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* YNDropDownMenu_Example.app */,
+				607FACD01AFB9204008FA782 /* YNDropDownMenuExample.app */,
 				607FACE51AFB9204008FA782 /* YNDropDownMenu_Tests.xctest */,
 			);
 			name = Products;
@@ -152,6 +154,7 @@
 			children = (
 				B6F261B36B5DDE550E82AEF9 /* YNDropDownMenu.podspec */,
 				2948B5D198C7826A3BF3D14C /* README.md */,
+				196F98B51E5FE2F600673236 /* CHANGELOG.md */,
 				4F3545D2900D0BA147A4241A /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -171,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* YNDropDownMenu_Example */ = {
+		607FACCF1AFB9204008FA782 /* YNDropDownMenuExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "YNDropDownMenu_Example" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "YNDropDownMenuExample" */;
 			buildPhases = (
 				6A85DE5278267EF93B9CC48F /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
@@ -186,9 +189,9 @@
 			);
 			dependencies = (
 			);
-			name = YNDropDownMenu_Example;
+			name = YNDropDownMenuExample;
 			productName = YNDropDownMenu;
-			productReference = 607FACD01AFB9204008FA782 /* YNDropDownMenu_Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* YNDropDownMenuExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		607FACE41AFB9204008FA782 /* YNDropDownMenu_Tests */ = {
@@ -248,7 +251,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* YNDropDownMenu_Example */,
+				607FACCF1AFB9204008FA782 /* YNDropDownMenuExample */,
 				607FACE41AFB9204008FA782 /* YNDropDownMenu_Tests */,
 			);
 		};
@@ -377,6 +380,7 @@
 				196A0F0D1E594C4700E302C8 /* ZBDropDownMenu.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				196F98B61E5FE2F600673236 /* CHANGELOG.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +397,7 @@
 /* Begin PBXTargetDependency section */
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* YNDropDownMenu_Example */;
+			target = 607FACCF1AFB9204008FA782 /* YNDropDownMenuExample */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -585,7 +589,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "YNDropDownMenu_Example" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "YNDropDownMenuExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
