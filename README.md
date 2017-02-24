@@ -33,19 +33,26 @@ The eligible dropdown menu, written in Swift 3, appears dropdown menu to display
 
 ## Installation
 
+### Cocoapods
+
 YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-`pod 'YNDropDownMenu'`
-
+```
+pod 'YNDropDownMenu'
+```
+### Carthage
+```
+github "younatics/YNDropDownMenu"
+```
 ## Usage
 
 Import first 
+```
+import YNDropDownMenu
+```
 
-`import YNDropDownMenu`
-
-
-Init view with frame[CGRect], Views[YNDropDownView] and Titles[String]
+Init view with frame`[CGRect]`, Views`[YNDropDownView]` and Titles`[String]`
 ```
 let view = YNDropDownMenu(frame:frame, dropDownViews: dropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 self.addSubview(view)
