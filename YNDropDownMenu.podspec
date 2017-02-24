@@ -9,14 +9,12 @@
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
   s.version          = '1.2.0'
-  s.summary          = 'YNDropDownMenu is created to make drop down menu with Swift3'
+  s.summary          = 'YNDropDownMenu is created to make drop down menu with Swift 3'
 
-  s.description      = <<-DESC
-TODO: You can init with frame. Button Images, Labels are all optional. See example and README.md in my github
-                       DESC
+  s.description      = The eligible dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
 
   s.homepage         = 'https://github.com/younatics/YNDropDownMenu'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/YNDropDownMenu.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/YNDropDownMenu2.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/YNDropDownMenu3.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = 'younatics@gmail.com'
   s.source           = { :git => 'https://github.com/younatics/YNDropDownMenu.git', :tag => s.version.to_s }
