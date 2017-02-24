@@ -8,6 +8,9 @@
 ![Language](https://img.shields.io/badge/language-Swift-brightgreen.svg?style=flat)
 
 ## Congratulation!
+- Recorded 4th in Trending in open source 2017.02.24
+- Recorded 7th in Trending developers 2017.02.24
+
 - Recorded 7th in Trending in open source 2017.02.23
 - Recorded 11th in Trending developers 2017.02.23
 
