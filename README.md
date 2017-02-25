@@ -8,7 +8,7 @@
 (https://img.shields.io/cocoapods/p/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
-### Listed 2nd at trending open source and 3rd at trending developer in Github Swift category
+[Listed 2nd at trending open source and 3rd at trending developer in Github Swift category [02/24/2017]](https://github.com/younatics/YNDropDownMenu/blob/master/Images/2nd.PNG)
 
 ## Updates
 
@@ -17,8 +17,8 @@ See [CHANGELOG](https://github.com/younatics/YNDropDownMenu/blob/master/CHANGELO
 ## Intoduction
 The eligible dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
 
-![demo](YNDropDownMenu.gif)
-![demo2](YNDropDownMenu2.gif)
+![demo](Images/YNDropDownMenu.gif)
+![demo2](Images/YNDropDownMenu2.gif)
 
 ## Requirements
 
