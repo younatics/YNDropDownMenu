@@ -43,15 +43,19 @@ Import first
 import YNDropDownMenu
 ```
 
-Init view with frame`[CGRect]`, Views`[YNDropDownView]` and Titles`[String]`
+Init view with frame`[CGRect]`, Views`[UIView]` and Titles`[String]`
 ```
 let view = YNDropDownMenu(frame:frame, dropDownViews: dropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 self.addSubview(view)
 ```
 
-Done!
+If you want to hide menu in your drop down views, init view with frame`[CGRect]`, YNDropDownViews`[YNDropDownView]` and Titles`[String]` 
+```
+let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
+self.addSubview(view)
+```
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Done!
 
 ### Customize
 
