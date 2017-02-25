@@ -5,6 +5,9 @@ it, simply add the following line to your Podfile:
 
 `pod 'YNDropDownMenu'`
 
+## [v1.2.2](https://github.com/younatics/YNDropDownMenu/releases/tag/1.2.1)
+* Init style added UIView and YNDropDownView
+
 ## [v1.2.1](https://github.com/younatics/YNDropDownMenu/releases/tag/1.2.1)
 * Customize UIFont
 

@@ -21,6 +21,21 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     private var buttonImages: YNImages?
     private var buttonlabelFontColors: YNFontColor?
     private var buttonlabelFonts: YNFont?
+    
+    private var _yNDropDownViews: [YNDropDownView]?
+    private var yNDropDownViews: [YNDropDownView]? {
+        get {
+            return self._yNDropDownViews
+        }
+        set {
+            guard let _dropDownViews = newValue else { return }
+            for view in _dropDownViews {
+                view.delegate = self
+            }
+            
+            self._yNDropDownViews = newValue
+        }
+    }
 
     open var blurEffectView: UIView? {
         didSet {
@@ -31,20 +46,8 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     open var blurEffectViewAlpha:CGFloat = 1.0
     open var blurEffectStyle:UIBlurEffectStyle = .dark
     
-    var _dropDownViews: [YNDropDownView]?
-    open var dropDownViews: [YNDropDownView]? {
-        get {
-            return self._dropDownViews
-        }
-        set {
-            guard let _dropDownViews = newValue else { return }
-            for view in _dropDownViews {
-                view.delegate = self
-            }
-            
-            self._dropDownViews = newValue
-        }
-    }
+    private var dropDownViews: [UIView]?
+    
     open var dropDownViewTitles: [String]?
 
     open var backgroundBlurEnabled = true
@@ -58,7 +61,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     open var hideMenuSpringVelocity:CGFloat = 0.9
     open var hideMenuSpringWithDamping:CGFloat = 0.8
     
-    public init(frame: CGRect, dropDownViews: [YNDropDownView], dropDownViewTitles: [String]) {
+    public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
         
         if dropDownViews.count != dropDownViewTitles.count {
@@ -68,15 +71,28 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
         
         self.dropDownViews = dropDownViews
-        guard let _dropDownViews = self.dropDownViews else { return }
-        for view in _dropDownViews {
-            view.delegate = self
-        }
         
         self.dropDownViewTitles = dropDownViewTitles
         self.menuHeight = self.frame.height
         
         self.initViews()
+    }
+    
+    public init(frame: CGRect, YNDropDownView: [YNDropDownView], dropDownViewTitles: [String]) {
+        super.init(frame: frame)
+
+        if YNDropDownView.count != dropDownViewTitles.count {
+            fatalError("Please make dropDownViews count same with dropDownViewsTitles count")
+        } else {
+            numberOfMenu = YNDropDownView.count
+        }
+
+        self.yNDropDownViews = YNDropDownView
+        self.dropDownViewTitles = dropDownViewTitles
+        self.menuHeight = self.frame.height
+
+        self.initViews()
+
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -292,8 +308,17 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             self.addSubview(button)
             
             // Setup Views
-            let dropDownMenu = dropDownViews?[i]
-            if let _dropDownMenu = dropDownMenu {
+            if let _yNDropDownViews = yNDropDownViews?[i] {
+                _yNDropDownViews.frame.size = CGSize(width: self.bounds.size.width, height: _yNDropDownViews.frame.height)
+                _yNDropDownViews.frame.origin.y = -_yNDropDownViews.frame.height + CGFloat(menuHeight)
+                _yNDropDownViews.tag = i + 100
+                _yNDropDownViews.isHidden = true
+                
+                self.addSubview(_yNDropDownViews)
+                self.sendSubview(toBack: _yNDropDownViews)
+            }
+
+            if let _dropDownMenu = dropDownViews?[i] {
                 _dropDownMenu.frame.size = CGSize(width: self.bounds.size.width, height: _dropDownMenu.frame.height)
                 _dropDownMenu.frame.origin.y = -_dropDownMenu.frame.height + CGFloat(menuHeight)
                 _dropDownMenu.tag = i + 100
