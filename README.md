@@ -37,8 +37,6 @@ pod 'YNDropDownMenu'
 github "younatics/YNDropDownMenu"
 ```
 ## Usage
-
-Import first 
 ```
 import YNDropDownMenu
 ```
@@ -48,14 +46,20 @@ Init view with frame`[CGRect]`, Views`[UIView]` and Titles`[String]`
 let view = YNDropDownMenu(frame:frame, dropDownViews: dropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 self.addSubview(view)
 ```
+done!
 
-If you want to hide menu in your drop down views, init view with frame`[CGRect]`, YNDropDownViews`[YNDropDownView]` and Titles`[String]` 
+### Hide menu in drop down views
+Init view with frame`[CGRect]`, YNDropDownViews`[YNDropDownView]` and Titles`[String]` 
 ```
 let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 self.addSubview(view)
 ```
 
-Done!
+Custom YNDropDownView
+```
+class DropDownView: YNDropDownView
+self.hideMenu()
+```
 
 ### Customize
 
@@ -65,11 +69,6 @@ view.showAndHideMenuAt(index:1)
 
 // When view is already opened
 view.hideMenu()
-```
-
-In your Custom YNDropDownView
-```
-self.hideMenu()
 ```
 
 Disable & Enable Menu 
@@ -108,7 +107,6 @@ view.blurEffectView = backgroundView
 
 // Animation end alpha
 view.blurEffectViewAlpha = 0.7
-
 ```
 
 Animation duration
