@@ -78,16 +78,16 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.initViews()
     }
     
-    public init(frame: CGRect, YNDropDownView: [YNDropDownView], dropDownViewTitles: [String]) {
+    public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
 
-        if YNDropDownView.count != dropDownViewTitles.count {
+        if YNDropDownViews.count != dropDownViewTitles.count {
             fatalError("Please make dropDownViews count same with dropDownViewsTitles count")
         } else {
-            numberOfMenu = YNDropDownView.count
+            numberOfMenu = YNDropDownViews.count
         }
 
-        self.yNDropDownViews = YNDropDownView
+        self.yNDropDownViews = YNDropDownViews
         self.dropDownViewTitles = dropDownViewTitles
         self.menuHeight = self.frame.height
 
