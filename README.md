@@ -48,7 +48,7 @@ self.addSubview(view)
 ```
 done!
 
-### Hide menu in drop down views
+### Call hide menu in drop down views
 Init view with frame`[CGRect]`, YNDropDownViews`[YNDropDownView]` and Titles`[String]` 
 ```
 let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
