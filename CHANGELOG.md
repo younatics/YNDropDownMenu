@@ -5,7 +5,11 @@ it, simply add the following line to your Podfile:
 
 `pod 'YNDropDownMenu'`
 
-## [v1.2.2](https://github.com/younatics/YNDropDownMenu/releases/tag/1.2.1)
+## [v1.2.3](https://github.com/younatics/YNDropDownMenu/releases/tag/1.2.3)
+* Add Image Folder
+* Edtited readme.md
+
+## [v1.2.2](https://github.com/younatics/YNDropDownMenu/releases/tag/1.2.2)
 * Init style added UIView and YNDropDownView
 
 ## [v1.2.1](https://github.com/younatics/YNDropDownMenu/releases/tag/1.2.1)
