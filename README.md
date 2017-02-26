@@ -31,7 +31,7 @@ The eligible dropdown menu, written in Swift 3, appears dropdown menu to display
 YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```
+```ruby
 pod 'YNDropDownMenu'
 ```
 ### Carthage
@@ -39,12 +39,12 @@ pod 'YNDropDownMenu'
 github "younatics/YNDropDownMenu"
 ```
 ## Usage
-```
+```swift
 import YNDropDownMenu
 ```
 
 Init view with frame`[CGRect]`, Views`[UIView]` and Titles`[String]`
-```
+```swift
 let view = YNDropDownMenu(frame:frame, dropDownViews: dropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 self.addSubview(view)
 ```
@@ -52,13 +52,13 @@ done!
 
 ### Call hide menu in drop down views
 Init view with frame`[CGRect]`, YNDropDownViews`[YNDropDownView]` and Titles`[String]` 
-```
+```swift
 let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
 self.addSubview(view)
 ```
 
 Custom YNDropDownView
-```
+```swift
 class DropDownView: YNDropDownView
 self.hideMenu()
 ```
@@ -66,7 +66,7 @@ self.hideMenu()
 ### Customize
 
 Show & Hide Menu 
-```
+```swift
 view.showAndHideMenuAt(index:1)
 
 // When view is already opened
@@ -74,28 +74,28 @@ view.hideMenu()
 ```
 
 Disable & Enable Menu 
-```
+```swift
 view.disabledMenuAt(index: 2)
 view.enabledMenuAt(index: 3)
 ```
 
 Button Image with 3 situations (normal, selected, disabled)
-```
+```swift
 view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
 ```
 
 Label color with 3 situations
-```
+```swift
 view.setLabelColorWhen(normal: UIColor.black, selected: UIColor.blue, disabled: UIColor.gray)
 ```
 
 Label font with 3 situations
-```
+```swift
 view.setLabelFontWhen(normal: UIFont.systemFont(ofSize: 12), selected: UIFont.boldSystemFont(ofSize: 12), disabled: UIFont.systemFont(ofSize: 12))
 ```
 
 BlurEffectView
-```
+```swift
 // Enadbled or Disabled first (Default true)
 view.backgroundBlurEnabled = false
 
@@ -112,13 +112,13 @@ view.blurEffectViewAlpha = 0.7
 ```
 
 Animation duration
-```
+```swift
 view.showMenuDuration = 0.5
 view.hideMenuDuration = 0.3
 ```
 
 Animation velocity, damping
-```
+```swift
 view.showMenuSpringVelocity = 0.5
 view.showMenuSpringWithDamping = 0.8
 
