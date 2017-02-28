@@ -339,16 +339,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             self.addSubview(button)
             
             // Setup Views
-            if let _yNDropDownViews = yNDropDownViews?[i] {
-                _yNDropDownViews.frame.size = CGSize(width: self.bounds.size.width, height: _yNDropDownViews.frame.height)
-                _yNDropDownViews.frame.origin.y = -_yNDropDownViews.frame.height + CGFloat(menuHeight)
-                _yNDropDownViews.tag = i + 100
-                _yNDropDownViews.isHidden = true
-                
-                self.addSubview(_yNDropDownViews)
-                self.sendSubview(toBack: _yNDropDownViews)
-            }
-
             if let _dropDownMenu = dropDownViews?[i] {
                 _dropDownMenu.frame.size = CGSize(width: self.bounds.size.width, height: _dropDownMenu.frame.height)
                 _dropDownMenu.frame.origin.y = -_dropDownMenu.frame.height + CGFloat(menuHeight)
