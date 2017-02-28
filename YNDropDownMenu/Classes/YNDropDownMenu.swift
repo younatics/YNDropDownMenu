@@ -141,7 +141,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
 
                 }
             }
-            
         }
     }
     
@@ -156,9 +155,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                     _subview.disabled()
                 }
             }
-
         }
-        
     }
     
     open func enabledMenuAt(index: Int) {
@@ -182,6 +179,18 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
+    open func changeMenuTitleAt(index: Int, title: String) {
+        for subview in self.subviews {
+            if subview.tag == index {
+                if subview.isKind(of: YNDropDownButton.self) {
+                    let _subview = subview as! YNDropDownButton
+                    _subview.buttonLabel.text = title
+                }
+            }
+        }
+
+    }
+
     open func showAndHideMenuAt(index: Int) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")

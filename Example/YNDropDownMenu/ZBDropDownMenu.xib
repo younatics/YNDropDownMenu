@@ -10,7 +10,7 @@
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZBFilterMemeView" customModule="YNDropDownMenu_Example" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZBFilterMemeView" customModule="YNDropDownMenuExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -48,7 +48,7 @@
                         <constraint firstAttribute="height" constant="50" id="cUL-kH-EeQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                    <state key="normal" title="Cancel">
+                    <state key="normal" title="Change Text">
                         <color key="titleColor" red="1" green="0.64313725489999995" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -107,7 +107,7 @@
             <point key="canvasLocation" x="65.5" y="-265.5"/>
         </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="5Pl-bP-Rqa" customClass="ZBFilterSalesPriceVIew" customModule="YNDropDownMenu_Example" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="5Pl-bP-Rqa" customClass="ZBFilterSalesPriceVIew" customModule="YNDropDownMenuExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -199,7 +199,7 @@
             </connections>
             <point key="canvasLocation" x="66" y="-49"/>
         </view>
-        <view contentMode="scaleToFill" id="APS-H0-w6t" customClass="ZBFilterDepositPriceView" customModule="YNDropDownMenu_Example" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="APS-H0-w6t" customClass="ZBFilterDepositPriceView" customModule="YNDropDownMenuExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="302.5"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -350,7 +350,7 @@
             </connections>
             <point key="canvasLocation" x="66" y="238"/>
         </view>
-        <view contentMode="scaleToFill" id="WZ5-hm-Wdy" customClass="ZBFilterFeatureView" customModule="YNDropDownMenu_Example" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="WZ5-hm-Wdy" customClass="ZBFilterFeatureView" customModule="YNDropDownMenuExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
