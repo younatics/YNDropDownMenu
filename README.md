@@ -50,17 +50,21 @@ self.addSubview(view)
 ```
 done!
 
-### Call hide menu in drop down views
-Init view with frame`[CGRect]`, YNDropDownViews`[YNDropDownView]` and Titles`[String]` 
+### Inherit YNDropDownView
 ```swift
-let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
-self.addSubview(view)
-```
+class DropDownView: YNDropDownView {
+   // override method to call open & close
+    override func dropDownViewOpened() {
+        print("dropDownViewOpened")
+    }
+    
+    override func dropDownViewClosed() {
+        print("dropDownViewClosed")
+    }
 
-Custom YNDropDownView
-```swift
-class DropDownView: YNDropDownView
+// Hide Menu
 self.hideMenu()
+}
 ```
 
 ### Customize
@@ -77,6 +81,11 @@ Disable & Enable Menu
 ```swift
 view.disabledMenuAt(index: 2)
 view.enabledMenuAt(index: 3)
+```
+
+Always selected button label
+```swift
+view.alwaysSelectedAt(index: 0)
 ```
 
 Button Image with 3 situations (normal, selected, disabled)
@@ -126,9 +135,16 @@ view.hideMenuSpringVelocity = 0.9
 view.hideMenuSpringWithDamping = 0.8
 ```
 
+### Deprecated
+```swift
+let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
+```
+
 ## Author
 [Younatics](http://younatics.github.io)
 
+## Thanks to
+[@jegumhon](https://github.com/jegumhon)
 
 ## License
 
