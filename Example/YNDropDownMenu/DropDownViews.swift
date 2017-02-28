@@ -66,7 +66,7 @@ class ZBFilterSalesPriceVIew: YNDropDownView {
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        let ZBdropDownViews = Bundle.main.loadNibNamed("ZBDropDownMenu", owner: nil, options: nil) as? [UIView]
+        let ZBdropDownViews = Bundle.main.loadNibNamed("DropDownViews", owner: nil, options: nil) as? [UIView]
         self.changeViewAt(index: 3, view: (ZBdropDownViews?[0])!)
         self.hideMenu()
     }

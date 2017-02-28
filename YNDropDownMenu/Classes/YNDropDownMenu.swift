@@ -10,9 +10,7 @@ import UIKit
 
 open class YNDropDownMenu: UIView, YNDropDownDelegate {
     fileprivate var opened: Bool = false
-    fileprivate var openedView = UIView()
-    fileprivate var openedArrowView = UIImageView()
-    fileprivate var openedYNDropDownButton = YNDropDownButton()
+    fileprivate var openedIndex: Int = 0
     
     fileprivate var dropDownButtons: [YNDropDownButton]?
     fileprivate var menuHeight: CGFloat = 0.0
@@ -100,7 +98,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Use this function when your menu button image is all same
     open func setImageWhen(normal: UIImage?, selected: UIImage?, disabled: UIImage?) {
         self.buttonImages = YNImages.init(normal: normal, selected: selected, disabled: disabled)
         
@@ -132,80 +129,52 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
         self.alwaysOnIndex = index
         
-        for subview in self.subviews {
-            if subview.tag == index {
-                if subview.isKind(of: YNDropDownButton.self) {
-                    let _subview = subview as! YNDropDownButton
-                    _subview.buttonLabel.textColor = self.buttonlabelFontColors?.selected
-                    _subview.buttonLabel.font = self.buttonlabelFonts?.selected
-
-                }
-            }
-        }
+        dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.selected
+        dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.selected
     }
     
     open func disabledMenuAt(index: Int) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
-        for subview in self.subviews {
-            if subview.tag == index {
-                if subview.isKind(of: YNDropDownButton.self) {
-                    let _subview = subview as! YNDropDownButton
-                    _subview.disabled()
-                }
-            }
-        }
+        dropDownButtons?[index].disabled()
     }
     
     open func enabledMenuAt(index: Int) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
-        for subview in self.subviews {
-            if subview.tag == index {
-                if subview.isKind(of: YNDropDownButton.self) {
-                    let _subview = subview as! YNDropDownButton
-                    _subview.enabled()
-                }
-            }
-        }
+        dropDownButtons?[index].enabled()
     }
     
     open func hideMenu() {
         if opened {
-            hideMenu(yNDropDownButton: openedYNDropDownButton, arrowView: openedArrowView, dropDownMenu: openedView, didComplete: nil)
+            hideMenu(yNDropDownButton: dropDownButtons?[openedIndex], buttonImageView: dropDownButtons?[openedIndex].buttonImageView, dropDownMenu: dropDownViews?[openedIndex], didComplete: nil)
             opened = !opened
         }
     }
     
     open func changeMenuTitleAt(index: Int, title: String) {
-        for subview in self.subviews {
-            if subview.tag == index {
-                if subview.isKind(of: YNDropDownButton.self) {
-                    let _subview = subview as! YNDropDownButton
-                    _subview.buttonLabel.text = title
-                }
-            }
-        }
+        dropDownButtons?[index].buttonLabel.text = title
     }
     
     open func changeViewAt(index: Int, view: UIView) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
-        for subview in self.subviews {
-            if subview.tag == index + 100 {
-                subview.removeFromSuperview()
-            }
-        }
+        
+        dropDownViews?[index] = view
+        
         view.frame.size = CGSize(width: self.bounds.size.width, height: view.frame.size.height)
         view.frame.origin.y = -view.frame.height + CGFloat(menuHeight)
-        view.tag = index + 100
-        view.backgroundColor = UIColor.black
         view.isHidden = true
         
-        self.insertSubview(view, at: index)
+        self.addSubview(view)
+        self.sendSubview(toBack: view)
+        
+        print("///changeViewAt///")
+        print(dropDownViews?[index])
+        print("///////")
 
     }
 
@@ -213,46 +182,27 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
-        
-        var dropDownView = UIView()
-        var buttonImageView = UIImageView()
-        var yNDropDownButton = YNDropDownButton()
+        print("///showAndHideMenuAt///")
+        print(dropDownViews?[index])
+        print("///////")
 
-        for subview in self.subviews {
-            if subview.tag == index + 100 {
-                dropDownView = subview
-                print(dropDownView)
-            }
-            
-            if subview.tag == index {
-                if subview.isKind(of: YNDropDownButton.self) {
-                    let _subview = subview as! YNDropDownButton
-                    yNDropDownButton = _subview
-                    buttonImageView = _subview.buttonImageView
-                }
-            }
-        }
-        
-        if openedView.tag != dropDownView.tag && opened {
-            hideMenu(yNDropDownButton: openedYNDropDownButton, arrowView: openedArrowView, dropDownMenu: openedView, didComplete: {
-                self.showMenu(yNDropDownButton: yNDropDownButton, arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+        if openedIndex != index && opened {
+            hideMenu(yNDropDownButton: dropDownButtons?[openedIndex], buttonImageView: dropDownButtons?[openedIndex].buttonImageView, dropDownMenu: dropDownViews?[openedIndex], didComplete: {
+                self.showMenu(yNDropDownButton: self.dropDownButtons?[index], buttonImageView: self.dropDownButtons?[index].buttonImageView, dropDownMenu: self.dropDownViews?[index], didComplete: nil)
             })
-            openedYNDropDownButton = yNDropDownButton
-            openedArrowView = buttonImageView
-            openedView = dropDownView
+            openedIndex = index
             return
         }
         
-        openedYNDropDownButton = yNDropDownButton
-        openedArrowView = buttonImageView
-        openedView = dropDownView
+        openedIndex = index
         
         if !opened {
-            showMenu(yNDropDownButton: yNDropDownButton, arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+            showMenu(yNDropDownButton: dropDownButtons?[index], buttonImageView: dropDownButtons?[index].buttonImageView, dropDownMenu: dropDownViews?[index], didComplete: nil)
         } else {
-            hideMenu(yNDropDownButton: yNDropDownButton, arrowView: buttonImageView, dropDownMenu: dropDownView, didComplete: nil)
+            hideMenu(yNDropDownButton: dropDownButtons?[index], buttonImageView: dropDownButtons?[index].buttonImageView, dropDownMenu: dropDownViews?[index], didComplete: nil)
 
         }
+
         opened = !opened
 
     }
@@ -265,9 +215,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
 
     
-    private func showMenu(yNDropDownButton: YNDropDownButton, arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
+    private func showMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownMenu: UIView?, didComplete: (()-> Void)?) {
+        guard let yNDropDownButton = yNDropDownButton else { return }
+        guard let dropDownMenu = dropDownMenu else { return }
+        
         dropDownMenu.isHidden = false
-        print(dropDownMenu)
         
         if let v = dropDownMenu as? YNDropDownView {
             v.dropDownViewOpened()
@@ -289,9 +241,10 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                     self.blurEffectView?.alpha = self.blurEffectViewAlpha
                 }
                 self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownMenu.frame.height + CGFloat(self.menuHeight))
-
-                arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
-                arrowView.image = self.buttonImages?.selected
+                if let _buttonImageView = buttonImageView {
+                    _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
+                    _buttonImageView.image = self.buttonImages?.selected
+                }
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
                 yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.selected
                 
@@ -301,7 +254,10 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         })
     }
     
-    private func hideMenu(yNDropDownButton: YNDropDownButton,arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
+    private func hideMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownMenu: UIView?, didComplete: (()-> Void)?) {
+        guard let yNDropDownButton = yNDropDownButton else { return }
+        guard let dropDownMenu = dropDownMenu else { return }
+        
         dropDownMenu.isHidden = true
         
         if let v = dropDownMenu as? YNDropDownView {
@@ -320,10 +276,10 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                     self.blurEffectView?.alpha = 0
                 }
                 self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
-
-                arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
-                arrowView.image = self.buttonImages?.normal
-                
+                if let _buttonImageView = buttonImageView {
+                    _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
+                    _buttonImageView.image = self.buttonImages?.normal
+                }
                 if self.alwaysOnIndex != yNDropDownButton.tag {
                     yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
                     yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.normal
@@ -368,13 +324,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             if let _dropDownView = dropDownViews?[i] {
                 _dropDownView.frame.size = CGSize(width: self.bounds.size.width, height: _dropDownView.frame.height)
                 _dropDownView.frame.origin.y = -_dropDownView.frame.height + CGFloat(menuHeight)
-                _dropDownView.tag = i + 100
                 _dropDownView.isHidden = true
                 
                 self.addSubview(_dropDownView)
                 self.sendSubview(toBack: _dropDownView)
             }
-            
         }
         
         let blurEffect = UIBlurEffect(style: blurEffectStyle)

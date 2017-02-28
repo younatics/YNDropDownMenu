@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ZBdropDownViews = Bundle.main.loadNibNamed("ZBDropDownMenu", owner: nil, options: nil) as? [UIView]
+        let ZBdropDownViews = Bundle.main.loadNibNamed("DropDownViews", owner: nil, options: nil) as? [UIView]
         let FFA409 = UIColor(colorLiteralRed: 255/255, green: 164/255, blue: 9/255, alpha: 1.0)
         
         if let _ZBdropDownViews = ZBdropDownViews {
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             view.setLabelColorWhen(normal: UIColor.black, selected: FFA409, disabled: UIColor.gray)
             view.setLabelFontWhen(normal: UIFont.systemFont(ofSize: 12), selected: UIFont.boldSystemFont(ofSize: 12), disabled: UIFont.systemFont(ofSize: 12))
             
-            view.backgroundBlurEnabled = false
+            view.backgroundBlurEnabled = true
             
             // Add custom blurEffectView
             let backgroundView = UIView()
