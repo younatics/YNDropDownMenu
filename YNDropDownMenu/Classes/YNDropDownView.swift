@@ -21,4 +21,8 @@ open class YNDropDownView: UIView {
     open func changeMenuTitleAt(index: Int, title: String) {
         self.delegate?.changeMenuTitleAt(index: index, title: title)
     }
+    
+    open func changeViewAt(index: Int, view: UIView) {
+        self.delegate?.changeViewAt(index: index, view: view)
+    }
 }

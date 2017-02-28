@@ -28,6 +28,8 @@ class ZBFilterMemeView: YNDropDownView {
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
         self.changeMenuTitleAt(index: 1, title: "Changed")
+        self.hideMenu()
+
     }
     
     override func dropDownViewOpened() {
@@ -64,6 +66,8 @@ class ZBFilterSalesPriceVIew: YNDropDownView {
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
+        let ZBdropDownViews = Bundle.main.loadNibNamed("ZBDropDownMenu", owner: nil, options: nil) as? [UIView]
+        self.changeViewAt(index: 3, view: (ZBdropDownViews?[0])!)
         self.hideMenu()
     }
     
@@ -102,32 +106,6 @@ class ZBFilterDepositPriceView: YNDropDownView {
         
     }
 
-}
-
-class ZBFilterAreaView: YNDropDownView {
-    @IBOutlet var areaTableView: UITableView!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = UIColor.white
-        self.initViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.initViews()
-    }
-    @IBAction func confirmButtonClicked(_ sender: Any) {
-        self.hideMenu()
-    }
-    
-    @IBAction func cancelButtonClicked(_ sender: Any) {
-        self.hideMenu()
-    }
-    func initViews() {
-        
-    }
 }
 
 class ZBFilterFeatureView: YNDropDownView {

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             view.setLabelColorWhen(normal: UIColor.black, selected: FFA409, disabled: UIColor.gray)
             view.setLabelFontWhen(normal: UIFont.systemFont(ofSize: 12), selected: UIFont.boldSystemFont(ofSize: 12), disabled: UIFont.systemFont(ofSize: 12))
             
-            view.backgroundBlurEnabled = true
+            view.backgroundBlurEnabled = false
             
             // Add custom blurEffectView
             let backgroundView = UIView()

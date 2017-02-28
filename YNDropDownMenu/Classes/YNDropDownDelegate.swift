@@ -11,4 +11,5 @@ import Foundation
 public protocol YNDropDownDelegate: class {
     func hideMenu()
     func changeMenuTitleAt(index: Int, title: String)
+    func changeViewAt(index: Int, view: UIView)
 }
