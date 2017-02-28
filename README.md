@@ -64,6 +64,9 @@ class DropDownView: YNDropDownView {
 
 // Hide Menu
 self.hideMenu()
+// Change Menu Title At Index
+self.changeMenuTitleAt(index: 1, title: "Changed")
+
 }
 ```
 
@@ -133,6 +136,11 @@ view.showMenuSpringWithDamping = 0.8
 
 view.hideMenuSpringVelocity = 0.9
 view.hideMenuSpringWithDamping = 0.8
+```
+
+Change Menu Title At Index
+```swift
+view.changeMenuTitleAt(index: 1, title: "Changed")
 ```
 
 ### Deprecated
