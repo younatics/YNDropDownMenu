@@ -144,8 +144,7 @@ let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDow
 [Younatics](http://younatics.github.io)
 
 ## Thanks to
-[@jegumhon](https://github.com/jegumhon)
+[jegumhon](https://github.com/jegumhon)
 
 ## License
-
 YNDropDownMenu is available under the MIT license. See the LICENSE file for more info.
