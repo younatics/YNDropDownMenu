@@ -18,14 +18,12 @@ class ViewController: UIViewController {
         
         if let _ZBdropDownViews = ZBdropDownViews {
             // Inherit YNDropDownView if you want to hideMenu in your dropDownViews
-           //let view = YNDropDownMenu(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: 38), YNDropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
-            
             let view = YNDropDownMenu(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
             view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
             view.setLabelColorWhen(normal: UIColor.black, selected: FFA409, disabled: UIColor.gray)
             view.setLabelFontWhen(normal: UIFont.systemFont(ofSize: 12), selected: UIFont.boldSystemFont(ofSize: 12), disabled: UIFont.systemFont(ofSize: 12))
             
-            view.backgroundBlurEnabled = false
+            view.backgroundBlurEnabled = true
             
             // Add custom blurEffectView
             let backgroundView = UIView()
@@ -34,7 +32,8 @@ class ViewController: UIViewController {
             view.blurEffectViewAlpha = 0.7
             
             // Open and Hide Menu
-            view.disabledMenuAt(index: 2)
+            view.alwaysSelectedAt(index: 0)
+//            view.disabledMenuAt(index: 2)
             //view.showAndHideMenuAt(index: 3)
             self.view.addSubview(view)
         }        

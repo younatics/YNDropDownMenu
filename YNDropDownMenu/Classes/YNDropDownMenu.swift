@@ -9,33 +9,36 @@
 import UIKit
 
 open class YNDropDownMenu: UIView, YNDropDownDelegate {
-    private var opened: Bool = false
-    private var openedView = UIView()
-    private var openedArrowView = UIImageView()
-    private var openedYNDropDownButton = YNDropDownButton()
+    fileprivate var opened: Bool = false
+    fileprivate var openedView = UIView()
+    fileprivate var openedArrowView = UIImageView()
+    fileprivate var openedYNDropDownButton = YNDropDownButton()
     
-    private var dropDownButtons: [YNDropDownButton]?
-    private var menuHeight: CGFloat = 0.0
-    private var numberOfMenu: Int = 0
+    fileprivate var dropDownButtons: [YNDropDownButton]?
+    fileprivate var menuHeight: CGFloat = 0.0
+    fileprivate var numberOfMenu: Int = 0
     
-    private var buttonImages: YNImages?
-    private var buttonlabelFontColors: YNFontColor?
-    private var buttonlabelFonts: YNFont?
+    fileprivate var buttonImages: YNImages?
+    fileprivate var buttonlabelFontColors: YNFontColor?
+    fileprivate var buttonlabelFonts: YNFont?
     
-    private var _yNDropDownViews: [YNDropDownView]?
-    private var yNDropDownViews: [YNDropDownView]? {
+    fileprivate var _dropDownViews: [UIView]?
+    fileprivate var dropDownViews: [UIView]? {
         get {
-            return self._yNDropDownViews
+            return self._dropDownViews
         }
         set {
             guard let _dropDownViews = newValue else { return }
             for view in _dropDownViews {
-                view.delegate = self
+                if let v = view as? YNDropDownView {
+                    v.delegate = self
+                }
             }
-            
-            self._yNDropDownViews = newValue
+            self._dropDownViews = newValue
         }
     }
+    
+    fileprivate var alwaysOnIndex: Int?
 
     open var blurEffectView: UIView? {
         didSet {
@@ -45,8 +48,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     open var blurEffectViewAlpha:CGFloat = 1.0
     open var blurEffectStyle:UIBlurEffectStyle = .dark
-    
-    private var dropDownViews: [UIView]?
     
     open var dropDownViewTitles: [String]?
 
@@ -78,6 +79,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.initViews()
     }
     
+    @available(*, deprecated, message: "use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead")
     public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
 
@@ -87,12 +89,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             numberOfMenu = YNDropDownViews.count
         }
 
-        self.yNDropDownViews = YNDropDownViews
+        self._dropDownViews = YNDropDownViews
         self.dropDownViewTitles = dropDownViewTitles
         self.menuHeight = self.frame.height
 
         self.initViews()
-
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -123,6 +124,25 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             dropDownButtons?[i].labelFonts = self.buttonlabelFonts
         }
 
+    }
+    
+    open func alwaysSelectedAt(index: Int) {
+        if index > numberOfMenu {
+            fatalError("index should be smaller than menu count")
+        }
+        self.alwaysOnIndex = index
+        
+        for subview in self.subviews {
+            if subview.tag == index {
+                if subview.isKind(of: YNDropDownButton.self) {
+                    let _subview = subview as! YNDropDownButton
+                    _subview.buttonLabel.textColor = self.buttonlabelFontColors?.selected
+                    _subview.buttonLabel.font = self.buttonlabelFonts?.selected
+
+                }
+            }
+            
+        }
     }
     
     open func disabledMenuAt(index: Int) {
@@ -208,7 +228,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         opened = !opened
 
     }
-    
     @objc private func menuClicked(_ sender: YNDropDownButton) {
         self.showAndHideMenuAt(index: sender.tag)
     }
@@ -220,6 +239,10 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     private func showMenu(yNDropDownButton: YNDropDownButton, arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = false
+        
+        if let v = dropDownMenu as? YNDropDownView {
+            v.dropDownViewOpened()
+        }
         
         if self.backgroundBlurEnabled, let _blurEffectView = blurEffectView {
             self.superview?.addSubview(_blurEffectView)
@@ -252,6 +275,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     private func hideMenu(yNDropDownButton: YNDropDownButton,arrowView: UIImageView, dropDownMenu: UIView, didComplete: (()-> Void)?) {
         dropDownMenu.isHidden = true
+        
+        if let v = dropDownMenu as? YNDropDownView {
+            v.dropDownViewClosed()
+        }
+
         UIView.animate(
             withDuration: self.hideMenuDuration,
             delay: 0,
@@ -267,8 +295,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
 
                 arrowView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
                 arrowView.image = self.buttonImages?.normal
-                yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
-                yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.normal
+                
+                if self.alwaysOnIndex != yNDropDownButton.tag {
+                    yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
+                    yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.normal
+                }
 
         }, completion: { (completion) in
             if self.backgroundBlurEnabled {

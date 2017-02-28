@@ -28,8 +28,17 @@ class ZBFilterMemeView: YNDropDownView {
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
         self.hideMenu()
+        
     }
     
+    override func dropDownViewOpened() {
+        print("dropDownViewOpened")
+    }
+    
+    override func dropDownViewClosed() {
+        print("dropDownViewClosed")
+    }
+
     func initViews() {
         
     }

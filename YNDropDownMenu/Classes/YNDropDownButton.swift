@@ -7,8 +7,8 @@
 //
 
 class YNDropDownButton: UIButton {
-    private var centerXwithOffsetConstraint: NSLayoutConstraint!
-    private var centerYConstraint: NSLayoutConstraint!
+    fileprivate var centerXwithOffsetConstraint: NSLayoutConstraint!
+    fileprivate var centerYConstraint: NSLayoutConstraint!
 
     open var buttonImageView: UIImageView!
     

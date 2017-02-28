@@ -11,6 +11,7 @@
 		024D891FEEAB97E93CE1F0D79C2D5312 /* Pods-YNDropDownMenu_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A94D148A5DB8E30042AC280569A1E8 /* Pods-YNDropDownMenu_Tests-dummy.m */; };
 		07D83E5E54B4AC5D602C08135900D711 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		192995001E59E0CC0081E4FD /* YNDropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192994FE1E59E0C60081E4FD /* YNDropDownButton.swift */; };
+		199CE14B1E63F1000032B4BC /* YNDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199CE1491E63EF500032B4BC /* YNDropDownView.swift */; };
 		19B0494C1E5A9C9A009BB71C /* YNStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0494B1E5A9C9A009BB71C /* YNStatus.swift */; };
 		19EF8D911E5E7A2B00C45293 /* YNDropDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF8D901E5E7A2B00C45293 /* YNDropDownDelegate.swift */; };
 		2AB35C820A9D1B7EB7E2FC2A5CDA19ED /* YNDropDownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BAFC37AD26130EB7192D84168050057 /* YNDropDownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		0B6BC5E28F3AD22494DAC5C92705F390 /* Pods-YNDropDownMenu_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YNDropDownMenu_Example-umbrella.h"; sourceTree = "<group>"; };
 		192994FE1E59E0C60081E4FD /* YNDropDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownButton.swift; sourceTree = "<group>"; };
+		199CE1491E63EF500032B4BC /* YNDropDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownView.swift; sourceTree = "<group>"; };
 		19B0494B1E5A9C9A009BB71C /* YNStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNStatus.swift; sourceTree = "<group>"; };
 		19EF8D901E5E7A2B00C45293 /* YNDropDownDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownDelegate.swift; sourceTree = "<group>"; };
 		22075A17B3D8A1021FD99815DC813BC2 /* Pods-YNDropDownMenu_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNDropDownMenu_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				3609F409A4F50ACBFBCD8994200EE13D /* YNDropDownMenu.swift */,
 				192994FE1E59E0C60081E4FD /* YNDropDownButton.swift */,
+				199CE1491E63EF500032B4BC /* YNDropDownView.swift */,
 				19EF8D901E5E7A2B00C45293 /* YNDropDownDelegate.swift */,
 				19B0494B1E5A9C9A009BB71C /* YNStatus.swift */,
 			);
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199CE14B1E63F1000032B4BC /* YNDropDownView.swift in Sources */,
 				19B0494C1E5A9C9A009BB71C /* YNStatus.swift in Sources */,
 				19EF8D911E5E7A2B00C45293 /* YNDropDownDelegate.swift in Sources */,
 				EDA4081615E9B8AB08FE56F4E334B38E /* YNDropDownMenu-dummy.m in Sources */,
