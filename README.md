@@ -50,7 +50,7 @@ self.addSubview(view)
 ```
 done!
 
-### Inherit YNDropDownView
+### Inherit YNDropDownView (If you need)
 ```swift
 class DropDownView: YNDropDownView {
    // override method to call open & close
@@ -62,11 +62,14 @@ class DropDownView: YNDropDownView {
         print("dropDownViewClosed")
     }
 
-// Hide Menu
-self.hideMenu()
-// Change Menu Title At Index
-self.changeMenuTitleAt(index: 1, title: "Changed")
+    // Hide Menu
+    self.hideMenu()
 
+    // Change Menu Title At Index
+    self.changeMenu(title: "Changed", at: 1)
+
+    // Change View At Index 
+    self.changeView(view: UIView(), at: 3)
 }
 ```
 
@@ -74,7 +77,7 @@ self.changeMenuTitleAt(index: 1, title: "Changed")
 
 Show & Hide Menu 
 ```swift
-view.showAndHideMenuAt(index:1)
+view.showAndHideMenu(at:1)
 
 // When view is already opened
 view.hideMenu()
@@ -82,13 +85,13 @@ view.hideMenu()
 
 Disable & Enable Menu 
 ```swift
-view.disabledMenuAt(index: 2)
-view.enabledMenuAt(index: 3)
+view.disabledMenu(at: 2)
+view.enabledMenu(at: 3)
 ```
 
 Always selected button label
 ```swift
-view.alwaysSelectedAt(index: 0)
+view.alwaysSelected(at: 0)
 ```
 
 Button Image with 3 situations (normal, selected, disabled)
@@ -140,12 +143,47 @@ view.hideMenuSpringWithDamping = 0.8
 
 Change Menu Title At Index
 ```swift
-view.changeMenuTitleAt(index: 1, title: "Changed")
+view.changeMenu(title: "Changed", at: 1)
+```
+
+Change View At Index 
+```swift
+view.changeView(view: UIView(), at: 3)
 ```
 
 ### Deprecated
 ```swift
-let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
+extension YNDropDownMenu {
+    @available(*, deprecated, message: "use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead")
+    public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String])
+
+    @available(*, deprecated, message: "use alwaysSelected(at index: Int) instead")
+    open func alwaysSelectedAt(index: Int) {
+        self.alwaysSelected(at: index)
+    }
+    
+    @available(*, deprecated, message: "use disabledMenu(at index: Int) instead")
+    open func disabledMenuAt(index: Int) {
+        self.disabledMenu(at: index)
+    }
+    
+    @available(*, deprecated, message: "use enabledMenu(at index: Int) instead")
+    open func enabledMenuAt(index: Int) {
+        self.enabledMenu(at: index)
+    }
+
+    @available(*, deprecated, message: "use showAndHideMenu(at index: Int) instead")
+    open func showAndHideMenuAt(index: Int) {
+        self.showAndHideMenu(at: index)
+    }
+}
+
+extension YNDropDownView {
+    @available(*, deprecated, message: "use changeMenu(title: String, at index: Int) instead")
+    open func changeMenuTitleAt(index: Int, title: String) {
+        self.delegate?.changeMenu(title: title, at: index)
+    }
+}
 ```
 
 ## Author

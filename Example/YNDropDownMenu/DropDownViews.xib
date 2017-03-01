@@ -140,7 +140,7 @@
                         <constraint firstAttribute="height" constant="50" id="6AF-Ir-ev7"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                    <state key="normal" title="Cancel">
+                    <state key="normal" title="Change View">
                         <color key="titleColor" red="1" green="0.64313725489999995" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

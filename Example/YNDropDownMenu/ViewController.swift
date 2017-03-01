@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ZBdropDownViews = Bundle.main.loadNibNamed("ZBDropDownMenu", owner: nil, options: nil) as? [UIView]
+        let ZBdropDownViews = Bundle.main.loadNibNamed("DropDownViews", owner: nil, options: nil) as? [UIView]
         let FFA409 = UIColor(colorLiteralRed: 255/255, green: 164/255, blue: 9/255, alpha: 1.0)
         
         if let _ZBdropDownViews = ZBdropDownViews {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             view.blurEffectViewAlpha = 0.7
             
             // Open and Hide Menu
-            view.alwaysSelectedAt(index: 0)
+            view.alwaysSelected(at: 0)
 //            view.disabledMenuAt(index: 2)
             //view.showAndHideMenuAt(index: 3)
             self.view.addSubview(view)
