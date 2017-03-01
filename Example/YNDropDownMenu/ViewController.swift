@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             view.blurEffectViewAlpha = 0.7
             
             // Open and Hide Menu
-            view.alwaysSelectedAt(index: 0)
+            view.alwaysSelected(at: 0)
 //            view.disabledMenuAt(index: 2)
             //view.showAndHideMenuAt(index: 3)
             self.view.addSubview(view)

@@ -4,9 +4,11 @@ YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 `pod 'YNDropDownMenu'`
-## [v1.4.0](https://github.com/younatics/YNDropDownMenu/releases/tag/1.4.0)
+## [v2.0.0](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.0)
+* Add `changeView(at index: Int)` function in `YNDropDownMenu`
 * Code refactoring
 * Bug Fixed
+* Deprecated Functions 
 
 ## [v1.3.1](https://github.com/younatics/YNDropDownMenu/releases/tag/1.3.1)
 * Add `changeMenuTitleAt(index: Int, title: String)` function in `YNDropDownView` and `YNDropDownMenu`

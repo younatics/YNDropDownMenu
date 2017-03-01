@@ -9,19 +9,19 @@
 import UIKit
 
 open class YNDropDownMenu: UIView, YNDropDownDelegate {
-    fileprivate var opened: Bool = false
-    fileprivate var openedIndex: Int = 0
+    internal var opened: Bool = false
+    internal var openedIndex: Int = 0
     
-    fileprivate var dropDownButtons: [YNDropDownButton]?
-    fileprivate var menuHeight: CGFloat = 0.0
-    fileprivate var numberOfMenu: Int = 0
+    internal var dropDownButtons: [YNDropDownButton]?
+    internal var menuHeight: CGFloat = 0.0
+    internal var numberOfMenu: Int = 0
     
-    fileprivate var buttonImages: YNImages?
-    fileprivate var buttonlabelFontColors: YNFontColor?
-    fileprivate var buttonlabelFonts: YNFont?
+    internal var buttonImages: YNImages?
+    internal var buttonlabelFontColors: YNFontColor?
+    internal var buttonlabelFonts: YNFont?
     
-    fileprivate var _dropDownViews: [UIView]?
-    fileprivate var dropDownViews: [UIView]? {
+    internal var _dropDownViews: [UIView]?
+    internal var dropDownViews: [UIView]? {
         get {
             return self._dropDownViews
         }
@@ -36,7 +36,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
-    fileprivate var alwaysOnIndex: Int?
+    internal var alwaysOnIndex: Int?
 
     open var blurEffectView: UIView? {
         didSet {
@@ -119,10 +119,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         for i in 0..<numberOfMenu {
             dropDownButtons?[i].labelFonts = self.buttonlabelFonts
         }
-
     }
     
-    open func alwaysSelectedAt(index: Int) {
+    open func alwaysSelected(at index: Int) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
@@ -132,14 +131,14 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.selected
     }
     
-    open func disabledMenuAt(index: Int) {
+    open func disabledMenu(at index: Int) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
         dropDownButtons?[index].disabled()
     }
     
-    open func enabledMenuAt(index: Int) {
+    open func enabledMenu(at index: Int) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
@@ -153,7 +152,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
-    public func changeMenu(title: String, at index: Int) {
+    open func changeMenu(title: String, at index: Int) {
         dropDownButtons?[index].buttonLabel.text = title
 
     }
@@ -171,7 +170,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
 
     }
     
-    open func showAndHideMenuAt(index: Int) {
+    open func showAndHideMenu(at index: Int) {
         if index > numberOfMenu {
             fatalError("index should be smaller than menu count")
         }

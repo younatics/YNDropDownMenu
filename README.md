@@ -145,7 +145,39 @@ view.changeMenuTitleAt(index: 1, title: "Changed")
 
 ### Deprecated
 ```swift
-let view = YNDropDownMenu(frame:frame, YNDropDownViews: yNDropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
+extension YNDropDownMenu {
+@available(*, deprecated, message: "use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead")
+public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String])
+
+@available(*, deprecated, message: "use alwaysSelected(at index: Int) instead")
+open func alwaysSelectedAt(index: Int) {
+self.alwaysSelected(at: index)
+}
+
+@available(*, deprecated, message: "use disabledMenu(at index: Int) instead")
+open func disabledMenuAt(index: Int) {
+self.disabledMenu(at: index)
+}
+
+@available(*, deprecated, message: "use enabledMenu(at index: Int) instead")
+open func enabledMenuAt(index: Int) {
+self.enabledMenu(at: index)
+}
+
+@available(*, deprecated, message: "use showAndHideMenu(at index: Int) instead")
+open func showAndHideMenuAt(index: Int) {
+self.showAndHideMenu(at: index)
+}
+}
+
+extension YNDropDownView {
+@available(*, deprecated, message: "use changeMenu(title: String, at index: Int) instead")
+open func changeMenuTitleAt(index: Int, title: String) {
+self.delegate?.changeMenu(title: title, at: index)
+}
+
+}
+
 ```
 
 ## Author
