@@ -185,7 +185,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     @objc private func menuClicked(_ sender: YNDropDownButton) {
-        self.showAndHideMenuAt(index: sender.tag)
+        self.showAndHideMenu(at: sender.tag)
     }
     
     @objc private func blurEffectViewClicked(_ sender: UITapGestureRecognizer) {
