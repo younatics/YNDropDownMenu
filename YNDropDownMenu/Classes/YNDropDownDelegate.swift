@@ -10,6 +10,7 @@ import Foundation
 
 public protocol YNDropDownDelegate: class {
     func hideMenu()
-    func changeMenuTitleAt(index: Int, title: String)
-    func changeViewAt(index: Int, view: UIView)
+    
+    func changeMenu(title: String, at index: Int)
+    func changeView(view: UIView, at index: Int)
 }

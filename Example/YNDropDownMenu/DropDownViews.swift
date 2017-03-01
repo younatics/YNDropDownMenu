@@ -27,7 +27,7 @@ class ZBFilterMemeView: YNDropDownView {
         self.hideMenu()
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        self.changeMenuTitleAt(index: 1, title: "Changed")
+        self.changeMenu(title: "Changed", at: 1)
         self.hideMenu()
 
     }
@@ -67,7 +67,7 @@ class ZBFilterSalesPriceVIew: YNDropDownView {
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
         let ZBdropDownViews = Bundle.main.loadNibNamed("DropDownViews", owner: nil, options: nil) as? [UIView]
-        self.changeViewAt(index: 3, view: (ZBdropDownViews?[0])!)
+        self.changeView(view: (ZBdropDownViews?[0])!, at: 3)
         self.hideMenu()
     }
     
