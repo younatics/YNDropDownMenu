@@ -16,7 +16,8 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/younatics/YNDropDownMenu'
   s.screenshots     = 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu2.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu3.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = 'younatics@gmail.com'
+  s.author           = { "Seungyoun Yi" => "younatics@gmail.co" }
+
   s.source           = { :git => 'https://github.com/younatics/YNDropDownMenu.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
