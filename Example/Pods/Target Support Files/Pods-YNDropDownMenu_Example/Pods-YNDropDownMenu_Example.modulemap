@@ -1,6 +1,0 @@
-framework module Pods_YNDropDownMenu_Example {
-  umbrella header "Pods-YNDropDownMenu_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
