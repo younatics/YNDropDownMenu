@@ -4,6 +4,9 @@ YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 `pod 'YNDropDownMenu'`
+## [v2.0.2](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.2)
+* Update Podspec
+
 ## [v2.0.1](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.1)
 * Bug fixed [#4](https://github.com/younatics/YNDropDownMenu/issues/4)
 
