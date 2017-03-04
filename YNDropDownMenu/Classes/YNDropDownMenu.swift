@@ -122,9 +122,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     open func alwaysSelected(at index: Int) {
-        if index > numberOfMenu {
-            fatalError("index should be smaller than menu count")
-        }
+        self.checkIndex(index: index)
         self.alwaysOnIndex = index
         
         dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.selected
@@ -132,16 +130,12 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     open func disabledMenu(at index: Int) {
-        if index > numberOfMenu {
-            fatalError("index should be smaller than menu count")
-        }
+        self.checkIndex(index: index)
         dropDownButtons?[index].disabled()
     }
     
     open func enabledMenu(at index: Int) {
-        if index > numberOfMenu {
-            fatalError("index should be smaller than menu count")
-        }
+        self.checkIndex(index: index)
         dropDownButtons?[index].enabled()
     }
     
@@ -158,9 +152,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     open func changeView(view: UIView, at index: Int) {
-        if index > numberOfMenu {
-            fatalError("index should be smaller than menu count")
-        }
+        self.checkIndex(index: index)
         
         dropDownViews?[index] = view
         
@@ -171,9 +163,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     open func showAndHideMenu(at index: Int) {
-        if index > numberOfMenu {
-            fatalError("index should be smaller than menu count")
-        }
+        self.checkIndex(index: index)
         
         if openedIndex != index && opened {
             hideMenu(yNDropDownButton: dropDownButtons?[openedIndex], buttonImageView: dropDownButtons?[openedIndex].buttonImageView, dropDownView: dropDownViews?[openedIndex], didComplete: {
@@ -182,7 +172,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             openedIndex = index
             return
         }
-        
         openedIndex = index
         
         if !opened {
@@ -193,16 +182,21 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
 
         opened = !opened
-
     }
+    
     @objc private func menuClicked(_ sender: YNDropDownButton) {
-        self.showAndHideMenuAt(index: sender.tag)
+        self.showAndHideMenu(at: sender.tag)
     }
     
     @objc private func blurEffectViewClicked(_ sender: UITapGestureRecognizer) {
         self.hideMenu()
     }
-
+    
+    private func checkIndex(index: Int) {
+        if index >= numberOfMenu {
+            fatalError("index should be smaller than menu count")
+        }
+    }
     
     private func showMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownView: UIView?, didComplete: (()-> Void)?) {
         guard let yNDropDownButton = yNDropDownButton else { return }
@@ -232,7 +226,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 if self.backgroundBlurEnabled {
                     self.blurEffectView?.alpha = self.blurEffectViewAlpha
                 }
-                self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.frame.width, height: dropDownView.frame.height + CGFloat(self.menuHeight))
+                self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: dropDownView.frame.height + CGFloat(self.menuHeight))
                 if let _buttonImageView = buttonImageView {
                     _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
                     _buttonImageView.image = self.buttonImages?.selected
@@ -265,7 +259,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 if self.backgroundBlurEnabled {
                     self.blurEffectView?.alpha = 0
                 }
-                self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
+                self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
                 if let _buttonImageView = buttonImageView {
                     _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
                     _buttonImageView.image = self.buttonImages?.normal
