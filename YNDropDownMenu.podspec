@@ -8,15 +8,17 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '2.0.3'
+  s.version          = '2.0.4'
   s.summary          = 'YNDropDownMenu is created to make drop down menu with Swift 3'
 
-  s.description      = 'The eligible dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)'
+  s.description      = <<-DESC
+                        Awesome dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
+                        DESC
 
   s.homepage         = 'https://github.com/younatics/YNDropDownMenu'
   s.screenshots      = 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu2.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu3.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { "Seungyoun Yi" => "younatics@gmail.co" }
+  s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
   s.source           = { :git => 'https://github.com/younatics/YNDropDownMenu.git', :tag => s.version.to_s }
   s.source_files     = 'YNDropDownMenu/Classes/**/*'
@@ -25,4 +27,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
+  s.requires_arc = true
 end
