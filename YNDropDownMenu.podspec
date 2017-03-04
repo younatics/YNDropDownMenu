@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '2.0.4'
-  s.summary          = 'YNDropDownMenu is created to make drop down menu with Swift 3'
+  s.version          = '2.0.5'
+  s.summary          = 'Awesome Dropdown menu for iOS with Swift 3'
 
   s.description      = <<-DESC
                         Awesome dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
   s.source           = { :git => 'https://github.com/younatics/YNDropDownMenu.git', :tag => s.version.to_s }
-  s.source_files     = 'Source/*.swift'
+  s.source_files     = 'YNDropDownMenu/Source/*.swift'
 
   s.ios.deployment_target = '8.0'
 
