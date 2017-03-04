@@ -21,6 +21,9 @@
 		19D093441E6A8D3F008E7695 /* YNDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0933E1E6A8D3F008E7695 /* YNDropDownMenu.swift */; };
 		19D093451E6A8D3F008E7695 /* YNDropDownStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0933F1E6A8D3F008E7695 /* YNDropDownStatus.swift */; };
 		19D093461E6A8D3F008E7695 /* YNDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D093401E6A8D3F008E7695 /* YNDropDownView.swift */; };
+		19F8D3101E6A8EB10080EC90 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 19F8D30D1E6A8EB10080EC90 /* CHANGELOG.md */; };
+		19F8D3111E6A8EB10080EC90 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 19F8D30E1E6A8EB10080EC90 /* README.md */; };
+		19F8D3121E6A8EB10080EC90 /* YNDropDownMenu.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 19F8D30F1E6A8EB10080EC90 /* YNDropDownMenu.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		19D0933E1E6A8D3F008E7695 /* YNDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownMenu.swift; path = ../../Source/YNDropDownMenu.swift; sourceTree = "<group>"; };
 		19D0933F1E6A8D3F008E7695 /* YNDropDownStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownStatus.swift; path = ../../Source/YNDropDownStatus.swift; sourceTree = "<group>"; };
 		19D093401E6A8D3F008E7695 /* YNDropDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownView.swift; path = ../../Source/YNDropDownView.swift; sourceTree = "<group>"; };
+		19F8D30D1E6A8EB10080EC90 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../../CHANGELOG.md; sourceTree = "<group>"; };
+		19F8D30E1E6A8EB10080EC90 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		19F8D30F1E6A8EB10080EC90 /* YNDropDownMenu.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = YNDropDownMenu.podspec; path = ../../YNDropDownMenu.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		19D0931D1E6A8B3C008E7695 /* YNDropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
+				19F8D30C1E6A8E7A0080EC90 /* Support */,
 				19D0933B1E6A8D3F008E7695 /* YNDropDownButton.swift */,
 				19D0933C1E6A8D3F008E7695 /* YNDropDownDelegate.swift */,
 				19D0933D1E6A8D3F008E7695 /* YNDropDownDeprecated.swift */,
@@ -125,6 +132,16 @@
 				19D093371E6A8C7A008E7695 /* Main.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		19F8D30C1E6A8E7A0080EC90 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				19F8D30D1E6A8EB10080EC90 /* CHANGELOG.md */,
+				19F8D30E1E6A8EB10080EC90 /* README.md */,
+				19F8D30F1E6A8EB10080EC90 /* YNDropDownMenu.podspec */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +232,7 @@
 				19D093391E6A8C7A008E7695 /* LaunchScreen.xib in Resources */,
 				19D093321E6A8B99008E7695 /* Images.xcassets in Resources */,
 				19D093311E6A8B99008E7695 /* DropDownViews.xib in Resources */,
+				19F8D3121E6A8EB10080EC90 /* YNDropDownMenu.podspec in Resources */,
 				19D0933A1E6A8C7A008E7695 /* Main.storyboard in Resources */,
 				19D093331E6A8B99008E7695 /* IMG_2279.PNG in Resources */,
 			);
@@ -235,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19D093431E6A8D3F008E7695 /* YNDropDownDeprecated.swift in Sources */,
+				19F8D3101E6A8EB10080EC90 /* CHANGELOG.md in Sources */,
 				19D093451E6A8D3F008E7695 /* YNDropDownStatus.swift in Sources */,
 				19D093001E6A8A30008E7695 /* ViewController.swift in Sources */,
 				19D093411E6A8D3F008E7695 /* YNDropDownButton.swift in Sources */,
@@ -242,6 +261,7 @@
 				19D093301E6A8B99008E7695 /* DropDownViews.swift in Sources */,
 				19D093461E6A8D3F008E7695 /* YNDropDownView.swift in Sources */,
 				19D093441E6A8D3F008E7695 /* YNDropDownMenu.swift in Sources */,
+				19F8D3111E6A8EB10080EC90 /* README.md in Sources */,
 				19D092FE1E6A8A30008E7695 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
