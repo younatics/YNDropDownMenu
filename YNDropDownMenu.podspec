@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
   s.source           = { :git => 'https://github.com/younatics/YNDropDownMenu.git', :tag => s.version.to_s }
-  s.source_files     = 'YNDropDownMenu/Source/*.swift'
+  s.source_files     = 'YNDropDownMenu/Source/*.swift','YNDropDownMenu/Source/*.{h,m}'
 
   s.ios.deployment_target = '8.0'
 

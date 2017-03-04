@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19162CEB1E6A9BCB00047D46 /* YNDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNDropDownMenu.h; path = Source/YNDropDownMenu.h; sourceTree = SOURCE_ROOT; };
 		196A74E01E6A93420078F64F /* YNDropDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownButton.swift; path = Source/YNDropDownButton.swift; sourceTree = SOURCE_ROOT; };
 		196A74E11E6A93420078F64F /* YNDropDownDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownDelegate.swift; path = Source/YNDropDownDelegate.swift; sourceTree = SOURCE_ROOT; };
 		196A74E21E6A93420078F64F /* YNDropDownDeprecated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownDeprecated.swift; path = Source/YNDropDownDeprecated.swift; sourceTree = SOURCE_ROOT; };
@@ -113,6 +114,7 @@
 		19D0931D1E6A8B3C008E7695 /* YNDropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
+				19162CEB1E6A9BCB00047D46 /* YNDropDownMenu.h */,
 				196A74E01E6A93420078F64F /* YNDropDownButton.swift */,
 				196A74E11E6A93420078F64F /* YNDropDownDelegate.swift */,
 				196A74E21E6A93420078F64F /* YNDropDownDeprecated.swift */,
