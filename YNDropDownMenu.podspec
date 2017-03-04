@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '2.0.2'
+  s.version          = '2.0.3'
   s.summary          = 'YNDropDownMenu is created to make drop down menu with Swift 3'
 
   s.description      = 'The eligible dropdown menu, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)'
@@ -22,8 +22,6 @@ Pod::Spec.new do |s|
   s.source_files     = 'YNDropDownMenu/Classes/**/*'
 
   s.ios.deployment_target = '8.0'
-
-  s.source_files     = 'YNDropDownMenu/Classes/**/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
