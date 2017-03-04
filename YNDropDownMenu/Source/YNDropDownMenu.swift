@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Main Class for YNDropDownMenu
 open class YNDropDownMenu: UIView, YNDropDownDelegate {
     internal var opened: Bool = false
     internal var openedIndex: Int = 0

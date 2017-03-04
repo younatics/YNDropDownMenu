@@ -8,10 +8,15 @@
 
 import UIKit
 
+/// Inherit this class to customize functions
 open class YNDropDownView: UIView {
+    /// YNDropDownDelegate for call back
     open weak var delegate: YNDropDownDelegate?
     
+    /// Override this method if you want to get call back opened
     open func dropDownViewOpened() { }
+    
+    /// Override this method if you want to get call back closed
     open func dropDownViewClosed() { }
     
     /// hide menu self

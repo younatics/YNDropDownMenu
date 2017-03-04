@@ -100,13 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				19162D0F1E6AA4CF00047D46 /* Support */,
+				19162CFD1E6AA0E000047D46 /* YNDropDownMenu.swift */,
+				19162CFF1E6AA0E000047D46 /* YNDropDownView.swift */,
 				19162CF91E6AA0E000047D46 /* YNDropDownButton.swift */,
 				19162CFA1E6AA0E000047D46 /* YNDropDownDelegate.swift */,
-				19162CFB1E6AA0E000047D46 /* YNDropDownDeprecated.swift */,
-				19162CFC1E6AA0E000047D46 /* YNDropDownMenu.h */,
-				19162CFD1E6AA0E000047D46 /* YNDropDownMenu.swift */,
 				19162CFE1E6AA0E000047D46 /* YNDropDownStatus.swift */,
-				19162CFF1E6AA0E000047D46 /* YNDropDownView.swift */,
+				19162CFB1E6AA0E000047D46 /* YNDropDownDeprecated.swift */,
 			);
 			name = Source;
 			path = YNDropDownMenu/Source;
@@ -118,6 +117,7 @@
 				19162D101E6AA4DE00047D46 /* CHANGELOG.md */,
 				19162D111E6AA4DE00047D46 /* README.md */,
 				19162D121E6AA4DE00047D46 /* YNDropDownMenu.podspec */,
+				19162CFC1E6AA0E000047D46 /* YNDropDownMenu.h */,
 			);
 			name = Support;
 			sourceTree = "<group>";

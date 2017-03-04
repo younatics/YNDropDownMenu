@@ -1,9 +1,8 @@
-# Installation & Update
+# Updates
 
-YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## [v2.0.7](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.7)
+* Add Cocoapods doc
 
-`pod 'YNDropDownMenu'`
 ## [v2.0.6](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.6)
 * Swift version changed
 
