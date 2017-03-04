@@ -7,23 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		196A74E61E6A93420078F64F /* YNDropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A74E01E6A93420078F64F /* YNDropDownButton.swift */; };
-		196A74E71E6A93420078F64F /* YNDropDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A74E11E6A93420078F64F /* YNDropDownDelegate.swift */; };
-		196A74E81E6A93420078F64F /* YNDropDownDeprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A74E21E6A93420078F64F /* YNDropDownDeprecated.swift */; };
-		196A74E91E6A93420078F64F /* YNDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A74E31E6A93420078F64F /* YNDropDownMenu.swift */; };
-		196A74EA1E6A93420078F64F /* YNDropDownStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A74E41E6A93420078F64F /* YNDropDownStatus.swift */; };
-		196A74EB1E6A93420078F64F /* YNDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A74E51E6A93420078F64F /* YNDropDownView.swift */; };
-		19D092FE1E6A8A30008E7695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D092FD1E6A8A30008E7695 /* AppDelegate.swift */; };
-		19D093001E6A8A30008E7695 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D092FF1E6A8A30008E7695 /* ViewController.swift */; };
-		19D093301E6A8B99008E7695 /* DropDownViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0932C1E6A8B99008E7695 /* DropDownViews.swift */; };
-		19D093311E6A8B99008E7695 /* DropDownViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D0932D1E6A8B99008E7695 /* DropDownViews.xib */; };
-		19D093321E6A8B99008E7695 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D0932E1E6A8B99008E7695 /* Images.xcassets */; };
-		19D093331E6A8B99008E7695 /* IMG_2279.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19D0932F1E6A8B99008E7695 /* IMG_2279.PNG */; };
-		19D093391E6A8C7A008E7695 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D093351E6A8C7A008E7695 /* LaunchScreen.xib */; };
-		19D0933A1E6A8C7A008E7695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D093371E6A8C7A008E7695 /* Main.storyboard */; };
-		19F8D3101E6A8EB10080EC90 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 19F8D30D1E6A8EB10080EC90 /* CHANGELOG.md */; };
-		19F8D3111E6A8EB10080EC90 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 19F8D30E1E6A8EB10080EC90 /* README.md */; };
-		19F8D3121E6A8EB10080EC90 /* YNDropDownMenu.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 19F8D30F1E6A8EB10080EC90 /* YNDropDownMenu.podspec */; };
+		19162D001E6AA0E000047D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CED1E6AA0E000047D46 /* AppDelegate.swift */; };
+		19162D011E6AA0E000047D46 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19162CEE1E6AA0E000047D46 /* LaunchScreen.xib */; };
+		19162D021E6AA0E000047D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF01E6AA0E000047D46 /* Main.storyboard */; };
+		19162D031E6AA0E000047D46 /* DropDownViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CF21E6AA0E000047D46 /* DropDownViews.swift */; };
+		19162D041E6AA0E000047D46 /* DropDownViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF31E6AA0E000047D46 /* DropDownViews.xib */; };
+		19162D051E6AA0E000047D46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF41E6AA0E000047D46 /* Images.xcassets */; };
+		19162D061E6AA0E000047D46 /* IMG_2279.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF51E6AA0E000047D46 /* IMG_2279.PNG */; };
+		19162D071E6AA0E000047D46 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF61E6AA0E000047D46 /* Info.plist */; };
+		19162D081E6AA0E000047D46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CF71E6AA0E000047D46 /* ViewController.swift */; };
+		19162D091E6AA0E000047D46 /* YNDropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CF91E6AA0E000047D46 /* YNDropDownButton.swift */; };
+		19162D0A1E6AA0E000047D46 /* YNDropDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CFA1E6AA0E000047D46 /* YNDropDownDelegate.swift */; };
+		19162D0B1E6AA0E000047D46 /* YNDropDownDeprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CFB1E6AA0E000047D46 /* YNDropDownDeprecated.swift */; };
+		19162D0C1E6AA0E000047D46 /* YNDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CFD1E6AA0E000047D46 /* YNDropDownMenu.swift */; };
+		19162D0D1E6AA0E000047D46 /* YNDropDownStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CFE1E6AA0E000047D46 /* YNDropDownStatus.swift */; };
+		19162D0E1E6AA0E000047D46 /* YNDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CFF1E6AA0E000047D46 /* YNDropDownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,27 +35,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19162CEB1E6A9BCB00047D46 /* YNDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNDropDownMenu.h; path = Source/YNDropDownMenu.h; sourceTree = SOURCE_ROOT; };
-		196A74E01E6A93420078F64F /* YNDropDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownButton.swift; path = Source/YNDropDownButton.swift; sourceTree = SOURCE_ROOT; };
-		196A74E11E6A93420078F64F /* YNDropDownDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownDelegate.swift; path = Source/YNDropDownDelegate.swift; sourceTree = SOURCE_ROOT; };
-		196A74E21E6A93420078F64F /* YNDropDownDeprecated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownDeprecated.swift; path = Source/YNDropDownDeprecated.swift; sourceTree = SOURCE_ROOT; };
-		196A74E31E6A93420078F64F /* YNDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownMenu.swift; path = Source/YNDropDownMenu.swift; sourceTree = SOURCE_ROOT; };
-		196A74E41E6A93420078F64F /* YNDropDownStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownStatus.swift; path = Source/YNDropDownStatus.swift; sourceTree = SOURCE_ROOT; };
-		196A74E51E6A93420078F64F /* YNDropDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YNDropDownView.swift; path = Source/YNDropDownView.swift; sourceTree = SOURCE_ROOT; };
+		19162CED1E6AA0E000047D46 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		19162CEF1E6AA0E000047D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		19162CF11E6AA0E000047D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19162CF21E6AA0E000047D46 /* DropDownViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownViews.swift; sourceTree = "<group>"; };
+		19162CF31E6AA0E000047D46 /* DropDownViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownViews.xib; sourceTree = "<group>"; };
+		19162CF41E6AA0E000047D46 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		19162CF51E6AA0E000047D46 /* IMG_2279.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2279.PNG; sourceTree = "<group>"; };
+		19162CF61E6AA0E000047D46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19162CF71E6AA0E000047D46 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19162CF91E6AA0E000047D46 /* YNDropDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownButton.swift; sourceTree = "<group>"; };
+		19162CFA1E6AA0E000047D46 /* YNDropDownDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownDelegate.swift; sourceTree = "<group>"; };
+		19162CFB1E6AA0E000047D46 /* YNDropDownDeprecated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownDeprecated.swift; sourceTree = "<group>"; };
+		19162CFC1E6AA0E000047D46 /* YNDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNDropDownMenu.h; sourceTree = "<group>"; };
+		19162CFD1E6AA0E000047D46 /* YNDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownMenu.swift; sourceTree = "<group>"; };
+		19162CFE1E6AA0E000047D46 /* YNDropDownStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownStatus.swift; sourceTree = "<group>"; };
+		19162CFF1E6AA0E000047D46 /* YNDropDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNDropDownView.swift; sourceTree = "<group>"; };
 		19D092FA1E6A8A30008E7695 /* YNDropDownMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNDropDownMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		19D092FD1E6A8A30008E7695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19D092FF1E6A8A30008E7695 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		19D093091E6A8A30008E7695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19D0930E1E6A8A31008E7695 /* YNDropDownMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNDropDownMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19D0932C1E6A8B99008E7695 /* DropDownViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownViews.swift; sourceTree = "<group>"; };
-		19D0932D1E6A8B99008E7695 /* DropDownViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownViews.xib; sourceTree = "<group>"; };
-		19D0932E1E6A8B99008E7695 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		19D0932F1E6A8B99008E7695 /* IMG_2279.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2279.PNG; sourceTree = "<group>"; };
-		19D093361E6A8C7A008E7695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		19D093381E6A8C7A008E7695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		19F8D30D1E6A8EB10080EC90 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../../CHANGELOG.md; sourceTree = "<group>"; };
-		19F8D30E1E6A8EB10080EC90 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
-		19F8D30F1E6A8EB10080EC90 /* YNDropDownMenu.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = YNDropDownMenu.podspec; path = ../../YNDropDownMenu.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +73,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19162CEC1E6AA0E000047D46 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				19162CED1E6AA0E000047D46 /* AppDelegate.swift */,
+				19162CEE1E6AA0E000047D46 /* LaunchScreen.xib */,
+				19162CF01E6AA0E000047D46 /* Main.storyboard */,
+				19162CF21E6AA0E000047D46 /* DropDownViews.swift */,
+				19162CF31E6AA0E000047D46 /* DropDownViews.xib */,
+				19162CF41E6AA0E000047D46 /* Images.xcassets */,
+				19162CF51E6AA0E000047D46 /* IMG_2279.PNG */,
+				19162CF61E6AA0E000047D46 /* Info.plist */,
+				19162CF71E6AA0E000047D46 /* ViewController.swift */,
+			);
+			name = Example;
+			path = YNDropDownMenu/Example;
+			sourceTree = "<group>";
+		};
+		19162CF81E6AA0E000047D46 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				19162CF91E6AA0E000047D46 /* YNDropDownButton.swift */,
+				19162CFA1E6AA0E000047D46 /* YNDropDownDelegate.swift */,
+				19162CFB1E6AA0E000047D46 /* YNDropDownDeprecated.swift */,
+				19162CFC1E6AA0E000047D46 /* YNDropDownMenu.h */,
+				19162CFD1E6AA0E000047D46 /* YNDropDownMenu.swift */,
+				19162CFE1E6AA0E000047D46 /* YNDropDownStatus.swift */,
+				19162CFF1E6AA0E000047D46 /* YNDropDownView.swift */,
+			);
+			name = Source;
+			path = YNDropDownMenu/Source;
+			sourceTree = "<group>";
+		};
 		19D092F11E6A8A30008E7695 = {
 			isa = PBXGroup;
 			children = (
-				19D0931D1E6A8B3C008E7695 /* YNDropDownMenu */,
-				19D092FC1E6A8A30008E7695 /* Example */,
+				19162CEC1E6AA0E000047D46 /* Example */,
+				19162CF81E6AA0E000047D46 /* Source */,
 				19D092FB1E6A8A30008E7695 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,56 +121,6 @@
 				19D0930E1E6A8A31008E7695 /* YNDropDownMenuUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		19D092FC1E6A8A30008E7695 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				19D093341E6A8C7A008E7695 /* Base.lproj */,
-				19D092FD1E6A8A30008E7695 /* AppDelegate.swift */,
-				19D092FF1E6A8A30008E7695 /* ViewController.swift */,
-				19D0932C1E6A8B99008E7695 /* DropDownViews.swift */,
-				19D0932D1E6A8B99008E7695 /* DropDownViews.xib */,
-				19D0932E1E6A8B99008E7695 /* Images.xcassets */,
-				19D0932F1E6A8B99008E7695 /* IMG_2279.PNG */,
-				19D093091E6A8A30008E7695 /* Info.plist */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		19D0931D1E6A8B3C008E7695 /* YNDropDownMenu */ = {
-			isa = PBXGroup;
-			children = (
-				19162CEB1E6A9BCB00047D46 /* YNDropDownMenu.h */,
-				196A74E01E6A93420078F64F /* YNDropDownButton.swift */,
-				196A74E11E6A93420078F64F /* YNDropDownDelegate.swift */,
-				196A74E21E6A93420078F64F /* YNDropDownDeprecated.swift */,
-				196A74E31E6A93420078F64F /* YNDropDownMenu.swift */,
-				196A74E41E6A93420078F64F /* YNDropDownStatus.swift */,
-				196A74E51E6A93420078F64F /* YNDropDownView.swift */,
-				19F8D30C1E6A8E7A0080EC90 /* Support */,
-			);
-			name = YNDropDownMenu;
-			path = Example;
-			sourceTree = "<group>";
-		};
-		19D093341E6A8C7A008E7695 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				19D093351E6A8C7A008E7695 /* LaunchScreen.xib */,
-				19D093371E6A8C7A008E7695 /* Main.storyboard */,
-			);
-			path = Base.lproj;
-			sourceTree = "<group>";
-		};
-		19F8D30C1E6A8E7A0080EC90 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				19F8D30D1E6A8EB10080EC90 /* CHANGELOG.md */,
-				19F8D30E1E6A8EB10080EC90 /* README.md */,
-				19F8D30F1E6A8EB10080EC90 /* YNDropDownMenu.podspec */,
-			);
-			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +208,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19D093391E6A8C7A008E7695 /* LaunchScreen.xib in Resources */,
-				19D093321E6A8B99008E7695 /* Images.xcassets in Resources */,
-				19D093311E6A8B99008E7695 /* DropDownViews.xib in Resources */,
-				19F8D3121E6A8EB10080EC90 /* YNDropDownMenu.podspec in Resources */,
-				19D0933A1E6A8C7A008E7695 /* Main.storyboard in Resources */,
-				19D093331E6A8B99008E7695 /* IMG_2279.PNG in Resources */,
+				19162D011E6AA0E000047D46 /* LaunchScreen.xib in Resources */,
+				19162D051E6AA0E000047D46 /* Images.xcassets in Resources */,
+				19162D071E6AA0E000047D46 /* Info.plist in Resources */,
+				19162D061E6AA0E000047D46 /* IMG_2279.PNG in Resources */,
+				19162D021E6AA0E000047D46 /* Main.storyboard in Resources */,
+				19162D041E6AA0E000047D46 /* DropDownViews.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,17 +231,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F8D3101E6A8EB10080EC90 /* CHANGELOG.md in Sources */,
-				196A74E61E6A93420078F64F /* YNDropDownButton.swift in Sources */,
-				196A74E81E6A93420078F64F /* YNDropDownDeprecated.swift in Sources */,
-				19D093001E6A8A30008E7695 /* ViewController.swift in Sources */,
-				196A74E71E6A93420078F64F /* YNDropDownDelegate.swift in Sources */,
-				19D093301E6A8B99008E7695 /* DropDownViews.swift in Sources */,
-				19F8D3111E6A8EB10080EC90 /* README.md in Sources */,
-				196A74EB1E6A93420078F64F /* YNDropDownView.swift in Sources */,
-				196A74E91E6A93420078F64F /* YNDropDownMenu.swift in Sources */,
-				19D092FE1E6A8A30008E7695 /* AppDelegate.swift in Sources */,
-				196A74EA1E6A93420078F64F /* YNDropDownStatus.swift in Sources */,
+				19162D0B1E6AA0E000047D46 /* YNDropDownDeprecated.swift in Sources */,
+				19162D0D1E6AA0E000047D46 /* YNDropDownStatus.swift in Sources */,
+				19162D081E6AA0E000047D46 /* ViewController.swift in Sources */,
+				19162D091E6AA0E000047D46 /* YNDropDownButton.swift in Sources */,
+				19162D0A1E6AA0E000047D46 /* YNDropDownDelegate.swift in Sources */,
+				19162D001E6AA0E000047D46 /* AppDelegate.swift in Sources */,
+				19162D0E1E6AA0E000047D46 /* YNDropDownView.swift in Sources */,
+				19162D0C1E6AA0E000047D46 /* YNDropDownMenu.swift in Sources */,
+				19162D031E6AA0E000047D46 /* DropDownViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,18 +261,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		19D093351E6A8C7A008E7695 /* LaunchScreen.xib */ = {
+		19162CEE1E6AA0E000047D46 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				19D093361E6A8C7A008E7695 /* Base */,
+				19162CEF1E6AA0E000047D46 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		19D093371E6A8C7A008E7695 /* Main.storyboard */ = {
+		19162CF01E6AA0E000047D46 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				19D093381E6A8C7A008E7695 /* Base */,
+				19162CF11E6AA0E000047D46 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -401,7 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YNDropDownMenu/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.YNDropDownMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,7 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YNDropDownMenu/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.YNDropDownMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
