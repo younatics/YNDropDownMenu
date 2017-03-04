@@ -37,29 +37,49 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     internal var alwaysOnIndex: Int?
+    internal var dropDownViewTitles: [String]?
 
+    /// Blur effect view will changed if you change this popperty. Backgorund view don't have to be blur view (e.g. UIColor.black)
     open var blurEffectView: UIView? {
         didSet {
             self.changeBlurEffectView()
         }
     }
-    
+    /// Alpha Value if animation ended in *hideMenu()* function
     open var blurEffectViewAlpha:CGFloat = 1.0
+    
+    /// Blur effect style in background view
     open var blurEffectStyle:UIBlurEffectStyle = .dark
     
-    open var dropDownViewTitles: [String]?
-
+    /// Make background blur view enabled
     open var backgroundBlurEnabled = true
     
+    /// Show menu second default value: *0.5*
     open var showMenuDuration = 0.5
+    
+    /// Hide menu second default value: *0.3*
     open var hideMenuDuration = 0.3
     
+    /// Show menu spring velocity default value: *0.5*
     open var showMenuSpringVelocity:CGFloat = 0.5
+    
+    /// Show menu spring damping default value: *0.8*
     open var showMenuSpringWithDamping:CGFloat = 0.8
     
+    /// Hide menu spring velocity Default value: *0.9*
     open var hideMenuSpringVelocity:CGFloat = 0.9
+    
+    /// Hide menu spring damping Default value: *0.8*
     open var hideMenuSpringWithDamping:CGFloat = 0.8
     
+    
+    /**
+     Init YNDropDownMenu with frame, views, strings. Views count and titles count should be same
+     
+     - Parameter frame: CGRect Frame
+     - Parameter dropDownViews: Use [UIView] or [YNDropDownView]
+     - Parameter dropDownViewTitles: [String]
+     */
     public init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
         
@@ -76,6 +96,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.initViews()
     }
     
+    /// deprecated use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead
     @available(*, deprecated, message: "use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead")
     public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
@@ -97,6 +118,13 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /**
+     Set arrow image or other images. Same image size is the best
+     
+     - Parameter normal: Normal image
+     - Parameter selected: Selected image
+     - Parameter disabled: Disabled image
+     */
     open func setImageWhen(normal: UIImage?, selected: UIImage?, disabled: UIImage?) {
         self.buttonImages = YNImages.init(normal: normal, selected: selected, disabled: disabled)
         
@@ -105,6 +133,13 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
+    /**
+     Set label color.
+     
+     - Parameter normal: Normal color
+     - Parameter selected: Selected color
+     - Parameter disabled: Disabled color
+     */
     open func setLabelColorWhen(normal: UIColor, selected: UIColor, disabled: UIColor) {
         self.buttonlabelFontColors = YNFontColor.init(normal: normal, selected: selected, disabled: disabled)
         
@@ -113,6 +148,13 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
+    /**
+     Set label font.
+     
+     - Parameter normal: Normal font
+     - Parameter selected: Selected font
+     - Parameter disabled: Disabled font
+     */
     open func setLabelFontWhen(normal: UIFont, selected: UIFont, disabled: UIFont) {
         self.buttonlabelFonts = YNFont.init(normal: normal, selected: selected, disabled: disabled)
         
@@ -121,6 +163,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
+    /**
+     Make button label always selected. (not button image)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
     open func alwaysSelected(at index: Int) {
         self.checkIndex(index: index)
         self.alwaysOnIndex = index
@@ -129,16 +176,27 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.selected
     }
     
+    /**
+     Make button disabled (title and image you set)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
     open func disabledMenu(at index: Int) {
         self.checkIndex(index: index)
         dropDownButtons?[index].disabled()
     }
     
+    /**
+     Makes button enabled (title and image you set)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
     open func enabledMenu(at index: Int) {
         self.checkIndex(index: index)
         dropDownButtons?[index].enabled()
     }
     
+    /// Hide menu will be called when view is opened already.
     open func hideMenu() {
         if opened {
             hideMenu(yNDropDownButton: dropDownButtons?[openedIndex], buttonImageView: dropDownButtons?[openedIndex].buttonImageView, dropDownView: dropDownViews?[openedIndex], didComplete: nil)
@@ -146,11 +204,21 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
+    /**
+     Change menu title you called. you can call it in YNDropDownMenu or YNDropDownView
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
     open func changeMenu(title: String, at index: Int) {
         dropDownButtons?[index].buttonLabel.text = title
 
     }
     
+    /**
+     Change view you called. you can call it in YNDropDownMenu or YNDropDownView
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
     open func changeView(view: UIView, at index: Int) {
         self.checkIndex(index: index)
         
@@ -162,6 +230,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
 
     }
     
+    /**
+     View will be closed and open when already opened. If not, just open drop down view
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
     open func showAndHideMenu(at index: Int) {
         self.checkIndex(index: index)
         
@@ -184,21 +257,21 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         opened = !opened
     }
     
-    @objc private func menuClicked(_ sender: YNDropDownButton) {
+    @objc internal func menuClicked(_ sender: YNDropDownButton) {
         self.showAndHideMenu(at: sender.tag)
     }
     
-    @objc private func blurEffectViewClicked(_ sender: UITapGestureRecognizer) {
+    @objc internal func blurEffectViewClicked(_ sender: UITapGestureRecognizer) {
         self.hideMenu()
     }
     
-    private func checkIndex(index: Int) {
+    internal func checkIndex(index: Int) {
         if index >= numberOfMenu {
             fatalError("index should be smaller than menu count")
         }
     }
     
-    private func showMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownView: UIView?, didComplete: (()-> Void)?) {
+    internal func showMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownView: UIView?, didComplete: (()-> Void)?) {
         guard let yNDropDownButton = yNDropDownButton else { return }
         guard let dropDownView = dropDownView else { return }
         
@@ -240,7 +313,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         })
     }
     
-    private func hideMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownView: UIView?, didComplete: (()-> Void)?) {
+    internal func hideMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownView: UIView?, didComplete: (()-> Void)?) {
         guard let yNDropDownButton = yNDropDownButton else { return }
         guard let dropDownView = dropDownView else { return }
         
@@ -280,7 +353,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     
-    private func changeBlurEffectView() {
+    internal func changeBlurEffectView() {
         self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: UIScreen.main.bounds.size.height - self.frame.origin.y)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(blurEffectViewClicked(_:)))
         self.blurEffectView?.addGestureRecognizer(tapGesture)
@@ -288,7 +361,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
 
     }
     
-    private func initViews() {
+    internal func initViews() {
         self.clipsToBounds = true
         
         self.backgroundColor = UIColor.white
