@@ -115,6 +115,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.initViews()
     }
     
+    /// Init coder
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
