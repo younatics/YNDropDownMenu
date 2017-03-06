@@ -1,4 +1,6 @@
 # Updates
+## [v2.0.8](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.8)
+* Support SPM
 
 ## [v2.0.7](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.7)
 * Add Cocoapods doc
