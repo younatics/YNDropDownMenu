@@ -83,14 +83,14 @@
 			isa = PBXGroup;
 			children = (
 				19162CED1E6AA0E000047D46 /* AppDelegate.swift */,
-				19162CEE1E6AA0E000047D46 /* LaunchScreen.xib */,
-				19162CF01E6AA0E000047D46 /* Main.storyboard */,
+				19162CF71E6AA0E000047D46 /* ViewController.swift */,
 				19162CF21E6AA0E000047D46 /* DropDownViews.swift */,
 				19162CF31E6AA0E000047D46 /* DropDownViews.xib */,
+				19162CEE1E6AA0E000047D46 /* LaunchScreen.xib */,
+				19162CF01E6AA0E000047D46 /* Main.storyboard */,
 				19162CF41E6AA0E000047D46 /* Images.xcassets */,
 				19162CF51E6AA0E000047D46 /* IMG_2279.PNG */,
 				19162CF61E6AA0E000047D46 /* Info.plist */,
-				19162CF71E6AA0E000047D46 /* ViewController.swift */,
 			);
 			name = Example;
 			path = YNDropDownMenu/Example;

@@ -1,4 +1,7 @@
 # Updates
+## [v2.0.9](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.9)
+* Add bottom line for seperator 
+
 ## [v2.0.8](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.8)
 * Support SPM
 

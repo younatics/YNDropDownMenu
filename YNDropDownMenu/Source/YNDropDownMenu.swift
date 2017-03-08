@@ -73,7 +73,8 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     /// Hide menu spring damping Default value: *0.8*
     open var hideMenuSpringWithDamping:CGFloat = 0.8
     
-    
+    /// Bottom 0.5px line
+    open var bottomLine: UIView!
     /**
      Init YNDropDownMenu with frame, views, strings. Views count and titles count should be same
      
@@ -386,6 +387,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 _dropDownView.frame.origin.y = -_dropDownView.frame.height + CGFloat(menuHeight)
             }
         }
+        
+        self.bottomLine = UIView(frame: CGRect(x: self.frame.origin.x, y: CGFloat(menuHeight) - 0.5, width: self.frame.width, height: 0.5))
+        self.bottomLine.backgroundColor = UIColor(colorLiteralRed: 225/255, green: 225/255, blue: 225/255, alpha: 1.0)
+        self.bottomLine.isHidden = true
+        self.addSubview(self.bottomLine)
         
         let blurEffect = UIBlurEffect(style: blurEffectStyle)
         self.blurEffectView = UIVisualEffectView(effect: blurEffect)

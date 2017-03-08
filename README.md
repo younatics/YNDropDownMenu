@@ -152,6 +152,13 @@ Change View At Index
 view.changeView(view: UIView(), at: 3)
 ```
 
+Change Bottom Line
+```swift
+view.bottomLine.backgroundColor = UIColor.black
+view.bottomLine.isHidden = false
+
+```
+
 ### Deprecated
 ```swift
 extension YNDropDownMenu {
