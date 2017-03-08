@@ -38,4 +38,18 @@ public protocol YNDropDownDelegate: class {
      */
     func changeView(view: UIView, at index: Int)
     
+    /**
+     Make button label always selected. (not button image)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
+    func alwaysSelected(at index: Int)
+
+    /**
+     Make button label normal that selected before. (not button image)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
+    func normalSelected(at index: Int)
+
 }

@@ -72,6 +72,10 @@ class DropDownView: YNDropDownView {
 
     // Change View At Index 
     self.changeView(view: UIView(), at: 3)
+
+    // Always Selected Menu
+    self.alwaysSelected(at: 0)
+    self.normalSelected(at: 0)
 }
 ```
 
@@ -94,6 +98,7 @@ view.enabledMenu(at: 3)
 Always/Normal selected button label
 ```swift
 view.alwaysSelected(at: 0)
+view.normalSelected(at: 0)
 ```
 
 Button Image with 3 situations (normal, selected, disabled)
@@ -159,7 +164,6 @@ Change Bottom Line
 ```swift
 view.bottomLine.backgroundColor = UIColor.black
 view.bottomLine.isHidden = false
-
 ```
 
 

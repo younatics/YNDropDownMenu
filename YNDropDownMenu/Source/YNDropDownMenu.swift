@@ -44,7 +44,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
-    internal var alwaysOnIndex: Int?
+    internal var alwaysOnIndex: [Int]?
     internal var dropDownViewTitles: [String]?
 
     /// Blur effect view will changed if you change this popperty. Backgorund view don't have to be blur view (e.g. UIColor.black)
@@ -180,10 +180,37 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
      */
     open func alwaysSelected(at index: Int) {
         self.checkIndex(index: index)
-        self.alwaysOnIndex = index
+        
+        guard let alwaysOnIndex = self.alwaysOnIndex else { return }
+        
+        if alwaysOnIndex.contains(index) {
+            print("YNDropDownMenu: Alreay index is contained in Array")
+        } else {
+            self.alwaysOnIndex?.append(index)
+        }
         
         dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.selected
         dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.selected
+    }
+    
+    /**
+     Make button label normal that selected before. (not button image)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
+    open func normalSelected(at index: Int) {
+        self.checkIndex(index: index)
+        
+        guard let alwaysOnIndex = self.alwaysOnIndex else { return }
+
+        if let value = alwaysOnIndex.index(of: index) {
+            self.alwaysOnIndex!.remove(at: value)
+        } else {
+            print("YNDropDownMenu: Index is not contained in Array")
+        }
+        
+        dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.normal
+        dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.normal
     }
     
     /**
@@ -377,7 +404,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                     _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
                     _buttonImageView.image = self.buttonImages?.normal
                 }
-                if self.alwaysOnIndex != yNDropDownButton.tag {
+                
+                guard let alwaysOnIndex = self.alwaysOnIndex else { return }
+                if !alwaysOnIndex.contains(yNDropDownButton.tag) {
                     yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
                     yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.normal
                 }
@@ -403,6 +432,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     internal func initViews() {
         self.clipsToBounds = true
+        self.alwaysOnIndex = [Int]()
         
         self.backgroundColor = UIColor.white
         self.dropDownButtons = [YNDropDownButton]()

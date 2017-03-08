@@ -23,11 +23,15 @@ class ZBFilterMemeView: YNDropDownView {
         self.initViews()
     }
     @IBAction func confirmButtonClicked(_ sender: Any) {
+        self.normalSelected(at: 1)
         self.hideMenu()
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
 //        self.changeMenu(title: "Changed", at: 1)
-        self.changeMenu(title: "Changed", status: .selected, at: 1)
+//        self.changeMenu(title: "Changed", status: .selected, at: 0)
+        self.alwaysSelected(at: 1)
+//        self.alwaysSelected(at: 2)
+//        self.alwaysSelected(at: 3)
         self.hideMenu()
 
     }

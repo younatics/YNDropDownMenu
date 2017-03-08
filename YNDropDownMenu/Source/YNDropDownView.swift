@@ -55,4 +55,23 @@ open class YNDropDownView: UIView {
     open func changeView(view: UIView, at index: Int) {
         self.delegate?.changeView(view: view, at: index)
     }
+    
+    /**
+     Make button label always selected. (not button image)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
+    open func alwaysSelected(at index: Int) {
+        self.delegate?.alwaysSelected(at: index)
+    }
+    
+    /**
+     Make button label normal that selected before. (not button image)
+     
+     - Parameter index: Index should be smaller than your menu counts
+     */
+    open func normalSelected(at index: Int) {
+        self.delegate?.normalSelected(at: index)
+    }
+
 }
