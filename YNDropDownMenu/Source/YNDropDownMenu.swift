@@ -8,6 +8,13 @@
 
 import UIKit
 
+/// Button status
+public enum YNStatus {
+    case normal
+    case selected
+    case disabled
+}
+
 /// Main Class for YNDropDownMenu
 open class YNDropDownMenu: UIView, YNDropDownDelegate {
     internal var opened: Bool = false
@@ -210,16 +217,46 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     /**
      Change menu title you called. you can call it in YNDropDownMenu or YNDropDownView
      
+     - Parameter title: Menu title
      - Parameter index: Index should be smaller than your menu counts
      */
     open func changeMenu(title: String, at index: Int) {
         dropDownButtons?[index].buttonLabel.text = title
-
     }
+    
+    /**
+     Change menu title you called. you can call it in YNDropDownMenu or YNDropDownView
+     
+     - Parameter title: Menu title
+     - Parameter index: Index should be smaller than your menu counts
+     */
+    open func changeMenu(title: String, status: YNStatus, at index: Int) {
+        switch status {
+        case .normal:
+            dropDownButtons?[index].buttonLabel.text = title
+            dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.normal
+            dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.normal
+            dropDownButtons?[index].isUserInteractionEnabled = true
+
+        case .selected:
+            dropDownButtons?[index].buttonLabel.text = title
+            dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.selected
+            dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.selected
+            dropDownButtons?[index].isUserInteractionEnabled = true
+
+        case .disabled:
+            dropDownButtons?[index].buttonLabel.text = title
+            dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.disabled
+            dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.disabled
+            dropDownButtons?[index].isUserInteractionEnabled = false
+        }
+    }
+
     
     /**
      Change view you called. you can call it in YNDropDownMenu or YNDropDownView
      
+     - Parameter view: view that you want to change
      - Parameter index: Index should be smaller than your menu counts
      */
     open func changeView(view: UIView, at index: Int) {

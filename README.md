@@ -68,6 +68,7 @@ class DropDownView: YNDropDownView {
 
     // Change Menu Title At Index
     self.changeMenu(title: "Changed", at: 1)
+    self.changeMenu(title: "Changed", status: .selected, at: 1)
 
     // Change View At Index 
     self.changeView(view: UIView(), at: 3)
@@ -90,7 +91,7 @@ view.disabledMenu(at: 2)
 view.enabledMenu(at: 3)
 ```
 
-Always selected button label
+Always/Normal selected button label
 ```swift
 view.alwaysSelected(at: 0)
 ```
@@ -145,6 +146,8 @@ view.hideMenuSpringWithDamping = 0.8
 Change Menu Title At Index
 ```swift
 view.changeMenu(title: "Changed", at: 1)
+view.changeMenu(title: "Changed", status: .selected, at: 1)
+
 ```
 
 Change View At Index 
@@ -158,6 +161,7 @@ view.bottomLine.backgroundColor = UIColor.black
 view.bottomLine.isHidden = false
 
 ```
+
 
 ### Deprecated
 ```swift

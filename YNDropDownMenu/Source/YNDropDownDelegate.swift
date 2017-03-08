@@ -24,8 +24,18 @@ public protocol YNDropDownDelegate: class {
     /**
      Change view you called. you can call it in YNDropDownMenu or YNDropDownView
      
+     - Parameter title: View you want to change
+     - Parameter status: normal, selected, disabled
+     - Parameter index: Index should be smaller than your menu counts
+     */
+    func changeMenu(title: String, status: YNStatus, at index: Int)
+    
+    /**
+     Change view you called. you can call it in YNDropDownMenu or YNDropDownView
+     
      - Parameter view: View you want to change
      - Parameter index: Index should be smaller than your menu counts
      */
     func changeView(view: UIView, at index: Int)
+    
 }

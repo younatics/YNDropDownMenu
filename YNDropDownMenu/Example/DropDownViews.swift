@@ -26,7 +26,8 @@ class ZBFilterMemeView: YNDropDownView {
         self.hideMenu()
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        self.changeMenu(title: "Changed", at: 1)
+//        self.changeMenu(title: "Changed", at: 1)
+        self.changeMenu(title: "Changed", status: .selected, at: 1)
         self.hideMenu()
 
     }

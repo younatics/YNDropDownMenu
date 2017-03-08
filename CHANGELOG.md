@@ -1,4 +1,8 @@
 # Updates
+
+## [v2.0.10](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.10)
+* Add `changeMenu(title: String, status: YNStatus, at index: Int)` method in `YNDropDownView` and `YNDropDownMenu`
+ 
 ## [v2.0.9](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.9)
 * Add bottom line for seperator 
 
