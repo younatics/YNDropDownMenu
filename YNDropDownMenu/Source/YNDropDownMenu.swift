@@ -349,9 +349,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.addSubview(dropDownView)
         self.sendSubview(toBack: dropDownView)
         
-        if let v = dropDownView as? YNDropDownView {
-            v.dropDownViewOpened()
-        }
+        (dropDownView as? YNDropDownView)?.dropDownViewOpened()
         
         if self.backgroundBlurEnabled, let _blurEffectView = blurEffectView {
             self.superview?.addSubview(_blurEffectView)
@@ -387,9 +385,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             let yNDropDownButton = yNDropDownButton,
             let dropDownView = dropDownView else { return }
         
-        if let v = dropDownView as? YNDropDownView {
-            v.dropDownViewClosed()
-        }
+        (dropDownView as? YNDropDownView)?.dropDownViewClosed()
 
         UIView.animate(
             withDuration: self.hideMenuDuration,
