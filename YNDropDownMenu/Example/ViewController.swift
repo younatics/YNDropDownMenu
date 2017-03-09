@@ -20,7 +20,8 @@ class ViewController: UIViewController {
             let view = YNDropDownMenu(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
             view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
             view.setLabelColorWhen(normal: .black, selected: FFA409, disabled: .gray)
-            view.setLabel(font: .systemFont(ofSize: 12))
+            view.setLabelFontWhen(normal: .systemFont(ofSize: 12), selected: .boldSystemFont(ofSize: 12), disabled: .systemFont(ofSize: 12))
+//            view.setLabel(font: .systemFont(ofSize: 12))
             
             view.backgroundBlurEnabled = true
 //            view.bottomLine.backgroundColor = UIColor.black
