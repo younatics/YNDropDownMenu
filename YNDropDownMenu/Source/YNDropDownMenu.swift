@@ -239,10 +239,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     /// Hide menu will be called when view is opened already.
     open func hideMenu() {
-        if opened {
-            hideMenu(yNDropDownButton: dropDownButtons?[openedIndex], buttonImageView: dropDownButtons?[openedIndex].buttonImageView, dropDownView: dropDownViews?[openedIndex], didComplete: nil)
-            opened = !opened
-        }
+        guard opened else { return }
+        hideMenu(yNDropDownButton: dropDownButtons?[openedIndex], buttonImageView: dropDownButtons?[openedIndex].buttonImageView, dropDownView: dropDownViews?[openedIndex], didComplete: nil)
+        opened = !opened
     }
     
     /**
