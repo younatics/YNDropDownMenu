@@ -431,10 +431,10 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     internal func initViews() {
         self.clipsToBounds = true
-        self.alwaysOnIndex = [Int]()
+        self.alwaysOnIndex = []
         
-        self.backgroundColor = UIColor.white
-        self.dropDownButtons = [YNDropDownButton]()
+        self.backgroundColor = .white
+        self.dropDownButtons = []
         
         let eachWidth = self.bounds.size.width / CGFloat(numberOfMenu)
         
