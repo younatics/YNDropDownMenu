@@ -262,21 +262,19 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
      - Parameter index: Index should be smaller than your menu counts
      */
     open func changeMenu(title: String, status: YNStatus, at index: Int) {
+        changeMenu(title: title, at: index)
         switch status {
         case .normal:
-            dropDownButtons?[index].buttonLabel.text = title
             dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.normal
             dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.normal
             dropDownButtons?[index].isUserInteractionEnabled = true
 
         case .selected:
-            dropDownButtons?[index].buttonLabel.text = title
             dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.selected
             dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.selected
             dropDownButtons?[index].isUserInteractionEnabled = true
 
         case .disabled:
-            dropDownButtons?[index].buttonLabel.text = title
             dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.disabled
             dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.disabled
             dropDownButtons?[index].isUserInteractionEnabled = false
