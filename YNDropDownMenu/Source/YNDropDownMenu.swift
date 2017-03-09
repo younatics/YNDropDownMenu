@@ -295,7 +295,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         view.frame.size = CGSize(width: self.bounds.size.width, height: view.frame.size.height)
         view.frame.origin.y = -view.frame.height + CGFloat(menuHeight)
         view.isHidden = true
-
     }
     
     /**
@@ -319,7 +318,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             showMenu(yNDropDownButton: dropDownButtons?[index], buttonImageView: dropDownButtons?[index].buttonImageView, dropDownView: dropDownViews?[index], didComplete: nil)
         } else {
             hideMenu(yNDropDownButton: dropDownButtons?[index], buttonImageView: dropDownButtons?[index].buttonImageView, dropDownView: dropDownViews?[index], didComplete: nil)
-
         }
 
         opened = !opened
@@ -426,7 +424,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(blurEffectViewClicked(_:)))
         self.blurEffectView?.addGestureRecognizer(tapGesture)
         self.blurEffectView?.alpha = 0
-
     }
     
     internal func initViews() {
