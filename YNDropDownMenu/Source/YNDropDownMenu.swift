@@ -340,8 +340,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     internal func showMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownView: UIView?, didComplete: (()-> Void)?) {
-        guard let yNDropDownButton = yNDropDownButton else { return }
-        guard let dropDownView = dropDownView else { return }
+        guard
+            let yNDropDownButton = yNDropDownButton,
+            let dropDownView = dropDownView else { return }
         
         dropDownView.isHidden = false
 
@@ -382,8 +383,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     internal func hideMenu(yNDropDownButton: YNDropDownButton?, buttonImageView: UIImageView?, dropDownView: UIView?, didComplete: (()-> Void)?) {
-        guard let yNDropDownButton = yNDropDownButton else { return }
-        guard let dropDownView = dropDownView else { return }
+        guard
+            let yNDropDownButton = yNDropDownButton,
+            let dropDownView = dropDownView else { return }
         
         if let v = dropDownView as? YNDropDownView {
             v.dropDownViewClosed()
