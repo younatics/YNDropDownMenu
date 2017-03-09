@@ -372,9 +372,8 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
                 yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.selected
                 
-        }, completion: { (completion) in
-            guard let block = didComplete else { return }
-            block()
+        }, completion: { _ in
+            didComplete?()
         })
     }
     
@@ -408,13 +407,12 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                     yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.normal
                 }
 
-        }, completion: { (completion) in
+        }, completion: { _ in
             if self.backgroundBlurEnabled {
                 self.blurEffectView?.removeFromSuperview()
                 dropDownView.isHidden = true
             }
-            guard let block = didComplete else { return }
-            block()
+            didComplete?()
         })
     }
     
