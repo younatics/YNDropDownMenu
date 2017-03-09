@@ -19,15 +19,15 @@ class ViewController: UIViewController {
             // Inherit YNDropDownView if you want to hideMenu in your dropDownViews
             let view = YNDropDownMenu(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
             view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
-            view.setLabelColorWhen(normal: UIColor.black, selected: FFA409, disabled: UIColor.gray)
-            view.setLabelFontWhen(normal: UIFont.systemFont(ofSize: 12), selected: UIFont.boldSystemFont(ofSize: 12), disabled: UIFont.systemFont(ofSize: 12))
+            view.setLabelColorWhen(normal: .black, selected: FFA409, disabled: .gray)
+            view.setLabel(font: .systemFont(ofSize: 12))
             
             view.backgroundBlurEnabled = true
 //            view.bottomLine.backgroundColor = UIColor.black
             view.bottomLine.isHidden = false
             // Add custom blurEffectView
             let backgroundView = UIView()
-            backgroundView.backgroundColor = UIColor.black
+            backgroundView.backgroundColor = .black
             view.blurEffectView = backgroundView
             view.blurEffectViewAlpha = 0.7
             
