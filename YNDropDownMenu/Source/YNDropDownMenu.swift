@@ -159,6 +159,15 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     /**
+     Set the same label font for every status.
+     
+     - Parameter font: Normal/Selected/Disabled font
+     */
+    open func setLabel(font: UIFont) {
+        self.setLabelFontWhen(normal: font, selected: font, disabled: font)
+    }
+    
+    /**
      Set label font.
      
      - Parameter normal: Normal font
