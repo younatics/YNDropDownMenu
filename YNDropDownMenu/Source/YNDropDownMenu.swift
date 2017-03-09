@@ -35,11 +35,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
         set {
             guard let _dropDownViews = newValue else { return }
-            for view in _dropDownViews {
-                if let v = view as? YNDropDownView {
-                    v.delegate = self
-                }
-            }
+            _dropDownViews.flatMap({ $0 as? YNDropDownView }).forEach { $0.delegate = self }
             self._dropDownViews = newValue
         }
     }
