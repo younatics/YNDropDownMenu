@@ -205,7 +205,7 @@ extension YNDropDownView {
 ```
 
 ## Author
-[Younatics](http://younatics.github.io)
+[🇰🇷 younatics](http://younatics.github.io)
 
 ## Thanks to
 [jegumhon](https://github.com/jegumhon)
