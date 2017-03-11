@@ -1,4 +1,8 @@
 # Updates
+
+## [v2.1.0](https://github.com/younatics/YNDropDownMenu/releases/tag/2.1.0)
+* Merged [#7](https://github.com/younatics/YNDropDownMenu/pull/7)
+
 ## [v2.0.11](https://github.com/younatics/YNDropDownMenu/releases/tag/2.0.11)
 * Add `alwaysSelected(at index: Int)` method in `YNDropDownView`
 * Add `normalSelected(at index: Int)` method in `YNDropDownView` and `YNDropDownMenu`
