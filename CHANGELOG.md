@@ -1,5 +1,8 @@
 # Updates
 
+## [v2.1.1](https://github.com/younatics/YNDropDownMenu/releases/tag/2.1.1)
+* Fixed bug [#8](https://github.com/younatics/YNDropDownMenu/issues/8)
+
 ## [v2.1.0](https://github.com/younatics/YNDropDownMenu/releases/tag/2.1.0)
 * Merged [#7](https://github.com/younatics/YNDropDownMenu/pull/7)
 
