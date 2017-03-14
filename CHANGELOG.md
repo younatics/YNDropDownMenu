@@ -1,5 +1,8 @@
 # Updates
 
+## [v2.1.3](https://github.com/younatics/YNDropDownMenu/releases/tag/2.1.3)
+* Add more docs
+
 ## [v2.1.2](https://github.com/younatics/YNDropDownMenu/releases/tag/2.1.2)
 * Add more docs
 

@@ -10,8 +10,13 @@ import UIKit
 
 /// Button status
 public enum YNStatus {
+    /// Normal YNStatus
     case normal
+    
+    /// Selected YNStatus
     case selected
+    
+    /// Disabled YNStatus
     case disabled
 }
 
