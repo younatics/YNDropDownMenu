@@ -1,15 +1,18 @@
 # YNDropDownMenu
+![titleImage](Images/younatics.png)
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Version](https://img.shields.io/cocoapods/v/YNDropDownMenu.svg?style=flat)]
 (http://cocoapods.org/pods/YNDropDownMenu)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/YNDropDownMenu.svg)](http://cocoadocs.org/docsets/YNDropDownMenu)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/younatics/YNDropDownMenu.svg?branch=master)](https://travis-ci.org/younatics/YNDropDownMenu)
 [![Platform]
 (https://img.shields.io/cocoapods/p/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
-#### [Listed 2nd at trending open source and 3rd at trending developer in Github Swift category [02/24/2017]](https://github.com/younatics/YNDropDownMenu/blob/master/Images/2nd.PNG)
+####✨ [Listed 2nd at trending open source and 3rd at trending developer in Github Swift category [02/24/2017]](https://github.com/younatics/YNDropDownMenu/blob/master/Images/2nd.PNG)
 
 ## Updates
 
@@ -203,7 +206,7 @@ extension YNDropDownView {
 ```
 
 ## Author
-[Younatics](http://younatics.github.io)
+[🇰🇷 younatics](http://younatics.github.io)
 
 ## Thanks to
 [jegumhon](https://github.com/jegumhon)
