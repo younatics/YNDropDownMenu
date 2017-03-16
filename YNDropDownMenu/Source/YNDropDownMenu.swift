@@ -355,7 +355,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         (dropDownView as? YNDropDownView)?.dropDownViewOpened()
         
         if self.backgroundBlurEnabled, let _blurEffectView = blurEffectView {
-            self.superview?.addSubview(_blurEffectView)
             self.superview?.insertSubview(_blurEffectView, belowSubview: self)
         }
         UIView.animate(
