@@ -207,7 +207,7 @@ extension YNDropDownView {
 [@zigbang](https://github.com/zigbang)
 
 ## Author
-[🇰🇷 younatics](http://younatics.github.io)
+[younatics 🇰🇷](http://younatics.github.io)
 
 ## Thanks to
 [jegumhon](https://github.com/jegumhon)
