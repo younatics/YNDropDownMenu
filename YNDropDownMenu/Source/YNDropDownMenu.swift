@@ -193,7 +193,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         guard let alwaysOnIndex = self.alwaysOnIndex else { return }
         
         if alwaysOnIndex.contains(index) {
-            print("YNDropDownMenu: Alreay index is contained in Array")
+            print("YNDropDownMenu: Already index is contained in Array")
         } else {
             self.alwaysOnIndex?.append(index)
         }
