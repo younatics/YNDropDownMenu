@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '2.1.3'
+  s.version          = '2.2.0'
   s.summary          = 'Awesome Dropdown menu for iOS with Swift 3'
 
   s.description      = <<-DESC

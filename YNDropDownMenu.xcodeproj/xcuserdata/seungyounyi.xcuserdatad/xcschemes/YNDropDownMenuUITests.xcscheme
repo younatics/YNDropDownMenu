@@ -16,7 +16,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19D0930D1E6A8A31008E7695"
+               BlueprintIdentifier = "199C67721E89688E00F4C297"
                BuildableName = "YNDropDownMenuUITests.xctest"
                BlueprintName = "YNDropDownMenuUITests"
                ReferencedContainer = "container:YNDropDownMenu.xcodeproj">

@@ -196,14 +196,6 @@
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
-    },
-    {
-      "filename" : "Icon-App-60x60@1x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-App-76x76@3x.png",
-      "unassigned" : true
     }
   ],
   "info" : {

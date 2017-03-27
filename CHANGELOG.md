@@ -1,5 +1,8 @@
 # Updates
 
+## [v2.2.0](https://github.com/younatics/YNDropDownMenu/releases/tag/2.2.0)
+* Add UITest
+
 ## [v2.1.3](https://github.com/younatics/YNDropDownMenu/releases/tag/2.1.3)
 * Add more docs
 
