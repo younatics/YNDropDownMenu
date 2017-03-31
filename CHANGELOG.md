@@ -1,4 +1,7 @@
 # Updates
+## [v2.2.1](https://github.com/younatics/YNDropDownMenu/releases/tag/2.2.1)
+* Changed M_PI to double.pi
+* Support Upside Down
 
 ## [v2.2.0](https://github.com/younatics/YNDropDownMenu/releases/tag/2.2.0)
 * Add UITest
