@@ -14,7 +14,6 @@
 		19162D041E6AA0E000047D46 /* DropDownViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF31E6AA0E000047D46 /* DropDownViews.xib */; };
 		19162D051E6AA0E000047D46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF41E6AA0E000047D46 /* Images.xcassets */; };
 		19162D061E6AA0E000047D46 /* IMG_2279.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF51E6AA0E000047D46 /* IMG_2279.PNG */; };
-		19162D071E6AA0E000047D46 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19162CF61E6AA0E000047D46 /* Info.plist */; };
 		19162D081E6AA0E000047D46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CF71E6AA0E000047D46 /* ViewController.swift */; };
 		19162D091E6AA0E000047D46 /* YNDropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CF91E6AA0E000047D46 /* YNDropDownButton.swift */; };
 		19162D0A1E6AA0E000047D46 /* YNDropDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19162CFA1E6AA0E000047D46 /* YNDropDownDelegate.swift */; };
@@ -198,7 +197,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = SeungyounYi;
 				TargetAttributes = {
 					199C67721E89688E00F4C297 = {
@@ -247,7 +246,6 @@
 			files = (
 				19162D011E6AA0E000047D46 /* LaunchScreen.xib in Resources */,
 				19162D051E6AA0E000047D46 /* Images.xcassets in Resources */,
-				19162D071E6AA0E000047D46 /* Info.plist in Resources */,
 				19162D061E6AA0E000047D46 /* IMG_2279.PNG in Resources */,
 				19162D021E6AA0E000047D46 /* Main.storyboard in Resources */,
 				19162D041E6AA0E000047D46 /* DropDownViews.xib in Resources */,
@@ -469,6 +467,7 @@
 				199C677C1E89688E00F4C297 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19D092F51E6A8A30008E7695 /* Build configuration list for PBXProject "YNDropDownMenu" */ = {
 			isa = XCConfigurationList;

@@ -370,7 +370,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 }
                 self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: dropDownView.frame.height + CGFloat(self.menuHeight))
                 if let _buttonImageView = buttonImageView {
-                    _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 1.0, 0.0, 0.0)
+                    _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(Double.pi), 1.0, 0.0, 0.0)
                     _buttonImageView.image = self.buttonImages?.selected
                 }
                 yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.selected
@@ -401,7 +401,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                 }
                 self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: CGFloat(self.menuHeight))
                 if let _buttonImageView = buttonImageView {
-                    _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 0.0);
+                    _buttonImageView.layer.transform = CATransform3DMakeRotation(CGFloat(Double.pi), 0.0, 0.0, 0.0);
                     _buttonImageView.image = self.buttonImages?.normal
                 }
                 
