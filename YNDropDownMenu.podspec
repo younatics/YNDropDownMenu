@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '2.2.1'
+  s.version          = '2.3.0'
   s.summary          = 'Awesome Dropdown menu for iOS with Swift 3'
 
   s.description      = <<-DESC
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
   s.source           = { :git => 'https://github.com/younatics/YNDropDownMenu.git', :tag => s.version.to_s }
-  s.source_files     = 'YNDropDownMenu/Source/*.swift','YNDropDownMenu/Source/*.{h,m}'
+  s.source_files     = 'YNDropDownMenu/*.swift'
 
   s.ios.deployment_target = '8.0'
 

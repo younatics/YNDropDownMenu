@@ -9,7 +9,7 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>YNDropDownMenuUITests.xcscheme</key>
+		<key>YNDropDownMenuDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -17,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>199C67721E89688E00F4C297</key>
+		<key>19FE32AC1EA7C65A00A4DB5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>19D092F91E6A8A30008E7695</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>19D0930D1E6A8A31008E7695</key>
+		<key>19FE32BB1EA7C6A000A4DB5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/seungyounyi/YNDropDownMenu/YNDropDownMenu/YNDropDownMenu.xcodeproj">
+      location = "self:YNDropDownMenu.xcodeproj">
    </FileRef>
 </Workspace>

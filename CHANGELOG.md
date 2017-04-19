@@ -1,4 +1,7 @@
 # Updates
+## [v2.3.0](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.0)
+* Make Framework
+
 ## [v2.2.1](https://github.com/younatics/YNDropDownMenu/releases/tag/2.2.1)
 * Changed M_PI to double.pi
 * Support Upside Down

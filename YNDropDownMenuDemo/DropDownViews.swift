@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YNDropDownMenu
 
 class ZBFilterMemeView: YNDropDownView {
     @IBOutlet var tradeTypeSegmentControl: UISegmentedControl!
