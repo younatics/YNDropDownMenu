@@ -1,4 +1,7 @@
 # Updates
+## [v2.3.1](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.1)
+* Minor UI Update
+
 ## [v2.3.0](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.0)
 * Make Framework
 
