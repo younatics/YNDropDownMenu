@@ -47,7 +47,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     internal var alwaysOnIndex: [Int]?
     internal var dropDownViewTitles: [String]?
-
+    
     /// Blur effect view will changed if you change this popperty. Backgorund view don't have to be blur view (e.g. UIColor.black)
     open var blurEffectView: UIView? {
         didSet {
@@ -109,17 +109,17 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     @available(*, deprecated, message: "use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead")
     public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String]) {
         super.init(frame: frame)
-
+        
         if YNDropDownViews.count != dropDownViewTitles.count {
             fatalError("Please make dropDownViews count same with dropDownViewsTitles count")
         } else {
             numberOfMenu = YNDropDownViews.count
         }
-
+        
         self.dropDownViews = YNDropDownViews
         self.dropDownViewTitles = dropDownViewTitles
         self.menuHeight = self.frame.height
-
+        
         self.initViews()
     }
     
@@ -127,6 +127,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     /**
      Set arrow image or other images. Same image size is the best
@@ -143,6 +144,104 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
+    
+    /**
+     Set an image for a drop-down button with various colors.
+     
+     - Parameter normal: Normal image used as a drop-down button.
+     - Parameter selectedColor: Tint color masking the image when the button selected.
+     - Parameter disabledColor: Tint color masking the image when the button disabled.
+     */
+    open func setImageWhen(normal: UIImage?, selectedTintColor: UIColor, disabledTintColor: UIColor) {
+        
+        let selected = imageMaskingwithColor(selectedTintColor, image: normal)
+        let disabled = imageMaskingwithColor(disabledTintColor, image: normal)
+        
+        self.buttonImages = YNImages.init(normal: normal, selected: selected, disabled: disabled)
+        
+        for i in 0..<numberOfMenu {
+            dropDownButtons?[i].buttonImages = self.buttonImages
+        }
+        
+        
+    }
+    
+    
+    /**
+     Set an image for a drop-down button with various colors.
+     
+     - Parameter normal: Normal image used as a drop-down button.
+     - Parameter selectedColorRGB: a Hex code color masking the image when the button selected.
+     - Parameter disabledColorRGB: a Hex code color masking the image when the button disabled.
+     */
+    open func setImageWhen(normal: UIImage?, selectedTintColorRGB: String, disabledTintColorRGB: String) {
+        
+        let selected = imageMaskingwithColor(hexStringToUIColor(hex: selectedTintColorRGB), image: normal)
+        let disabled = imageMaskingwithColor(hexStringToUIColor(hex: disabledTintColorRGB), image: normal)
+        
+        self.buttonImages = YNImages.init(normal: normal, selected: selected, disabled: disabled)
+        
+        for i in 0..<numberOfMenu {
+            dropDownButtons?[i].buttonImages = self.buttonImages
+        }
+        
+    }
+    
+    /// Convert String-type hex color codes into UIColor.
+    private func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.characters.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    /// Mask images with UIColor.
+    private func imageMaskingwithColor(_ color: UIColor, image: UIImage?) -> UIImage?{
+        
+        if let image = image {
+            
+            UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+            let context = UIGraphicsGetCurrentContext()!
+            
+            color.setFill()
+            
+            context.translateBy(x: 0, y: image.size.height)
+            context.scaleBy(x: 1.0, y: -1.0)
+            
+            let rect = CGRect(x: 0.0, y: 0.0, width: image.size.width, height: image.size.height)
+            context.draw(image.cgImage!, in: rect)
+            
+            context.setBlendMode(CGBlendMode.sourceIn)
+            context.addRect(rect)
+            context.drawPath(using: CGPathDrawingMode.fill)
+            
+            let coloredImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return coloredImage
+            
+        }else{
+            
+            return nil
+        }
+    }
+    
+    
     /**
      Set label color.
      
@@ -157,6 +256,25 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             dropDownButtons?[i].labelFontColors = self.buttonlabelFontColors
         }
     }
+    
+    
+    /**
+     Set label color with hex color codes
+     
+     - Parameter normal: Normal color
+     - Parameter selected: Selected color
+     - Parameter disabled: Disabled color
+     */
+    
+    open func setLabelColorWhen(normalRGB: String, selectedRGB: String, disabledRGB: String){
+        
+        self.buttonlabelFontColors = YNFontColor.init(normal: hexStringToUIColor(hex: normalRGB), selected: hexStringToUIColor(hex: selectedRGB), disabled: hexStringToUIColor(hex: disabledRGB))
+        
+        for i in 0..<numberOfMenu {
+            dropDownButtons?[i].labelFontColors = self.buttonlabelFontColors
+        }
+    }
+    
     
     /**
      Set the same label font for every status.
@@ -211,7 +329,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.checkIndex(index: index)
         
         guard let alwaysOnIndex = self.alwaysOnIndex else { return }
-
+        
         if let value = alwaysOnIndex.index(of: index) {
             self.alwaysOnIndex!.remove(at: value)
         } else {
@@ -272,19 +390,19 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.normal
             dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.normal
             dropDownButtons?[index].isUserInteractionEnabled = true
-
+            
         case .selected:
             dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.selected
             dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.selected
             dropDownButtons?[index].isUserInteractionEnabled = true
-
+            
         case .disabled:
             dropDownButtons?[index].buttonLabel.textColor = self.buttonlabelFontColors?.disabled
             dropDownButtons?[index].buttonLabel.font = self.buttonlabelFonts?.disabled
             dropDownButtons?[index].isUserInteractionEnabled = false
         }
     }
-
+    
     
     /**
      Change view you called. you can call it in YNDropDownMenu or YNDropDownView
@@ -324,7 +442,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         } else {
             hideMenu(yNDropDownButton: dropDownButtons?[index], buttonImageView: dropDownButtons?[index].buttonImageView, dropDownView: dropDownViews?[index], didComplete: nil)
         }
-
+        
         opened = !opened
     }
     
@@ -348,7 +466,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             let dropDownView = dropDownView else { return }
         
         dropDownView.isHidden = false
-
+        
         self.addSubview(dropDownView)
         self.sendSubview(toBack: dropDownView)
         
@@ -387,7 +505,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             let dropDownView = dropDownView else { return }
         
         (dropDownView as? YNDropDownView)?.dropDownViewClosed()
-
+        
         UIView.animate(
             withDuration: self.hideMenuDuration,
             delay: 0,
@@ -410,7 +528,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
                     yNDropDownButton.buttonLabel.textColor = self.buttonlabelFontColors?.normal
                     yNDropDownButton.buttonLabel.font = self.buttonlabelFonts?.normal
                 }
-
+                
         }, completion: { _ in
             if self.backgroundBlurEnabled {
                 self.blurEffectView?.removeFromSuperview()
