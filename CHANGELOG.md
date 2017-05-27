@@ -1,4 +1,7 @@
 # Updates
+## [v2.3.2](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.2)
+* Bug fixed
+
 ## [v2.3.1](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.1)
 * Minor UI Update
 
