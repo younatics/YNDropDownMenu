@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             //view.setImageWhen(normal: UIImage(named: "arrow_nor"), selectedTintColorRGB: "FFA409", disabledTintColorRGB: "FFA409")
             
             view.setLabelColorWhen(normal: .black, selected: FFA409, disabled: .gray)
-            //view.setLabelColorWhen(normalRGB: "000000", selectedRGB: "FFA409", disabledRGB: "FFA409")
+//            view.setLabelColorWhen(normalRGB: "000000", selectedRGB: "FFA409", disabledRGB: "FFA409")
             
             view.setLabelFontWhen(normal: .systemFont(ofSize: 12), selected: .boldSystemFont(ofSize: 12), disabled: .systemFont(ofSize: 12))
             //            view.setLabel(font: .systemFont(ofSize: 12))
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             //            view.disabledMenuAt(index: 2)
             //view.showAndHideMenuAt(index: 3)
             
-            view.setBackgroundColor(color: UIColor.clear)
+            view.setBackgroundColor(color: UIColor.white)
 
             self.view.addSubview(view)
         }

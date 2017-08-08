@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1946DA9F1F3986350077D2FD /* YNDropDownMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FE32AD1EA7C65A00A4DB5E /* YNDropDownMenu.framework */; };
+		1946DAA01F3986350077D2FD /* YNDropDownMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19FE32AD1EA7C65A00A4DB5E /* YNDropDownMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		19FE32B21EA7C65A00A4DB5E /* YNDropDownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 19FE32B01EA7C65A00A4DB5E /* YNDropDownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19FE32D41EA7C6AB00A4DB5E /* YNDropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE32CE1EA7C6AB00A4DB5E /* YNDropDownButton.swift */; };
 		19FE32D51EA7C6AB00A4DB5E /* YNDropDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE32CF1EA7C6AB00A4DB5E /* YNDropDownDelegate.swift */; };
@@ -23,12 +25,10 @@
 		19FE32EC1EA7C6C700A4DB5E /* IMG_2279.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19FE32E31EA7C6C700A4DB5E /* IMG_2279.PNG */; };
 		19FE32ED1EA7C6C700A4DB5E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19FE32E41EA7C6C700A4DB5E /* Info.plist */; };
 		19FE32EE1EA7C6C700A4DB5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE32E51EA7C6C700A4DB5E /* ViewController.swift */; };
-		19FE32EF1EA7C6CE00A4DB5E /* YNDropDownMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FE32AD1EA7C65A00A4DB5E /* YNDropDownMenu.framework */; };
-		19FE32F01EA7C6CE00A4DB5E /* YNDropDownMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19FE32AD1EA7C65A00A4DB5E /* YNDropDownMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		19FE32F11EA7C6CE00A4DB5E /* PBXContainerItemProxy */ = {
+		1946DAA11F3986350077D2FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 19FE32A41EA7C65A00A4DB5E /* Project object */;
 			proxyType = 1;
@@ -38,13 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		19FE32F31EA7C6CF00A4DB5E /* Embed Frameworks */ = {
+		1946DAA31F3986350077D2FD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				19FE32F01EA7C6CE00A4DB5E /* YNDropDownMenu.framework in Embed Frameworks */,
+				1946DAA01F3986350077D2FD /* YNDropDownMenu.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19FE32EF1EA7C6CE00A4DB5E /* YNDropDownMenu.framework in Frameworks */,
+				1946DA9F1F3986350077D2FD /* YNDropDownMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,12 +188,12 @@
 				19FE32B81EA7C6A000A4DB5E /* Sources */,
 				19FE32B91EA7C6A000A4DB5E /* Frameworks */,
 				19FE32BA1EA7C6A000A4DB5E /* Resources */,
-				19FE32F31EA7C6CF00A4DB5E /* Embed Frameworks */,
+				1946DAA31F3986350077D2FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				19FE32F21EA7C6CE00A4DB5E /* PBXTargetDependency */,
+				1946DAA21F3986350077D2FD /* PBXTargetDependency */,
 			);
 			name = YNDropDownMenuDemo;
 			productName = YNDropDownMenuDemo;
@@ -293,10 +293,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		19FE32F21EA7C6CE00A4DB5E /* PBXTargetDependency */ = {
+		1946DAA21F3986350077D2FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 19FE32AC1EA7C65A00A4DB5E /* YNDropDownMenu */;
-			targetProxy = 19FE32F11EA7C6CE00A4DB5E /* PBXContainerItemProxy */;
+			targetProxy = 1946DAA11F3986350077D2FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
