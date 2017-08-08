@@ -1,4 +1,8 @@
 # Updates
+## [v2.3.3](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.3)
+* Bug fixed
+* Add setBackground Function
+
 ## [v2.3.2](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.2)
 * Bug fixed
 
