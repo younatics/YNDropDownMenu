@@ -43,6 +43,9 @@ class ViewController: UIViewController {
             view.alwaysSelected(at: 0)
             //            view.disabledMenuAt(index: 2)
             //view.showAndHideMenuAt(index: 3)
+            
+            view.setBackgroundColor(color: UIColor.clear)
+
             self.view.addSubview(view)
         }
     }

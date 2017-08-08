@@ -129,13 +129,13 @@
 			isa = PBXGroup;
 			children = (
 				19FE32DA1EA7C6C700A4DB5E /* AppDelegate.swift */,
+				19FE32E51EA7C6C700A4DB5E /* ViewController.swift */,
 				19FE32DB1EA7C6C700A4DB5E /* Base.lproj */,
 				19FE32E01EA7C6C700A4DB5E /* DropDownViews.swift */,
 				19FE32E11EA7C6C700A4DB5E /* DropDownViews.xib */,
 				19FE32E21EA7C6C700A4DB5E /* Images.xcassets */,
 				19FE32E31EA7C6C700A4DB5E /* IMG_2279.PNG */,
 				19FE32E41EA7C6C700A4DB5E /* Info.plist */,
-				19FE32E51EA7C6C700A4DB5E /* ViewController.swift */,
 			);
 			path = YNDropDownMenuDemo;
 			sourceTree = "<group>";

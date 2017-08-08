@@ -185,7 +185,17 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         for i in 0..<numberOfMenu {
             dropDownButtons?[i].buttonImages = self.buttonImages
         }
-        
+    }
+    
+    /**
+     Set backgroung color.
+     
+     - Parameter color: background color.
+     */
+    open func setBackgroundColor(color: UIColor) {
+        for i in 0..<numberOfMenu {
+            dropDownButtons?[i].backgroundColor = color
+        }
     }
     
     /// Convert String-type hex color codes into UIColor.
@@ -236,12 +246,10 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             
             return coloredImage
             
-        }else{
-            
+        } else {
             return nil
         }
     }
-    
     
     /**
      Set label color.
@@ -258,7 +266,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
     }
     
-    
     /**
      Set label color with hex color codes
      
@@ -266,7 +273,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
      - Parameter selected: Selected color
      - Parameter disabled: Disabled color
      */
-    
     open func setLabelColorWhen(normalRGB: String, selectedRGB: String, disabledRGB: String){
         
         self.buttonlabelFontColors = YNFontColor.init(normal: hexStringToUIColor(hex: normalRGB), selected: hexStringToUIColor(hex: selectedRGB), disabled: hexStringToUIColor(hex: disabledRGB))
@@ -541,7 +547,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     
     
     internal func changeBlurEffectView() {
-        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: UIScreen.main.bounds.size.height - self.frame.origin.y)
+        let originY = self.frame.origin.y + self.frame.height
+
+        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: originY, width: self.frame.width, height: UIScreen.main.bounds.size.height - originY)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(blurEffectViewClicked(_:)))
         self.blurEffectView?.addGestureRecognizer(tapGesture)
         self.blurEffectView?.alpha = 0
@@ -551,7 +559,6 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.clipsToBounds = true
         self.alwaysOnIndex = []
         
-        self.backgroundColor = .white
         self.dropDownButtons = []
         
         let eachWidth = self.bounds.size.width / CGFloat(numberOfMenu)
@@ -581,7 +588,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.blurEffectView = UIVisualEffectView(effect: blurEffect)
         self.blurEffectView?.alpha = 0
         
-        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: UIScreen.main.bounds.size.height - self.frame.origin.y)
+        let originY = self.frame.origin.y + self.frame.height
+        
+        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: originY, width: self.frame.width, height: UIScreen.main.bounds.size.height - originY)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(blurEffectViewClicked(_:)))
         self.blurEffectView?.addGestureRecognizer(tapGesture)
     }
