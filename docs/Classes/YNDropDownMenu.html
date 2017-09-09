@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>YNDropDownMenu Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/YNDropDownMenu" class="dashAnchor"></a>
+    <a title="YNDropDownMenu Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">YNDropDownMenu Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">YNDropDownMenu Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        YNDropDownMenu Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/YNDropDownMenu.html">YNDropDownMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/YNDropDownView.html">YNDropDownView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/YNStatus.html">YNStatus</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/YNDropDownDelegate.html">YNDropDownDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>YNDropDownMenu</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">YNDropDownMenu</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt"><a href="../Protocols/YNDropDownDelegate.html">YNDropDownDelegate</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Main Class for YNDropDownMenu</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu14blurEffectViewGSqCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/blurEffectView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu14blurEffectViewGSqCSo6UIView_">blurEffectView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blur effect view will changed if you change this popperty. Backgorund view don&rsquo;t have to be blur view (e.g. UIColor.black)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">blurEffectView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu19blurEffectViewAlphaV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/blurEffectViewAlpha" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu19blurEffectViewAlphaV12CoreGraphics7CGFloat">blurEffectViewAlpha</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Alpha Value if animation ended in <em>hideMenu()</em> function</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">blurEffectViewAlpha</span><span class="p">:</span><span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">1.0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu15blurEffectStyleOSC17UIBlurEffectStyle"></a>
+                    <a name="//apple_ref/swift/Property/blurEffectStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu15blurEffectStyleOSC17UIBlurEffectStyle">blurEffectStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blur effect style in background view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">blurEffectStyle</span><span class="p">:</span><span class="kt">UIBlurEffectStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">dark</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu21backgroundBlurEnabledSb"></a>
+                    <a name="//apple_ref/swift/Property/backgroundBlurEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu21backgroundBlurEnabledSb">backgroundBlurEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make background blur view enabled</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">backgroundBlurEnabled</span> <span class="o">=</span> <span class="kc">true</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu16showMenuDurationSd"></a>
+                    <a name="//apple_ref/swift/Property/showMenuDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu16showMenuDurationSd">showMenuDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show menu second default value: <em>0.5</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">showMenuDuration</span> <span class="o">=</span> <span class="mf">0.5</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu16hideMenuDurationSd"></a>
+                    <a name="//apple_ref/swift/Property/hideMenuDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu16hideMenuDurationSd">hideMenuDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hide menu second default value: <em>0.3</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">hideMenuDuration</span> <span class="o">=</span> <span class="mf">0.3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu22showMenuSpringVelocityV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/showMenuSpringVelocity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu22showMenuSpringVelocityV12CoreGraphics7CGFloat">showMenuSpringVelocity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show menu spring velocity default value: <em>0.5</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">showMenuSpringVelocity</span><span class="p">:</span><span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.5</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu25showMenuSpringWithDampingV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/showMenuSpringWithDamping" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu25showMenuSpringWithDampingV12CoreGraphics7CGFloat">showMenuSpringWithDamping</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show menu spring damping default value: <em>0.8</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">showMenuSpringWithDamping</span><span class="p">:</span><span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu22hideMenuSpringVelocityV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/hideMenuSpringVelocity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu22hideMenuSpringVelocityV12CoreGraphics7CGFloat">hideMenuSpringVelocity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hide menu spring velocity Default value: <em>0.9</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">hideMenuSpringVelocity</span><span class="p">:</span><span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.9</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu25hideMenuSpringWithDampingV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/hideMenuSpringWithDamping" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu25hideMenuSpringWithDampingV12CoreGraphics7CGFloat">hideMenuSpringWithDamping</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hide menu spring damping Default value: <em>0.8</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">hideMenuSpringWithDamping</span><span class="p">:</span><span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14YNDropDownMenu14YNDropDownMenu10bottomLineGSQCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/bottomLine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14YNDropDownMenu14YNDropDownMenu10bottomLineGSQCSo6UIView_">bottomLine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bottom 0.5px line</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">bottomLine</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenucFT5frameVSC6CGRect13dropDownViewsGSaCSo6UIView_18dropDownViewTitlesGSaSS__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(frame:dropDownViews:dropDownViewTitles:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenucFT5frameVSC6CGRect13dropDownViewsGSaCSo6UIView_18dropDownViewTitlesGSaSS__S0_">init(frame:dropDownViews:dropDownViewTitles:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init YNDropDownMenu with frame, views, strings. Views count and titles count should be same</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="nv">dropDownViews</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIView</span><span class="p">],</span> <span class="nv">dropDownViewTitles</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CGRect Frame</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dropDownViews</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Use [UIView] or [YNDropDownView]</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dropDownViewTitles</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>[String]</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenucFT5frameVSC6CGRect15YNDropDownViewsGSaCS_14YNDropDownView_18dropDownViewTitlesGSaSS__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(frame:YNDropDownViews:dropDownViewTitles:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenucFT5frameVSC6CGRect15YNDropDownViewsGSaCS_14YNDropDownView_18dropDownViewTitlesGSaSS__S0_">init(frame:YNDropDownViews:dropDownViewTitles:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>deprecated use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="kt">YNDropDownViews</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/YNDropDownView.html">YNDropDownView</a></span><span class="p">],</span> <span class="nv">dropDownViewTitles</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenucFT5coderCSo7NSCoder_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenucFT5coderCSo7NSCoder_GSqS0__">init(coder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init coder</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu12setImageWhenFT6normalGSqCSo7UIImage_8selectedGSqS1__8disabledGSqS1___T_"></a>
+                    <a name="//apple_ref/swift/Method/setImageWhen(normal:selected:disabled:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu12setImageWhenFT6normalGSqCSo7UIImage_8selectedGSqS1__8disabledGSqS1___T_">setImageWhen(normal:selected:disabled:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set arrow image or other images. Same image size is the best</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setImageWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?,</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?,</span> <span class="nv">disabled</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>normal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Normal image</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selected</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Selected image</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>disabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Disabled image</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu12setImageWhenFT6normalGSqCSo7UIImage_17selectedTintColorCSo7UIColor17disabledTintColorS2__T_"></a>
+                    <a name="//apple_ref/swift/Method/setImageWhen(normal:selectedTintColor:disabledTintColor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu12setImageWhenFT6normalGSqCSo7UIImage_17selectedTintColorCSo7UIColor17disabledTintColorS2__T_">setImageWhen(normal:selectedTintColor:disabledTintColor:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set an image for a drop-down button with various colors.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setImageWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?,</span> <span class="nv">selectedTintColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">disabledTintColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>normal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Normal image used as a drop-down button.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selectedColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tint color masking the image when the button selected.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>disabledColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tint color masking the image when the button disabled.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu12setImageWhenFT6normalGSqCSo7UIImage_20selectedTintColorRGBSS20disabledTintColorRGBSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setImageWhen(normal:selectedTintColorRGB:disabledTintColorRGB:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu12setImageWhenFT6normalGSqCSo7UIImage_20selectedTintColorRGBSS20disabledTintColorRGBSS_T_">setImageWhen(normal:selectedTintColorRGB:disabledTintColorRGB:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set an image for a drop-down button with various colors.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setImageWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?,</span> <span class="nv">selectedTintColorRGB</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">disabledTintColorRGB</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>normal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Normal image used as a drop-down button.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selectedColorRGB</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a Hex code color masking the image when the button selected.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>disabledColorRGB</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a Hex code color masking the image when the button disabled.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu18setBackgroundColorFT5colorCSo7UIColor_T_"></a>
+                    <a name="//apple_ref/swift/Method/setBackgroundColor(color:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu18setBackgroundColorFT5colorCSo7UIColor_T_">setBackgroundColor(color:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set backgroung color.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setBackgroundColor</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>background color.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu17setLabelColorWhenFT6normalCSo7UIColor8selectedS1_8disabledS1__T_"></a>
+                    <a name="//apple_ref/swift/Method/setLabelColorWhen(normal:selected:disabled:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu17setLabelColorWhenFT6normalCSo7UIColor8selectedS1_8disabledS1__T_">setLabelColorWhen(normal:selected:disabled:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set label color.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setLabelColorWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">disabled</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>normal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Normal color</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selected</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Selected color</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>disabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Disabled color</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu17setLabelColorWhenFT9normalRGBSS11selectedRGBSS11disabledRGBSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setLabelColorWhen(normalRGB:selectedRGB:disabledRGB:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu17setLabelColorWhenFT9normalRGBSS11selectedRGBSS11disabledRGBSS_T_">setLabelColorWhen(normalRGB:selectedRGB:disabledRGB:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set label color with hex color codes</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setLabelColorWhen</span><span class="p">(</span><span class="nv">normalRGB</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">selectedRGB</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">disabledRGB</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>normal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Normal color</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selected</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Selected color</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>disabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Disabled color</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu8setLabelFT4fontCSo6UIFont_T_"></a>
+                    <a name="//apple_ref/swift/Method/setLabel(font:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu8setLabelFT4fontCSo6UIFont_T_">setLabel(font:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the same label font for every status.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setLabel</span><span class="p">(</span><span class="nv">font</span><span class="p">:</span> <span class="kt">UIFont</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>font</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Normal/Selected/Disabled font</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu16setLabelFontWhenFT6normalCSo6UIFont8selectedS1_8disabledS1__T_"></a>
+                    <a name="//apple_ref/swift/Method/setLabelFontWhen(normal:selected:disabled:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu16setLabelFontWhenFT6normalCSo6UIFont8selectedS1_8disabledS1__T_">setLabelFontWhen(normal:selected:disabled:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set label font.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setLabelFontWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIFont</span><span class="p">,</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">UIFont</span><span class="p">,</span> <span class="nv">disabled</span><span class="p">:</span> <span class="kt">UIFont</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>normal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Normal font</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selected</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Selected font</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>disabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Disabled font</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu14alwaysSelectedFT2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/alwaysSelected(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu14alwaysSelectedFT2atSi_T_">alwaysSelected(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make button label always selected. (not button image)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">alwaysSelected</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu14normalSelectedFT2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/normalSelected(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu14normalSelectedFT2atSi_T_">normalSelected(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make button label normal that selected before. (not button image)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">normalSelected</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu12disabledMenuFT2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/disabledMenu(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu12disabledMenuFT2atSi_T_">disabledMenu(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make button disabled (title and image you set)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">disabledMenu</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu11enabledMenuFT2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/enabledMenu(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu11enabledMenuFT2atSi_T_">enabledMenu(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes button enabled (title and image you set)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">enabledMenu</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu8hideMenuFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/hideMenu()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu8hideMenuFT_T_">hideMenu()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hide menu will be called when view is opened already.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">hideMenu</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu10changeMenuFT5titleSS2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/changeMenu(title:at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu10changeMenuFT5titleSS2atSi_T_">changeMenu(title:at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Change menu title you called. you can call it in YNDropDownMenu or YNDropDownView</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">changeMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Menu title</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu10changeMenuFT5titleSS6statusOS_8YNStatus2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/changeMenu(title:status:at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu10changeMenuFT5titleSS6statusOS_8YNStatus2atSi_T_">changeMenu(title:status:at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Change menu title you called. you can call it in YNDropDownMenu or YNDropDownView</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">changeMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="kt"><a href="../Enums/YNStatus.html">YNStatus</a></span><span class="p">,</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Menu title</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu10changeViewFT4viewCSo6UIView2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/changeView(view:at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu10changeViewFT4viewCSo6UIView2atSi_T_">changeView(view:at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Change view you called. you can call it in YNDropDownMenu or YNDropDownView</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">changeView</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>view that you want to change</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu15showAndHideMenuFT2atSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/showAndHideMenu(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu15showAndHideMenuFT2atSi_T_">showAndHideMenu(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>View will be closed and open when already opened. If not, just open drop down view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">showAndHideMenu</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index should be smaller than your menu counts</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu16alwaysSelectedAtFT5indexSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/alwaysSelectedAt(index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu16alwaysSelectedAtFT5indexSi_T_">alwaysSelectedAt(index:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deprecated use alwaysSelected(at index: Int) instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">alwaysSelectedAt</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu14disabledMenuAtFT5indexSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/disabledMenuAt(index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu14disabledMenuAtFT5indexSi_T_">disabledMenuAt(index:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deprecated use disabledMenu(at index: Int) instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">disabledMenuAt</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu13enabledMenuAtFT5indexSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/enabledMenuAt(index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu13enabledMenuAtFT5indexSi_T_">enabledMenuAt(index:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deprecated use enabledMenu(at index: Int) instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">enabledMenuAt</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14YNDropDownMenu14YNDropDownMenu17showAndHideMenuAtFT5indexSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/showAndHideMenuAt(index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14YNDropDownMenu14YNDropDownMenu17showAndHideMenuAtFT5indexSi_T_">showAndHideMenuAt(index:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deprecated use showAndHideMenu(at index: Int) instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">showAndHideMenuAt</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/younatics/YNDropDownMenu" target="_blank" rel="external">Seungyoun Yi</a>. All rights reserved. (Last updated: 2017-09-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

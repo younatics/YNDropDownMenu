@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>YNDropDownMenu  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="YNDropDownMenu  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">YNDropDownMenu Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">YNDropDownMenu Reference</a>
+        <img id="carat" src="img/carat.png" />
+        YNDropDownMenu  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/YNDropDownMenu.html">YNDropDownMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/YNDropDownView.html">YNDropDownView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/YNStatus.html">YNStatus</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/YNDropDownDelegate.html">YNDropDownDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='yndropdownmenu' class='heading'>YNDropDownMenu</h1>
+
+<p><a href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a>
+<a href="http://cocoapods.org/pods/YNDropDownMenu"><img src="https://img.shields.io/cocoapods/v/YNDropDownMenu.svg?style=flat" alt="Version"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
+<a href="http://cocoadocs.org/docsets/YNDropDownMenu"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/YNDropDownMenu.svg" alt="CocoaPods"></a>
+<a href="https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT"></a>
+<a href="https://travis-ci.org/younatics/YNDropDownMenu"><img src="https://travis-ci.org/younatics/YNDropDownMenu.svg?branch=master" alt="Build Status"></a>
+<a href="http://cocoapods.org/pods/YNDropDownMenu"><img src="https://img.shields.io/cocoapods/p/YNDropDownMenu.svg?style=flat" alt="Platform"></a>
+<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift 3.0"></a></p>
+<h2 id='updates' class='heading'>Updates</h2>
+
+<p>See <a href="https://github.com/younatics/YNDropDownMenu/blob/master/CHANGELOG.md">CHANGELOG</a> for details</p>
+<h2 id='intoduction' class='heading'>Intoduction</h2>
+
+<p>The eligible dropdown menu for iOS, written in Swift 3, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView&hellip; etc)</p>
+
+<p><img src="https://github.com/younatics/YNDropDownMenu/blob/master/Images/YNDropDownMenu.gif?raw=true" alt="demo">
+<img src="https://github.com/younatics/YNDropDownMenu/blob/master/Images/YNDropDownMenu2.gif?raw=true" alt="demo2"></p>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<p><code>YNDropDownMenu</code> written in Swift 3. Compatible with iOS 8.0+</p>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>Cocoapods</h3>
+
+<p>YNDropDownMenu is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'YNDropDownMenu'</span>
+</code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+<pre class="highlight plaintext"><code>github "younatics/YNDropDownMenu"
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">YNDropDownMenu</span>
+</code></pre>
+
+<p>Init view with frame<code>[CGRect]</code>, Views<code>[UIView]</code> and Titles<code>[String]</code></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">YNDropDownMenu</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span><span class="n">frame</span><span class="p">,</span> <span class="nv">dropDownViews</span><span class="p">:</span> <span class="n">dropDownViews</span><span class="p">,</span> <span class="nv">dropDownViewTitles</span><span class="p">:</span> <span class="p">[</span><span class="s">"Apple"</span><span class="p">,</span> <span class="s">"Banana"</span><span class="p">,</span> <span class="s">"Kiwi"</span><span class="p">,</span> <span class="s">"Pear"</span><span class="p">])</span>
+<span class="k">self</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+</code></pre>
+
+<p>done!</p>
+<h3 id='inherit-yndropdownview-if-you-need' class='heading'>Inherit YNDropDownView (If you need)</h3>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">DropDownView</span><span class="p">:</span> <span class="kt">YNDropDownView</span> <span class="p">{</span>
+   <span class="c1">// override method to call open &amp; close</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">dropDownViewOpened</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"dropDownViewOpened"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">dropDownViewClosed</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"dropDownViewClosed"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Hide Menu</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">hideMenu</span><span class="p">()</span>
+
+    <span class="c1">// Change Menu Title At Index</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">changeMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Changed"</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">changeMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Changed"</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="o">.</span><span class="n">selected</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1">// Change View At Index </span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">changeView</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">(),</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="c1">// Always Selected Menu</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">alwaysSelected</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">normalSelected</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='customize' class='heading'>Customize</h3>
+
+<p>Show &amp; Hide Menu </p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">showAndHideMenu</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">// When view is already opened</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">hideMenu</span><span class="p">()</span>
+</code></pre>
+
+<p>Disable &amp; Enable Menu </p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">disabledMenu</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">enabledMenu</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>Always/Normal selected button label</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">alwaysSelected</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">normalSelected</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre>
+
+<p>Button Image with 3 situations (normal, selected, disabled)</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">setImageWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"arrow_nor"</span><span class="p">),</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"arrow_sel"</span><span class="p">),</span> <span class="nv">disabled</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"arrow_dim"</span><span class="p">))</span>
+</code></pre>
+
+<p>Label color with 3 situations</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">setLabelColorWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">black</span><span class="p">,</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="nv">disabled</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+</code></pre>
+
+<p>Label font with 3 situations</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">setLabelFontWhen</span><span class="p">(</span><span class="nv">normal</span><span class="p">:</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">12</span><span class="p">),</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">boldSystemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">12</span><span class="p">),</span> <span class="nv">disabled</span><span class="p">:</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">12</span><span class="p">))</span>
+</code></pre>
+
+<p>BlurEffectView</p>
+<pre class="highlight swift"><code><span class="c1">// Enadbled or Disabled first (Default true)</span>
+<span class="n">view</span><span class="o">.</span><span class="n">backgroundBlurEnabled</span> <span class="o">=</span> <span class="kc">false</span>
+
+<span class="c1">// Use this line if you want to change UIBlurEffectStyle</span>
+<span class="n">view</span><span class="o">.</span><span class="n">blurEffectStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">light</span>
+
+<span class="c1">// Or customize blurEffectView(UIView)</span>
+<span class="k">let</span> <span class="nv">backgroundView</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+<span class="n">backgroundView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">black</span>
+<span class="n">view</span><span class="o">.</span><span class="n">blurEffectView</span> <span class="o">=</span> <span class="n">backgroundView</span>
+
+<span class="c1">// Animation end alpha</span>
+<span class="n">view</span><span class="o">.</span><span class="n">blurEffectViewAlpha</span> <span class="o">=</span> <span class="mf">0.7</span>
+</code></pre>
+
+<p>Animation duration</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="n">showMenuDuration</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">view</span><span class="o">.</span><span class="n">hideMenuDuration</span> <span class="o">=</span> <span class="mf">0.3</span>
+</code></pre>
+
+<p>Animation velocity, damping</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="n">showMenuSpringVelocity</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">view</span><span class="o">.</span><span class="n">showMenuSpringWithDamping</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">view</span><span class="o">.</span><span class="n">hideMenuSpringVelocity</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">view</span><span class="o">.</span><span class="n">hideMenuSpringWithDamping</span> <span class="o">=</span> <span class="mf">0.8</span>
+</code></pre>
+
+<p>Change Menu Title At Index</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">changeMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Changed"</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">changeMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Changed"</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="o">.</span><span class="n">selected</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+</code></pre>
+
+<p>Change View At Index </p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="nf">changeView</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">(),</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>Change Bottom Line</p>
+<pre class="highlight swift"><code><span class="n">view</span><span class="o">.</span><span class="n">bottomLine</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">black</span>
+<span class="n">view</span><span class="o">.</span><span class="n">bottomLine</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre>
+<h3 id='deprecated' class='heading'>Deprecated</h3>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">YNDropDownMenu</span> <span class="p">{</span>
+    <span class="kd">@available(*, deprecated, message: "use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String])</span> <span class="n">instead</span><span class="s">")
+    public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String])
+
+    @available(*, deprecated, message: "</span><span class="n">use</span> <span class="nf">alwaysSelected</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="n">instead</span><span class="s">")
+    open func alwaysSelectedAt(index: Int) {
+        self.alwaysSelected(at: index)
+    }
+
+    @available(*, deprecated, message: "</span><span class="n">use</span> <span class="nf">disabledMenu</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="n">instead</span><span class="s">")
+    open func disabledMenuAt(index: Int) {
+        self.disabledMenu(at: index)
+    }
+
+    @available(*, deprecated, message: "</span><span class="n">use</span> <span class="nf">enabledMenu</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="n">instead</span><span class="s">")
+    open func enabledMenuAt(index: Int) {
+        self.enabledMenu(at: index)
+    }
+
+    @available(*, deprecated, message: "</span><span class="n">use</span> <span class="nf">showAndHideMenu</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="n">instead</span><span class="s">")
+    open func showAndHideMenuAt(index: Int) {
+        self.showAndHideMenu(at: index)
+    }
+}
+
+extension YNDropDownView {
+    @available(*, deprecated, message: "</span><span class="n">use</span> <span class="nf">changeMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="n">instead</span><span class="s">")
+    open func changeMenuTitleAt(index: Int, title: String) {
+        self.delegate?.changeMenu(title: title, at: index)
+    }
+}
+</span></code></pre>
+<h2 id='references' class='heading'>References</h2>
+<h4 id='please-tell-me-or-make-pull-request-if-you-use-this-library-in-your-application' class='heading'>Please tell me or make pull request if you use this library in your application :)</h4>
+<h4 id='a-href-https-github-com-zigbang-zigbang-a' class='heading'><a href="https://github.com/zigbang">@zigbang</a></h4>
+<h4 id='a-href-https-github-com-younatics-motionbook-motionbook-a' class='heading'><a href="https://github.com/younatics/MotionBook">MotionBook</a></h4>
+<h2 id='author' class='heading'>Author</h2>
+
+<p><a href="https://twitter.com/younatics">younatics 🇰🇷</a></p>
+<h2 id='thanks-to' class='heading'>Thanks to</h2>
+
+<p><a href="https://github.com/jegumhon">jegumhon</a></p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>YNDropDownMenu is available under the MIT license. See the LICENSE file for more info.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/younatics/YNDropDownMenu" target="_blank" rel="external">Seungyoun Yi</a>. All rights reserved. (Last updated: 2017-09-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
