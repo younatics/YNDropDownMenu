@@ -204,7 +204,8 @@ extension YNDropDownView {
 #### [MotionBook](https://github.com/younatics/MotionBook)
 
 ## Author
-[younatics 🇰🇷](https://twitter.com/younatics)
+[younatics](https://twitter.com/younatics)
+<a href="http://twitter.com/younatics" target="_blank"><img alt="Twitter" src="https://img.shields.io/twitter/follow/younatics.svg?style=social&label=Follow"></a>
 
 ## Thanks to
 [jegumhon](https://github.com/jegumhon)
