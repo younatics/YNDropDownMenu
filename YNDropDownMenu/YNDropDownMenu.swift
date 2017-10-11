@@ -580,7 +580,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         }
         
         self.bottomLine = UIView(frame: CGRect(x: 0, y: CGFloat(menuHeight) - 0.5, width: self.frame.width, height: 0.5))
-        self.bottomLine.backgroundColor = UIColor(colorLiteralRed: 225/255, green: 225/255, blue: 225/255, alpha: 1.0)
+        self.bottomLine.backgroundColor = UIColor.init(red: 225/255, green: 225/255, blue: 225/255, alpha: 1.0)
         self.bottomLine.isHidden = true
         self.addSubview(self.bottomLine)
         
