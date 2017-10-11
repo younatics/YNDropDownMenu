@@ -1,4 +1,7 @@
 # Updates
+## [v3.0.0](https://github.com/younatics/YNDropDownMenu/releases/tag/3.0.0)
+* Upgrade for Swift 4.0
+
 ## [v2.3.3](https://github.com/younatics/YNDropDownMenu/releases/tag/2.3.3)
 * Bug fixed
 * Add setBackground Function
