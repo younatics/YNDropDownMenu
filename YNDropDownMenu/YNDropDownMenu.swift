@@ -602,7 +602,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             // Setup Views
             if let _dropDownView = dropDownViews?[i] {
                 _dropDownView.frame.size = CGSize(width: self.bounds.size.width, height: _dropDownView.frame.height)
-                _dropDownView.frame.origin.y = CGFloat(menuHeight) - (_dropDownView.isHidden ? _dropDownView.frame.height : 0.0)
+                _dropDownView.frame.origin.y = CGFloat(menuHeight)
             }
         }
         let originY = self.frame.origin.y + menuHeight + 5
