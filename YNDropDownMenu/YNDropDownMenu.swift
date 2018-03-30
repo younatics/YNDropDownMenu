@@ -561,11 +561,9 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         
         self.dropDownButtons = []
         
-        let eachWidth = self.bounds.size.width / CGFloat(numberOfMenu)
-        
         for i in 0..<numberOfMenu {
             // Setup button
-            let button = YNDropDownButton(frame: CGRect(x: eachWidth * CGFloat(i), y: 0.0, width: eachWidth, height: CGFloat(menuHeight)), buttonLabelText: dropDownViewTitles?[i])
+            let button = YNDropDownButton(frame: CGRect(x: 0, y: 0.0, width: 10, height: CGFloat(menuHeight)), buttonLabelText: dropDownViewTitles?[i])
             button.tag = i
             button.addTarget(self, action: #selector(menuClicked(_:)), for: .touchUpInside)
             dropDownButtons?.append(button)
@@ -574,12 +572,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             
             // Setup Views
             if let _dropDownView = dropDownViews?[i] {
-                _dropDownView.frame.size = CGSize(width: self.bounds.size.width, height: _dropDownView.frame.height)
-                _dropDownView.frame.origin.y = -_dropDownView.frame.height + CGFloat(menuHeight)
+                _dropDownView.isHidden = true
             }
         }
         
-        self.bottomLine = UIView(frame: CGRect(x: 0, y: CGFloat(menuHeight) - 0.5, width: self.frame.width, height: 0.5))
+        self.bottomLine = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 0.5))
         self.bottomLine.backgroundColor = UIColor.init(red: 225/255, green: 225/255, blue: 225/255, alpha: 1.0)
         self.bottomLine.isHidden = true
         self.addSubview(self.bottomLine)
@@ -588,10 +585,33 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         self.blurEffectView = UIVisualEffectView(effect: blurEffect)
         self.blurEffectView?.alpha = 0
         
-        let originY = self.frame.origin.y + menuHeight + 5
-        
-        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: originY, width: self.frame.width, height: UIScreen.main.bounds.size.height - originY)
+        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: 0, width: self.frame.width, height: 0)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(blurEffectViewClicked(_:)))
         self.blurEffectView?.addGestureRecognizer(tapGesture)
+        
+        layoutViews()
+    }
+    
+    internal func layoutViews() {
+        let eachWidth = self.bounds.size.width / CGFloat(numberOfMenu)
+        for i in 0..<numberOfMenu {
+            // Setup button
+            if let button = dropDownButtons?[i] {
+                button.frame = CGRect(x: eachWidth * CGFloat(i), y: 0.0, width: eachWidth, height: CGFloat(menuHeight))
+            }
+            // Setup Views
+            if let _dropDownView = dropDownViews?[i] {
+                _dropDownView.frame.size = CGSize(width: self.bounds.size.width, height: _dropDownView.frame.height)
+                _dropDownView.frame.origin.y = CGFloat(menuHeight)
+            }
+        }
+        let originY = self.frame.origin.y + menuHeight + 5
+        self.bottomLine.frame = CGRect(x: 0, y: CGFloat(menuHeight) - 0.5, width: self.frame.width, height: 0.5)
+        self.blurEffectView?.frame = CGRect(x: self.frame.origin.x, y: originY, width: self.frame.width, height: UIScreen.main.bounds.size.height - originY)
+    }
+    
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        layoutViews()
     }
 }
