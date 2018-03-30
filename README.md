@@ -12,7 +12,7 @@
 ## Updates
 See [CHANGELOG](https://github.com/younatics/YNDropDownMenu/blob/master/CHANGELOG.md) for details
 
-## Intoduction
+## Introduction
 The eligible dropdown menu for iOS, written in Swift 4, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
 
 ![demo](https://github.com/younatics/YNDropDownMenu/blob/master/Images/YNDropDownMenu.gif?raw=true)
