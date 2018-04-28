@@ -129,6 +129,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         
     }
     
+    deinit {
+        if let _blurEffectView = blurEffectView {
+            _blurEffectView.removeFromSuperview()
+        }
+    }
     
     /**
      Set arrow image or other images. Same image size is the best
