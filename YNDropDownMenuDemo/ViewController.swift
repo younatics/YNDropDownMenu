@@ -31,7 +31,6 @@ class ViewController: UIViewController {
             view.setImageWhens(normal: [UIImage(named: "HOME_BOX_NORMAL"),UIImage(named: "HOME_COLOR_NORMAL"),UIImage(named: "HOME_DESIGN_NORMAL"),UIImage(named: "HOME_CONCEPT_NORMAL")], selectedTintColorRGB: "FFA409", disabledTintColorRGB: "D3D3D3")
             
             
-            
             view.setLabelColorWhen(normal: .black, selected: FFA409, disabled: .gray)
 //            view.setLabelColorWhen(normalRGB: "000000", selectedRGB: "FFA409", disabledRGB: "FFA409")
             
