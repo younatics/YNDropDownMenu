@@ -20,16 +20,21 @@ class ViewController: UIViewController {
             // Inherit YNDropDownView if you want to hideMenu in your dropDownViews
             let view = YNDropDownMenu(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: 38), dropDownViews: _ZBdropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
             
-            /** 
-            * view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
-            * view.setImageWhen(normal: UIImage(named: "arrow_nor"), selectedTintColor: FFA409, disabledTintColor: FFA409)
-            * view.setImageWhen(normal: UIImage(named: "arrow_nor"), selectedTintColorRGB: "FFA409", disabledTintColorRGB: "FFA409")
-            */
-
-//            view.setImageWhens(normal: [UIImage(named: "HOME_BOX_NORMAL"),UIImage(named: "HOME_COLOR_NORMAL"),UIImage(named: "HOME_DESIGN_NORMAL"),UIImage(named: "HOME_CONCEPT_NORMAL")], selectedTintColor: .red, disabledTintColor: .gray)
-
-            view.setImageWhens(normal: [UIImage(named: "HOME_BOX_NORMAL"),UIImage(named: "HOME_COLOR_NORMAL"),UIImage(named: "HOME_DESIGN_NORMAL"),UIImage(named: "HOME_CONCEPT_NORMAL")], selectedTintColorRGB: "FFA409", disabledTintColorRGB: "D3D3D3")
+            let normalImages = [UIImage(named: "HOME_BOX_NORMAL"),
+                                UIImage(named: "HOME_COLOR_NORMAL"),
+                                UIImage(named: "HOME_DESIGN_NORMAL"),
+                                UIImage(named: "HOME_CONCEPT_NORMAL")]
             
+            let selectedImages = [imageMaskingwithColor(hexStringToUIColor(hex: "FFA409"), image: UIImage(named: "HOME_BOX_NORMAL")),
+                                  imageMaskingwithColor(hexStringToUIColor(hex: "FFA409"), image: UIImage(named: "HOME_COLOR_NORMAL")),
+                                  imageMaskingwithColor(hexStringToUIColor(hex: "FFA409"), image: UIImage(named: "HOME_DESIGN_NORMAL")),
+                                  imageMaskingwithColor(hexStringToUIColor(hex: "FFA409"), image: UIImage(named: "HOME_CONCEPT_NORMAL"))]
+            
+            let disabledImages = [imageMaskingwithColor(hexStringToUIColor(hex: "D3D3D3"), image: UIImage(named: "HOME_BOX_NORMAL")),
+                                  imageMaskingwithColor(hexStringToUIColor(hex: "D3D3D3"), image: UIImage(named: "HOME_COLOR_NORMAL")),
+                                  imageMaskingwithColor(hexStringToUIColor(hex: "D3D3D3"), image: UIImage(named: "HOME_DESIGN_NORMAL")),
+                                  imageMaskingwithColor(hexStringToUIColor(hex: "D3D3D3"), image: UIImage(named: "HOME_CONCEPT_NORMAL"))]
+            view.setStatesImages(normalImages: normalImages, selectedImages: selectedImages, disabledImages: disabledImages)
             
             view.setLabelColorWhen(normal: .black, selected: FFA409, disabled: .gray)
 //            view.setLabelColorWhen(normalRGB: "000000", selectedRGB: "FFA409", disabledRGB: "FFA409")
@@ -62,5 +67,57 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /// Convert String-type hex color codes into UIColor.
+    private func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    /// Mask images with UIColor.
+    private func imageMaskingwithColor(_ color: UIColor, image: UIImage?) -> UIImage?{
+        
+        if let image = image {
+            
+            UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+            let context = UIGraphicsGetCurrentContext()!
+            
+            color.setFill()
+            
+            context.translateBy(x: 0, y: image.size.height)
+            context.scaleBy(x: 1.0, y: -1.0)
+            
+            let rect = CGRect(x: 0.0, y: 0.0, width: image.size.width, height: image.size.height)
+            context.draw(image.cgImage!, in: rect)
+            
+            context.setBlendMode(CGBlendMode.sourceIn)
+            context.addRect(rect)
+            context.drawPath(using: CGPathDrawingMode.fill)
+            
+            let coloredImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return coloredImage
+            
+        } else {
+            return nil
+        }
+    }
 }
 
