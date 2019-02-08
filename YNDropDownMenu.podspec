@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '3.0.3'
+  s.version          = '3.0.4'
   s.summary          = 'Awesome Dropdown menu for iOS with Swift 4'
 
   s.description      = <<-DESC
@@ -26,7 +26,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
   s.requires_arc = true
 end
