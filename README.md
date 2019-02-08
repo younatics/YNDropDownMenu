@@ -98,9 +98,9 @@ view.alwaysSelected(at: 0)
 view.normalSelected(at: 0)
 ```
 
-Button Image with 3 situations (normal, selected, disabled)
+Button Images with 3 situations (normal, selected, disabled)
 ```swift
-view.setImageWhen(normal: UIImage(named: "arrow_nor"), selected: UIImage(named: "arrow_sel"), disabled: UIImage(named: "arrow_dim"))
+view.setStatesImages(normalImages: [UIImage(named: "arrow_nor")], selectedImages: [UIImage(named: "arrow_sel")], disabledImages: [UIImage(named: "arrow_dim")])
 ```
 
 Label color with 3 situations
