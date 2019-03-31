@@ -1,4 +1,7 @@
 # Updates
+## [v3.1.0](https://github.com/younatics/YNDropDownMenu/releases/tag/3.0.0)
+* Upgrade for Swift 5.0
+
 ## [v3.0.0](https://github.com/younatics/YNDropDownMenu/releases/tag/3.0.0)
 * Upgrade for Swift 4.0
 

@@ -333,7 +333,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         
         guard let alwaysOnIndex = self.alwaysOnIndex else { return }
         
-        if let value = alwaysOnIndex.index(of: index) {
+        if let value = alwaysOnIndex.firstIndex(of: index) {
             self.alwaysOnIndex!.remove(at: value)
         } else {
             print("YNDropDownMenu: Index is not contained in Array")

@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '3.0.4'
-  s.summary          = 'Awesome Dropdown menu for iOS with Swift 4'
+  s.version          = '3.1.0'
+  s.summary          = 'Awesome Dropdown menu for iOS with Swift 5'
 
   s.description      = <<-DESC
-                        Awesome dropdown menu, written in Swift 4, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
+                        Awesome dropdown menu, written in Swift 5, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
                         DESC
 
   s.homepage         = 'https://github.com/younatics/YNDropDownMenu'
