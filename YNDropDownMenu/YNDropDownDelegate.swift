@@ -9,7 +9,8 @@
 import UIKit
 
 /// Delegate to get call back
-public protocol YNDropDownDelegate: class {
+@MainActor
+public protocol YNDropDownDelegate: AnyObject {
     /// Hide menu
     func hideMenu()
     

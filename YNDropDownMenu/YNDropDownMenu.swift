@@ -130,8 +130,13 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
     }
     
     deinit {
-        if let _blurEffectView = blurEffectView {
-            _blurEffectView.removeFromSuperview()
+        // The blur view is inserted as a sibling into `self.superview`, so ARC
+        // does not remove it when the menu deallocates. Detach it on the main
+        // actor. We capture only the view (never `self`) so this is deinit-safe.
+        if let blurView = blurEffectView {
+            Task { @MainActor in
+                blurView.removeFromSuperview()
+            }
         }
     }
     
@@ -206,8 +211,8 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
             return UIColor.gray
         }
         
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
+        var rgbValue: UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
         
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,

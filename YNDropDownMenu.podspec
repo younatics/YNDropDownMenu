@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '3.1.0'
-  s.summary          = 'Awesome Dropdown menu for iOS with Swift 5'
+  s.version          = '4.0.0'
+  s.summary          = 'Awesome Dropdown menu for iOS with Swift 6'
 
   s.description      = <<-DESC
-                        Awesome dropdown menu, written in Swift 5, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
+                        Awesome dropdown menu, written in Swift 6, appears dropdown menu to display a view of related items when a user click on the dropdown menu. You can customize dropdown view whatever you like (e.g. UITableView, UICollectionView... etc)
                         DESC
 
   s.homepage         = 'https://github.com/younatics/YNDropDownMenu'
@@ -24,7 +24,8 @@ Pod::Spec.new do |s|
   s.source_files     = 'YNDropDownMenu/*.swift'
   s.social_media_url = 'https://twitter.com/younatics'
 
-  s.ios.deployment_target = '8.0'
+  s.swift_version = '6.0'
+  s.ios.deployment_target = '13.0'
 
   s.frameworks = 'UIKit'
   s.requires_arc = true
