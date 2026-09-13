@@ -1,5 +1,12 @@
 # Updates
-## [v3.1.0](https://github.com/younatics/YNDropDownMenu/releases/tag/3.0.0)
+
+## [v4.0.0](https://github.com/younatics/YNDropDownMenu/releases/tag/4.0.0)
+* Upgrade to Swift 6.0
+* Require iOS 13.0 or later
+* Fix Swift Package Manager support
+* Add unit tests
+
+## [v3.1.0](https://github.com/younatics/YNDropDownMenu/releases/tag/3.1.0)
 * Upgrade for Swift 5.0
 
 ## [v3.0.0](https://github.com/younatics/YNDropDownMenu/releases/tag/3.0.0)
@@ -100,4 +107,3 @@
 * Inherit YNDropDownView instead of UIView to add views for YNDropDownMenu
 * Available to call hideMenu in YNDropDownView
 * Support Carthage [#1](https://github.com/younatics/YNDropDownMenu/issues/1)
-
