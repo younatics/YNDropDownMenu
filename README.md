@@ -1,13 +1,10 @@
 # YNDropDownMenu
 
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg?style=flat)](https://www.swift.org/package-manager/)
 [![Version](https://img.shields.io/cocoapods/v/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Docs](https://github.com/younatics/YNDropDownMenu/blob/master/docs/badge.svg)](https://younatics.github.io/YNDropDownMenu/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/younatics/YNDropDownMenu.svg?branch=master)](https://travis-ci.org/younatics/YNDropDownMenu)
-[![Platform](https://img.shields.io/cocoapods/p/YNDropDownMenu.svg?style=flat)](http://cocoapods.org/pods/YNDropDownMenu)
+[![Platform](https://img.shields.io/badge/platform-iOS%2013.0%2B-lightgrey.svg?style=flat)](https://developer.apple.com/ios/)
 [![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/YNDropDownMenu/blob/master/CHANGELOG.md) for details
@@ -20,7 +17,7 @@ The eligible dropdown menu for iOS, written in Swift 6, appears dropdown menu to
 
 ## Requirements
 
-`YNDropDownMenu` written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
+`YNDropDownMenu` is written in Swift 6.0 and requires iOS 13.0 or later. The package manifest uses Swift tools 6.0, and the CocoaPods deployment target is iOS 13.0.
 
 ## Installation
 
@@ -40,34 +37,37 @@ dependencies: [
 ]
 ```
 
-### Cocoapods
+### CocoaPods
 
 YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'YNDropDownMenu'
+pod 'YNDropDownMenu', '~> 4.0.0'
 ```
-### Carthage
-```
-github "younatics/YNDropDownMenu"
-```
+
 ## Usage
+
 ```swift
 import YNDropDownMenu
 ```
 
-Init view with frame`[CGRect]`, Views`[UIView]` and Titles`[String]`
+Init view with a frame `CGRect`, views `[UIView]`, and titles `[String]`
+
 ```swift
-let view = YNDropDownMenu(frame:frame, dropDownViews: dropDownViews, dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"])
-self.addSubview(view)
+let dropDownMenu = YNDropDownMenu(
+    frame: CGRect(x: 0, y: 64, width: view.bounds.width, height: 38),
+    dropDownViews: dropDownViews,
+    dropDownViewTitles: ["Apple", "Banana", "Kiwi", "Pear"]
+)
+view.addSubview(dropDownMenu)
 ```
 done!
 
 ### Inherit YNDropDownView (If you need)
 ```swift
 class DropDownView: YNDropDownView {
-   // override method to call open & close
+    // Override methods called when the menu opens and closes.
     override func dropDownViewOpened() {
         print("dropDownViewOpened")
     }
@@ -76,19 +76,21 @@ class DropDownView: YNDropDownView {
         print("dropDownViewClosed")
     }
 
-    // Hide Menu
-    self.hideMenu()
+    func updateMenu() {
+        // Hide Menu
+        hideMenu()
 
-    // Change Menu Title At Index
-    self.changeMenu(title: "Changed", at: 1)
-    self.changeMenu(title: "Changed", status: .selected, at: 1)
+        // Change Menu Title At Index
+        changeMenu(title: "Changed", at: 1)
+        changeMenu(title: "Changed", status: .selected, at: 1)
 
-    // Change View At Index 
-    self.changeView(view: UIView(), at: 3)
+        // Change View At Index
+        changeView(view: UIView(), at: 3)
 
-    // Always Selected Menu
-    self.alwaysSelected(at: 0)
-    self.normalSelected(at: 0)
+        // Always Selected Menu
+        alwaysSelected(at: 0)
+        normalSelected(at: 0)
+    }
 }
 ```
 
@@ -96,123 +98,122 @@ class DropDownView: YNDropDownView {
 
 Show & Hide Menu 
 ```swift
-view.showAndHideMenu(at:1)
+dropDownMenu.showAndHideMenu(at: 1)
 
 // When view is already opened
-view.hideMenu()
+dropDownMenu.hideMenu()
 ```
 
 Disable & Enable Menu 
 ```swift
-view.disabledMenu(at: 2)
-view.enabledMenu(at: 3)
+dropDownMenu.disabledMenu(at: 2)
+dropDownMenu.enabledMenu(at: 3)
 ```
 
 Always/Normal selected button label
 ```swift
-view.alwaysSelected(at: 0)
-view.normalSelected(at: 0)
+dropDownMenu.alwaysSelected(at: 0)
+dropDownMenu.normalSelected(at: 0)
 ```
 
 Button Images with 3 situations (normal, selected, disabled)
+
+Provide one image for each menu item in every array.
+
 ```swift
-view.setStatesImages(normalImages: [UIImage(named: "arrow_nor")], selectedImages: [UIImage(named: "arrow_sel")], disabledImages: [UIImage(named: "arrow_dim")])
+let normalImages = Array(repeating: UIImage(named: "arrow_nor"), count: 4)
+let selectedImages = Array(repeating: UIImage(named: "arrow_sel"), count: 4)
+let disabledImages = Array(repeating: UIImage(named: "arrow_dim"), count: 4)
+
+dropDownMenu.setStatesImages(
+    normalImages: normalImages,
+    selectedImages: selectedImages,
+    disabledImages: disabledImages
+)
 ```
 
 Label color with 3 situations
 ```swift
-view.setLabelColorWhen(normal: UIColor.black, selected: UIColor.blue, disabled: UIColor.gray)
+dropDownMenu.setLabelColorWhen(normal: .black, selected: .blue, disabled: .gray)
 ```
 
 Label font with 3 situations
 ```swift
-view.setLabelFontWhen(normal: UIFont.systemFont(ofSize: 12), selected: UIFont.boldSystemFont(ofSize: 12), disabled: UIFont.systemFont(ofSize: 12))
+dropDownMenu.setLabelFontWhen(
+    normal: .systemFont(ofSize: 12),
+    selected: .boldSystemFont(ofSize: 12),
+    disabled: .systemFont(ofSize: 12)
+)
 ```
 
 BlurEffectView
 ```swift
 // Enadbled or Disabled first (Default true)
-view.backgroundBlurEnabled = false
+dropDownMenu.backgroundBlurEnabled = false
 
 // Use this line if you want to change UIBlurEffectStyle
-view.blurEffectStyle = .light
+dropDownMenu.blurEffectStyle = .light
 
 // Or customize blurEffectView(UIView)
 let backgroundView = UIView()
 backgroundView.backgroundColor = UIColor.black
-view.blurEffectView = backgroundView
+dropDownMenu.blurEffectView = backgroundView
 
 // Animation end alpha
-view.blurEffectViewAlpha = 0.7
+dropDownMenu.blurEffectViewAlpha = 0.7
 ```
 
 Animation duration
 ```swift
-view.showMenuDuration = 0.5
-view.hideMenuDuration = 0.3
+dropDownMenu.showMenuDuration = 0.5
+dropDownMenu.hideMenuDuration = 0.3
 ```
 
 Animation velocity, damping
 ```swift
-view.showMenuSpringVelocity = 0.5
-view.showMenuSpringWithDamping = 0.8
+dropDownMenu.showMenuSpringVelocity = 0.5
+dropDownMenu.showMenuSpringWithDamping = 0.8
 
-view.hideMenuSpringVelocity = 0.9
-view.hideMenuSpringWithDamping = 0.8
+dropDownMenu.hideMenuSpringVelocity = 0.9
+dropDownMenu.hideMenuSpringWithDamping = 0.8
 ```
 
 Change Menu Title At Index
 ```swift
-view.changeMenu(title: "Changed", at: 1)
-view.changeMenu(title: "Changed", status: .selected, at: 1)
+dropDownMenu.changeMenu(title: "Changed", at: 1)
+dropDownMenu.changeMenu(title: "Changed", status: .selected, at: 1)
 
 ```
 
 Change View At Index 
 ```swift
-view.changeView(view: UIView(), at: 3)
+dropDownMenu.changeView(view: UIView(), at: 3)
 ```
 
 Change Bottom Line
 ```swift
-view.bottomLine.backgroundColor = UIColor.black
-view.bottomLine.isHidden = false
+dropDownMenu.bottomLine.backgroundColor = .black
+dropDownMenu.bottomLine.isHidden = false
 ```
 
 
 ### Deprecated
+
+The following APIs remain available for source compatibility. Use their replacements in new code.
+
 ```swift
-extension YNDropDownMenu {
-    @available(*, deprecated, message: "use init(frame: CGRect, dropDownViews: [UIView], dropDownViewTitles: [String]) instead")
-    public init(frame: CGRect, YNDropDownViews: [YNDropDownView], dropDownViewTitles: [String])
+// Use alwaysSelected(at:) instead.
+dropDownMenu.alwaysSelectedAt(index: 0)
 
-    @available(*, deprecated, message: "use alwaysSelected(at index: Int) instead")
-    open func alwaysSelectedAt(index: Int) {
-        self.alwaysSelected(at: index)
-    }
-    
-    @available(*, deprecated, message: "use disabledMenu(at index: Int) instead")
-    open func disabledMenuAt(index: Int) {
-        self.disabledMenu(at: index)
-    }
-    
-    @available(*, deprecated, message: "use enabledMenu(at index: Int) instead")
-    open func enabledMenuAt(index: Int) {
-        self.enabledMenu(at: index)
-    }
+// Use disabledMenu(at:) and enabledMenu(at:) instead.
+dropDownMenu.disabledMenuAt(index: 1)
+dropDownMenu.enabledMenuAt(index: 1)
 
-    @available(*, deprecated, message: "use showAndHideMenu(at index: Int) instead")
-    open func showAndHideMenuAt(index: Int) {
-        self.showAndHideMenu(at: index)
-    }
-}
+// Use showAndHideMenu(at:) instead.
+dropDownMenu.showAndHideMenuAt(index: 2)
 
-extension YNDropDownView {
-    @available(*, deprecated, message: "use changeMenu(title: String, at index: Int) instead")
-    open func changeMenuTitleAt(index: Int, title: String) {
-        self.delegate?.changeMenu(title: title, at: index)
-    }
-}
+// In a YNDropDownView subclass, use changeMenu(title:at:) instead.
+changeMenuTitleAt(index: 0, title: "Changed")
 ```
 ## References
 #### Please tell me or make pull request if you use this library in your application :) 
