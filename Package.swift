@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "YNDropDownMenu",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
         .library(name: "YNDropDownMenu", targets: ["YNDropDownMenu"])

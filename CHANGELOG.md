@@ -1,4 +1,6 @@
 # Updates
+## [v4.1.0](https://github.com/younatics/YNDropDownMenu/releases/tag/4.1.0)
+* Raise the minimum deployment target to iOS 15.0 (Xcode 26/27 no longer build for iOS 13/14)
 
 ## [v4.0.0](https://github.com/younatics/YNDropDownMenu/releases/tag/4.0.0)
 * Upgrade to Swift 6.0

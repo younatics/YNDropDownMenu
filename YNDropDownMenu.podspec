@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNDropDownMenu'
-  s.version          = '4.0.0'
+  s.version          = '4.1.0'
   s.summary          = 'Awesome Dropdown menu for iOS with Swift 6'
 
   s.description      = <<-DESC
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/younatics'
 
   s.swift_version = '6.0'
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '15.0'
 
   s.frameworks = 'UIKit'
   s.requires_arc = true

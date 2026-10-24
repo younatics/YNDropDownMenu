@@ -17,7 +17,7 @@ The eligible dropdown menu for iOS, written in Swift 6, appears dropdown menu to
 
 ## Requirements
 
-`YNDropDownMenu` is written in Swift 6.0 and requires iOS 13.0 or later. The package manifest uses Swift tools 6.0, and the CocoaPods deployment target is iOS 13.0.
+`YNDropDownMenu` is written in Swift 6.0 and requires iOS 15.0 or later. The package manifest uses Swift tools 6.0, and the CocoaPods deployment target is iOS 15.0.
 
 ## Installation
 
